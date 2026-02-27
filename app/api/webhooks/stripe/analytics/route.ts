@@ -1,5 +1,10 @@
 import { NextResponse } from 'next/server'
-import { stripe } from '@/lib/stripe'
+import Stripe from 'stripe'
+
+// Initialize Stripe directly (not from @/lib/stripe)
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
+  apiVersion: '2024-12-18.acacia',
+})
 
 // This webhook is SEPARATE from the checkout webhook
 // It handles analytics/revenue tracking only and won't affect subscription processing
@@ -32,14 +37,10 @@ export async function POST(req: Request) {
     await trackToMixpanel(event, mixpanelToken)
   }
 
-  // Also track to internal analytics if needed
-  await trackToInternalAnalytics(event)
-
   return NextResponse.json({ received: true })
 }
 
 async function trackToMixpanel(event: any, token: string) {
-  const timestamp = new Date().toISOString()
   
   switch (event.type) {
     case 'checkout.session.completed': {
@@ -67,27 +68,6 @@ async function trackToMixpanel(event: any, token: string) {
             payment_status: session.payment_status,
           }
         })
-      })
-      
-      // Track revenue in Mixpanel's format
-      await fetch('https://api.mixpanel.com/import', {
-        method: 'POST',
-        headers: { 
-          'Content-Type': 'application/json',
-          'Authorization': `Basic ${Buffer.from(token + ':').toString('base64')}`
-        },
-        body: JSON.stringify([{
-          event: '$revenue',
-          properties: {
-            distinct_id: session.customer,
-            time: Math.floor(Date.now() / 1000),
-            $amount: amount,
-            $currency: currency,
-            token,
-            source: 'stripe',
-            plan: session.metadata?.plan || 'unknown',
-          }
-        }])
       })
       
       console.log(`[Analytics] Tracked purchase: $${amount} ${currency}`)
@@ -230,37 +210,5 @@ async function trackToMixpanel(event: any, token: string) {
       }
       break
     }
-  }
-}
-
-async function trackToInternalAnalytics(event: any) {
-  // Optionally track to your own database for custom dashboards
-  // This won't interfere with the main checkout webhook
-  
-  try {
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-    const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY
-    
-    if (!supabaseUrl || !supabaseKey) return
-    
-    // Store raw event for audit/debugging
-    await fetch(`${supabaseUrl}/rest/v1/analytics_events`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${supabaseKey}`,
-        'apikey': supabaseKey,
-        'Prefer': 'return=minimal'
-      },
-      body: JSON.stringify({
-        event_type: event.type,
-        stripe_event_id: event.id,
-        data: event.data.object,
-        created_at: new Date().toISOString()
-      })
-    })
-  } catch (err) {
-    // Non-critical: don't fail the webhook
-    console.error('[Analytics] Failed to store internal analytics:', err)
   }
 }
