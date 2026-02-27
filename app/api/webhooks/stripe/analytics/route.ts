@@ -1,13 +1,37 @@
 import { NextResponse } from 'next/server'
-import Stripe from 'stripe'
-
-// Initialize Stripe with secret key if available, otherwise dummy (for webhook verification only)
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_dummy', {
-  apiVersion: '2024-12-18.acacia',
-})
+import { createHmac } from 'crypto'
 
 // This webhook is SEPARATE from the checkout webhook
 // It handles analytics/revenue tracking only and won't affect subscription processing
+
+// Verify Stripe webhook signature without the stripe package
+function verifyWebhookSignature(payload: string, signature: string, secret: string): any {
+  const elements = signature.split(',')
+  const signatureHash = elements.find(el => el.startsWith('v1='))?.replace('v1=', '')
+  
+  if (!signatureHash) {
+    throw new Error('Invalid signature format')
+  }
+  
+  const expectedHash = createHmac('sha256', secret)
+    .update(payload)
+    .digest('hex')
+  
+  // Constant-time comparison to prevent timing attacks
+  let match = true
+  for (let i = 0; i < signatureHash.length; i++) {
+    if (signatureHash.charCodeAt(i) !== expectedHash.charCodeAt(i)) {
+      match = false
+    }
+  }
+  
+  if (!match) {
+    throw new Error('Signature verification failed')
+  }
+  
+  // Parse the payload
+  return JSON.parse(payload)
+}
 
 export async function POST(req: Request) {
   const payload = await req.text()
@@ -20,12 +44,7 @@ export async function POST(req: Request) {
   let event
 
   try {
-    // Webhook verification doesn't need valid API key, just the webhook secret
-    event = stripe.webhooks.constructEvent(
-      payload,
-      signature,
-      process.env.STRIPE_WEBHOOK_SECRET_ANALYTICS
-    )
+    event = verifyWebhookSignature(payload, signature, process.env.STRIPE_WEBHOOK_SECRET_ANALYTICS)
   } catch (err: any) {
     console.error('Analytics webhook signature verification failed:', err.message)
     return NextResponse.json({ error: err.message }, { status: 400 })
