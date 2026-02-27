@@ -1,0 +1,51 @@
+globalThis.__BUILD_MANIFEST = {
+  "pages": {
+    "/_app": [
+      "static/chunks/1875a_next_dist_compiled_f4a25ea6._.js",
+      "static/chunks/1875a_next_dist_shared_lib_c404c21f._.js",
+      "static/chunks/1875a_next_dist_client_2ee5722f._.js",
+      "static/chunks/1875a_next_dist_db7bf4a4._.js",
+      "static/chunks/1875a_next_app_b7b17880.js",
+      "static/chunks/[next]_entry_page-loader_ts_a635df65._.js",
+      "static/chunks/1875a_react-dom_0981d61e._.js",
+      "static/chunks/1875a_f3c9633a._.js",
+      "static/chunks/[root-of-the-server]__3a3c80ad._.js",
+      "static/chunks/OneDrive - Easyfairs_Desktop_Albin_brandgate_pages__app_2da965e7._.js",
+      "static/chunks/turbopack-OneDrive - Easyfairs_Desktop_Albin_brandgate_pages__app_8359eacc._.js"
+    ],
+    "/_error": [
+      "static/chunks/1875a_next_dist_compiled_f4a25ea6._.js",
+      "static/chunks/1875a_next_dist_shared_lib_b4771c30._.js",
+      "static/chunks/1875a_next_dist_client_2ee5722f._.js",
+      "static/chunks/1875a_next_dist_125b4a37._.js",
+      "static/chunks/1875a_next_error_a95582de.js",
+      "static/chunks/[next]_entry_page-loader_ts_5ec25725._.js",
+      "static/chunks/1875a_react-dom_0981d61e._.js",
+      "static/chunks/1875a_f3c9633a._.js",
+      "static/chunks/[root-of-the-server]__f329adb6._.js",
+      "static/chunks/OneDrive - Easyfairs_Desktop_Albin_brandgate_pages__error_2da965e7._.js",
+      "static/chunks/turbopack-OneDrive - Easyfairs_Desktop_Albin_brandgate_pages__error_318c802c._.js"
+    ]
+  },
+  "devFiles": [],
+  "polyfillFiles": [
+    "static/chunks/1875a_next_dist_build_polyfills_polyfill-nomodule.js"
+  ],
+  "lowPriorityFiles": [],
+  "rootMainFiles": [
+    "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_f4cadaed._.js",
+    "static/chunks/1875a_next_dist_compiled_react-dom_f5585593._.js",
+    "static/chunks/1875a_next_dist_compiled_react-server-dom-turbopack_af1c9b5b._.js",
+    "static/chunks/1875a_next_dist_compiled_next-devtools_index_28e002b3.js",
+    "static/chunks/1875a_next_dist_compiled_0b944582._.js",
+    "static/chunks/1875a_next_dist_client_a50ba7f3._.js",
+    "static/chunks/1875a_next_dist_454b8202._.js",
+    "static/chunks/1875a_@swc_helpers_cjs_e669ad20._.js",
+    "static/chunks/OneDrive - Easyfairs_Desktop_Albin_brandgate_a0ff3932._.js",
+    "static/chunks/turbopack-OneDrive - Easyfairs_Desktop_Albin_brandgate_a70ccec0._.js"
+  ]
+};
+globalThis.__BUILD_MANIFEST.lowPriorityFiles = [
+"/static/" + process.env.__NEXT_BUILD_ID + "/_buildManifest.js",
+"/static/" + process.env.__NEXT_BUILD_ID + "/_ssgManifest.js"
+];

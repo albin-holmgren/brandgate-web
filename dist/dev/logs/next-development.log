@@ -1,0 +1,385 @@
+[00:00:02.316] Server  LOG     ✓ Ready in 1859ms
+[00:00:02.881] Server  ERROR   ⨯ ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css:6206:9
+Parsing CSS source code failed
+  6204 |   }
+  6205 |   .\[\&_\.�\4 �\!-cartesian-axis-tick_text\]\:fill-muted-foreground {
+> 6206 |     & .��!-cartesian-axis-tick text {
+       |         ^
+  6207 |       fill: hsl(var(--muted-foreground));
+  6208 |     }
+  6209 |   }
+
+Unexpected token Delim('\u{4}')
+
+Import trace:
+  Client Component Browser:
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css [Client Component Browser]
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/layout.tsx [Server Component]
+
+
+[00:00:04.210] Browser ERROR   uncaughtError: Error: ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css:6206:9
+Parsing CSS source code failed
+  6204 |   }
+  6205 |   .\[\&_\.�\4 �\!-cartesian-axis-tick_text\]\:fill-muted-foreground {
+> 6206 |     & .��!-cartesian-axis-tick text {
+       |         ^
+  6207 |       fill: hsl(var(--muted-foreground));
+  6208 |     }
+  6209 |   }
+
+Unexpected token Delim('\u{4}')
+
+Import trace:
+  Client Component Browser:
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css [Client Component Browser]
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/layout.tsx [Server Component]
+
+
+[00:00:04.500] Browser ERROR   ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css:6206:9
+Parsing CSS source code failed
+  6204 |   }
+  6205 |   .\[\&_\.�\4 �\!-cartesian-axis-tick_text\]\:fill-muted-foreground {
+> 6206 |     & .��!-cartesian-axis-tick text {
+       |         ^
+  6207 |       fill: hsl(var(--muted-foreground));
+  6208 |     }
+  6209 |   }
+
+Unexpected token Delim('\u{4}')
+
+Import trace:
+  Client Component Browser:
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css [Client Component Browser]
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/layout.tsx [Server Component]
+[00:00:04.500] Browser ERROR   ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css:6206:9
+Parsing CSS source code failed
+  6204 |   }
+  6205 |   .\[\&_\.�\4 �\!-cartesian-axis-tick_text\]\:fill-muted-foreground {
+> 6206 |     & .��!-cartesian-axis-tick text {
+       |         ^
+  6207 |       fill: hsl(var(--muted-foreground));
+  6208 |     }
+  6209 |   }
+
+Unexpected token Delim('\u{4}')
+
+Import trace:
+  Client Component Browser:
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css [Client Component Browser]
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/layout.tsx [Server Component]
+[00:01:45.628] Browser ERROR   ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css:6206:9
+Parsing CSS source code failed
+  6204 |   }
+  6205 |   .\[\&_\.�\4 �\!-cartesian-axis-tick_text\]\:fill-muted-foreground {
+> 6206 |     & .��!-cartesian-axis-tick text {
+       |         ^
+  6207 |       fill: hsl(var(--muted-foreground));
+  6208 |     }
+  6209 |   }
+
+Unexpected token Delim('\u{4}')
+
+Import trace:
+  Client Component Browser:
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css [Client Component Browser]
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/layout.tsx [Server Component]
+[00:01:45.923] Browser ERROR   ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css:6206:9
+Parsing CSS source code failed
+  6204 |   }
+  6205 |   .\[\&_\.�\4 �\!-cartesian-axis-tick_text\]\:fill-muted-foreground {
+> 6206 |     & .��!-cartesian-axis-tick text {
+       |         ^
+  6207 |       fill: hsl(var(--muted-foreground));
+  6208 |     }
+  6209 |   }
+
+Unexpected token Delim('\u{4}')
+
+Import trace:
+  Client Component Browser:
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css [Client Component Browser]
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/layout.tsx [Server Component]
+[00:01:48.159] Browser ERROR   ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css:6206:9
+Parsing CSS source code failed
+  6204 |   }
+  6205 |   .\[\&_\.�\4 �\!-cartesian-axis-tick_text\]\:fill-muted-foreground {
+> 6206 |     & .��!-cartesian-axis-tick text {
+       |         ^
+  6207 |       fill: hsl(var(--muted-foreground));
+  6208 |     }
+  6209 |   }
+
+Unexpected token Delim('\u{4}')
+
+Import trace:
+  Client Component Browser:
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css [Client Component Browser]
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/layout.tsx [Server Component]
+[00:01:49.197] Browser ERROR   ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css:6206:9
+Parsing CSS source code failed
+  6204 |   }
+  6205 |   .\[\&_\.�\4 �\!-cartesian-axis-tick_text\]\:fill-muted-foreground {
+> 6206 |     & .��!-cartesian-axis-tick text {
+       |         ^
+  6207 |       fill: hsl(var(--muted-foreground));
+  6208 |     }
+  6209 |   }
+
+Unexpected token Delim('\u{4}')
+
+Import trace:
+  Client Component Browser:
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css [Client Component Browser]
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/layout.tsx [Server Component]
+[00:01:49.738] Browser ERROR   ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css:6206:9
+Parsing CSS source code failed
+  6204 |   }
+  6205 |   .\[\&_\.�\4 �\!-cartesian-axis-tick_text\]\:fill-muted-foreground {
+> 6206 |     & .��!-cartesian-axis-tick text {
+       |         ^
+  6207 |       fill: hsl(var(--muted-foreground));
+  6208 |     }
+  6209 |   }
+
+Unexpected token Delim('\u{4}')
+
+Import trace:
+  Client Component Browser:
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css [Client Component Browser]
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/layout.tsx [Server Component]
+[00:01:49.738] Browser ERROR   ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css:6206:9
+Parsing CSS source code failed
+  6204 |   }
+  6205 |   .\[\&_\.�\4 �\!-cartesian-axis-tick_text\]\:fill-muted-foreground {
+> 6206 |     & .��!-cartesian-axis-tick text {
+       |         ^
+  6207 |       fill: hsl(var(--muted-foreground));
+  6208 |     }
+  6209 |   }
+
+Unexpected token Delim('\u{4}')
+
+Import trace:
+  Client Component Browser:
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css [Client Component Browser]
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/layout.tsx [Server Component]
+[00:01:49.738] Browser ERROR   ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css:6206:9
+Parsing CSS source code failed
+  6204 |   }
+  6205 |   .\[\&_\.�\4 �\!-cartesian-axis-tick_text\]\:fill-muted-foreground {
+> 6206 |     & .��!-cartesian-axis-tick text {
+       |         ^
+  6207 |       fill: hsl(var(--muted-foreground));
+  6208 |     }
+  6209 |   }
+
+Unexpected token Delim('\u{4}')
+
+Import trace:
+  Client Component Browser:
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css [Client Component Browser]
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/layout.tsx [Server Component]
+[00:01:49.738] Browser ERROR   ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css:6206:9
+Parsing CSS source code failed
+  6204 |   }
+  6205 |   .\[\&_\.�\4 �\!-cartesian-axis-tick_text\]\:fill-muted-foreground {
+> 6206 |     & .��!-cartesian-axis-tick text {
+       |         ^
+  6207 |       fill: hsl(var(--muted-foreground));
+  6208 |     }
+  6209 |   }
+
+Unexpected token Delim('\u{4}')
+
+Import trace:
+  Client Component Browser:
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css [Client Component Browser]
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/layout.tsx [Server Component]
+[00:01:50.669] Browser ERROR   ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css:6206:9
+Parsing CSS source code failed
+  6204 |   }
+  6205 |   .\[\&_\.�\4 �\!-cartesian-axis-tick_text\]\:fill-muted-foreground {
+> 6206 |     & .��!-cartesian-axis-tick text {
+       |         ^
+  6207 |       fill: hsl(var(--muted-foreground));
+  6208 |     }
+  6209 |   }
+
+Unexpected token Delim('\u{4}')
+
+Import trace:
+  Client Component Browser:
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css [Client Component Browser]
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/layout.tsx [Server Component]
+[00:01:51.553] Browser ERROR   ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css:6206:9
+Parsing CSS source code failed
+  6204 |   }
+  6205 |   .\[\&_\.�\4 �\!-cartesian-axis-tick_text\]\:fill-muted-foreground {
+> 6206 |     & .��!-cartesian-axis-tick text {
+       |         ^
+  6207 |       fill: hsl(var(--muted-foreground));
+  6208 |     }
+  6209 |   }
+
+Unexpected token Delim('\u{4}')
+
+Import trace:
+  Client Component Browser:
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css [Client Component Browser]
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/layout.tsx [Server Component]
+[00:01:51.553] Browser ERROR   ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css:6206:9
+Parsing CSS source code failed
+  6204 |   }
+  6205 |   .\[\&_\.�\4 �\!-cartesian-axis-tick_text\]\:fill-muted-foreground {
+> 6206 |     & .��!-cartesian-axis-tick text {
+       |         ^
+  6207 |       fill: hsl(var(--muted-foreground));
+  6208 |     }
+  6209 |   }
+
+Unexpected token Delim('\u{4}')
+
+Import trace:
+  Client Component Browser:
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css [Client Component Browser]
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/layout.tsx [Server Component]
+[00:01:52.038] Browser ERROR   ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css:6206:9
+Parsing CSS source code failed
+  6204 |   }
+  6205 |   .\[\&_\.�\4 �\!-cartesian-axis-tick_text\]\:fill-muted-foreground {
+> 6206 |     & .��!-cartesian-axis-tick text {
+       |         ^
+  6207 |       fill: hsl(var(--muted-foreground));
+  6208 |     }
+  6209 |   }
+
+Unexpected token Delim('\u{4}')
+
+Import trace:
+  Client Component Browser:
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css [Client Component Browser]
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/layout.tsx [Server Component]
+[00:01:52.038] Browser ERROR   ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css:6206:9
+Parsing CSS source code failed
+  6204 |   }
+  6205 |   .\[\&_\.�\4 �\!-cartesian-axis-tick_text\]\:fill-muted-foreground {
+> 6206 |     & .��!-cartesian-axis-tick text {
+       |         ^
+  6207 |       fill: hsl(var(--muted-foreground));
+  6208 |     }
+  6209 |   }
+
+Unexpected token Delim('\u{4}')
+
+Import trace:
+  Client Component Browser:
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css [Client Component Browser]
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/layout.tsx [Server Component]
+[00:01:52.473] Browser ERROR   ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css:6206:9
+Parsing CSS source code failed
+  6204 |   }
+  6205 |   .\[\&_\.�\4 �\!-cartesian-axis-tick_text\]\:fill-muted-foreground {
+> 6206 |     & .��!-cartesian-axis-tick text {
+       |         ^
+  6207 |       fill: hsl(var(--muted-foreground));
+  6208 |     }
+  6209 |   }
+
+Unexpected token Delim('\u{4}')
+
+Import trace:
+  Client Component Browser:
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css [Client Component Browser]
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/layout.tsx [Server Component]
+[00:01:52.784] Browser ERROR   ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css:6206:9
+Parsing CSS source code failed
+  6204 |   }
+  6205 |   .\[\&_\.�\4 �\!-cartesian-axis-tick_text\]\:fill-muted-foreground {
+> 6206 |     & .��!-cartesian-axis-tick text {
+       |         ^
+  6207 |       fill: hsl(var(--muted-foreground));
+  6208 |     }
+  6209 |   }
+
+Unexpected token Delim('\u{4}')
+
+Import trace:
+  Client Component Browser:
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css [Client Component Browser]
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/layout.tsx [Server Component]
+[00:02:01.118] Browser ERROR   ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css:6206:9
+Parsing CSS source code failed
+  6204 |   }
+  6205 |   .\[\&_\.�\4 �\!-cartesian-axis-tick_text\]\:fill-muted-foreground {
+> 6206 |     & .��!-cartesian-axis-tick text {
+       |         ^
+  6207 |       fill: hsl(var(--muted-foreground));
+  6208 |     }
+  6209 |   }
+
+Unexpected token Delim('\u{4}')
+
+Import trace:
+  Client Component Browser:
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css [Client Component Browser]
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/layout.tsx [Server Component]
+[00:02:07.384] Browser ERROR   ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css:6206:9
+Parsing CSS source code failed
+  6204 |   }
+  6205 |   .\[\&_\.�\4 �\!-cartesian-axis-tick_text\]\:fill-muted-foreground {
+> 6206 |     & .��!-cartesian-axis-tick text {
+       |         ^
+  6207 |       fill: hsl(var(--muted-foreground));
+  6208 |     }
+  6209 |   }
+
+Unexpected token Delim('\u{4}')
+
+Import trace:
+  Client Component Browser:
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css [Client Component Browser]
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/layout.tsx [Server Component]
+[00:02:08.094] Browser ERROR   ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css:6206:9
+Parsing CSS source code failed
+  6204 |   }
+  6205 |   .\[\&_\.�\4 �\!-cartesian-axis-tick_text\]\:fill-muted-foreground {
+> 6206 |     & .��!-cartesian-axis-tick text {
+       |         ^
+  6207 |       fill: hsl(var(--muted-foreground));
+  6208 |     }
+  6209 |   }
+
+Unexpected token Delim('\u{4}')
+
+Import trace:
+  Client Component Browser:
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css [Client Component Browser]
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/layout.tsx [Server Component]
+[00:02:44.647] Browser ERROR   ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css:6206:9
+Parsing CSS source code failed
+  6204 |   }
+  6205 |   .\[\&_\.�\4 �\!-cartesian-axis-tick_text\]\:fill-muted-foreground {
+> 6206 |     & .��!-cartesian-axis-tick text {
+       |         ^
+  6207 |       fill: hsl(var(--muted-foreground));
+  6208 |     }
+  6209 |   }
+
+Unexpected token Delim('\u{4}')
+
+Import trace:
+  Client Component Browser:
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/globals.css [Client Component Browser]
+    ./OneDrive - Easyfairs/Desktop/Albin/brandgate/app/layout.tsx [Server Component]
+[00:04:23.935] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:24.313] Browser WARN    Image with src "http://localhost:3000/logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:08:22.375] Server  LOG     ✓ Compiled in 1666ms
+[00:08:40.028] Server  LOG     ✓ Compiled in 848ms
+[00:08:48.050] Server  LOG     ✓ Compiled in 2.1s
+[00:08:48.711] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:26.860] Server  LOG     ✓ Compiled in 3.6s
+[00:19:29.400] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:32.752] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:03.494] Server  LOG     ✓ Compiled in 1279ms
+[00:20:33.107] Server  LOG     ✓ Compiled in 234ms
+[00:21:56.883] Server  LOG     ✓ Compiled in 209ms

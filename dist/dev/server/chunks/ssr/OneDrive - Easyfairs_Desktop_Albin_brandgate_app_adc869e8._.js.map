@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/albin.holmgren/OneDrive%20-%20Easyfairs/Desktop/Albin/brandgate/app/favicon.ico.mjs%20%28structured%20image%20object%29"],"sourcesContent":["import src from \"IMAGE\";\nexport default { src, width: 500, height: 500 }\n"],"names":[],"mappings":";;;;AAAA;;uCACe;IAAE,KAAA,iMAAG;IAAE,OAAO;IAAK,QAAQ;AAAI"}}]
+}
