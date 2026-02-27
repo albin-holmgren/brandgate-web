@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server'
 import Stripe from 'stripe'
 
-// Initialize Stripe directly (not from @/lib/stripe)
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
+// Initialize Stripe with secret key if available, otherwise dummy (for webhook verification only)
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_dummy', {
   apiVersion: '2024-12-18.acacia',
 })
 
@@ -14,12 +14,13 @@ export async function POST(req: Request) {
   const signature = req.headers.get('stripe-signature')
 
   if (!signature || !process.env.STRIPE_WEBHOOK_SECRET_ANALYTICS) {
-    return NextResponse.json({ error: 'Missing signature' }, { status: 400 })
+    return NextResponse.json({ error: 'Missing signature or webhook secret' }, { status: 400 })
   }
 
   let event
 
   try {
+    // Webhook verification doesn't need valid API key, just the webhook secret
     event = stripe.webhooks.constructEvent(
       payload,
       signature,
