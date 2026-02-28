@@ -1,22 +1,47 @@
-// Blog listing page - BrandGate brand compliant
-// Matches brandgate.dev styling exactly
+// Blog listing page - Links to static HTML files
+// app/blog/page.tsx
 
 import Link from "next/link";
 import { Metadata } from "next";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
-import { blogPosts } from "./data";
 
 export const metadata: Metadata = {
   title: "BrandGate Blog | B2B Distribution Insights",
   description: "Expert insights on B2B distribution management, wholesale growth strategies, and scaling your brand.",
 };
 
-// Pre-render all blog posts at build time
-export function generateStaticParams() {
-  return blogPosts.map((post) => ({
-    slug: post.slug,
-  }));
-}
+const blogPosts = [
+  {
+    slug: "b2b-distribution-guide",
+    title: "The Complete Guide to B2B Distribution Management in 2024",
+    excerpt: "Learn how to manage your distribution network efficiently. Covers partner selection, onboarding, pricing strategies, and scaling with the right tools.",
+    date: "Feb 28, 2026",
+    readTime: "8 min read",
+    image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200",
+    tags: ["Distribution Strategy", "B2B", "Wholesale"],
+    featured: true,
+  },
+  {
+    slug: "choose-b2b-ecommerce-platform",
+    title: "How to Choose the Right B2B E-commerce Platform",
+    excerpt: "Key features to look for when selecting a B2B e-commerce platform. Compare options and find the best solution for your distribution needs.",
+    date: "Feb 28, 2026",
+    readTime: "6 min read",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200",
+    tags: ["B2B E-commerce", "Platform Selection", "Technology"],
+    featured: false,
+  },
+  {
+    slug: "sweden-b2b-distribution-guide",
+    title: "B2B Distribution in Sweden: A Complete Guide for Brands",
+    excerpt: "Everything you need to know about B2B distribution in Sweden. Local regulations, best practices, and how to build a successful distribution network.",
+    date: "Feb 28, 2026",
+    readTime: "7 min read",
+    image: "https://images.unsplash.com/photo-1520769945061-0a448c463865?w=1200",
+    tags: ["Sweden", "B2B", "Distribution", "Nordic Market"],
+    featured: false,
+  },
+];
 
 export default function BlogPage() {
   const featuredPost = blogPosts.find((p) => p.featured);
@@ -24,7 +49,7 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-[#F5F5F5]">
-      {/* Header - Matches brandgate.dev exactly */}
+      {/* Header */}
       <header className="sticky top-0 z-50 bg-[#F5F5F5] border-b border-[#E3E3E3]">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
@@ -53,7 +78,7 @@ export default function BlogPage() {
         </div>
       </header>
 
-      {/* Hero - Brand compliant */}
+      {/* Hero */}
       <section className="bg-[#F5F5F5] border-b border-[#E3E3E3] py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <div className="w-16 h-1 bg-[#E5A400] mx-auto mb-8" />
@@ -70,8 +95,8 @@ export default function BlogPage() {
       {featuredPost && (
         <section className="py-12 md:py-16 bg-[#F5F5F5]">
           <div className="max-w-7xl mx-auto px-6">
-            <Link
-              href={`/blog/${featuredPost.slug}`}
+            <a
+              href={`/blog/${featuredPost.slug}/index.html`}
               className="group block bg-white rounded-2xl border border-[#E3E3E3] overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
             >
               <div className="grid md:grid-cols-2">
@@ -102,7 +127,7 @@ export default function BlogPage() {
                   </div>
                 </div>
               </div>
-            </Link>
+            </a>
           </div>
         </section>
       )}
@@ -113,9 +138,9 @@ export default function BlogPage() {
           <h2 className="text-2xl font-bold text-[#003822] mb-8">Latest Articles</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {regularPosts.map((post) => (
-              <Link
+              <a
                 key={post.slug}
-                href={`/blog/${post.slug}`}
+                href={`/blog/${post.slug}/index.html`}
                 className="group block bg-white rounded-xl border border-[#E3E3E3] overflow-hidden shadow-sm hover:shadow-lg transition-all"
               >
                 <div
@@ -133,7 +158,7 @@ export default function BlogPage() {
                   </h3>
                   <p className="text-[#6E6B6B] text-sm line-clamp-2">{post.excerpt}</p>
                 </div>
-              </Link>
+              </a>
             ))}
           </div>
         </div>
