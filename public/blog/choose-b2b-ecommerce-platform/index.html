@@ -10,9 +10,14 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Inter', sans-serif; background: #F5F5F5; color: #4D4D4D; line-height: 1.6; }
     .nav { position: sticky; top: 0; background: #F5F5F5; border-bottom: 1px solid #E3E3E3; z-index: 50; }
-    .nav-inner { max-width: 800px; margin: 0 auto; padding: 1rem 1.5rem; }
+    .nav-inner { max-width: 800px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
     .nav a { display: inline-flex; align-items: center; gap: 0.5rem; color: #6E6B6B; text-decoration: none; font-size: 0.875rem; }
     .nav a:hover { color: #003822; }
+    .lang-switcher { display: flex; gap: 0.5rem; }
+    .lang-btn { padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; text-decoration: none; border: 1px solid #E3E3E3; }
+    .lang-btn.active { background: #003822; color: white; border-color: #003822; }
+    .lang-btn:not(.active) { background: white; color: #6E6B6B; }
+    .lang-btn:not(.active):hover { background: #F5F5F5; }
     .hero { position: relative; height: 300px; background: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200') center/cover; }
     .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,56,34,0.8), transparent); }
     .content-wrap { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 10; margin-top: -6rem; }
@@ -56,6 +61,10 @@
   <nav class="nav">
     <div class="nav-inner">
       <a href="/blog">← Back to Blog</a>
+      <div class="lang-switcher">
+        <a href="/blog/choose-b2b-ecommerce-platform/index.html" class="lang-btn active">🇬🇧 EN</a>
+        <a href="/blog/sv/choose-b2b-ecommerce-platform/index.html" class="lang-btn">🇸🇪 SV</a>
+      </div>
     </div>
   </nav>
 
@@ -94,29 +103,16 @@
         <h2>Essential Features Checklist</h2>
 
         <h3>1. Distributor Portal</h3>
-        <p>Your distributors need a dedicated space to browse products, place orders, and track shipments. Look for platforms that offer self-service portals with real-time inventory visibility and personalized pricing.</p>
+        <p>Your distributors need a dedicated space to browse products, place orders, and track shipments.</p>
 
         <h3>2. Order Management</h3>
-        <p>Manual order processing is the biggest time drain in distribution. The right platform should automate order workflows, handle complex pricing tiers, and integrate seamlessly with your fulfillment systems.</p>
+        <p>Manual order processing is the biggest time drain in distribution.</p>
 
         <h3>3. Pricing & Quoting</h3>
-        <p>B2B pricing is complex—tiered levels, volume discounts, and contract pricing are standard. Your platform must handle these scenarios without manual intervention.</p>
-
-        <h3>4. Integration Capabilities</h3>
-        <p>Your e-commerce platform shouldn't exist in isolation. It needs to connect with your existing tech stack: ERP for inventory, CRM for customer data, accounting for financials, and shipping carriers for fulfillment.</p>
-
-        <h2>Total Cost of Ownership</h2>
-        <p>Don't just compare monthly subscription fees. Calculate the total cost of ownership including:</p>
-        <ul>
-          <li>Setup and implementation costs</li>
-          <li>Training for your team and distributors</li>
-          <li>Ongoing maintenance and support</li>
-          <li>Transaction fees or commission structures</li>
-          <li>Integration development costs</li>
-        </ul>
+        <p>B2B pricing is complex—tiered levels, volume discounts, and contract pricing are standard.</p>
 
         <h2>Conclusion</h2>
-        <p>The right B2B e-commerce platform becomes the foundation of your distribution operations. Take time to evaluate your options, involve your team in the decision, and choose a solution that can grow with your business.</p>
+        <p>The right B2B e-commerce platform becomes the foundation of your distribution operations.</p>
 
         <p><strong>Ready to see how BrandGate compares?</strong> <a href="/demo">Schedule a personalized demo</a> and we'll show you how our platform handles your specific requirements.</p>
       </div>
@@ -131,13 +127,13 @@
   <section class="related">
     <h2>More Articles</h2>
     <div class="related-grid">
-      <a href="/blog/b2b-distribution-guide" class="related-card">
+      <a href="/blog/b2b-distribution-guide/index.html" class="related-card">
         <div class="related-img" style="background-image: url('https://images.unsplash.com/photo-1553413077-190dd305871c?w=600')"></div>
         <div class="related-content">
           <div class="related-title">The Complete Guide to B2B Distribution Management</div>
         </div>
       </a>
-      <a href="/blog/sweden-b2b-distribution-guide" class="related-card">
+      <a href="/blog/sweden-b2b-distribution-guide/index.html" class="related-card">
         <div class="related-img" style="background-image: url('https://images.unsplash.com/photo-1520769945061-0a448c463865?w=600')"></div>
         <div class="related-content">
           <div class="related-title">B2B Distribution in Sweden: A Complete Guide</div>
@@ -147,7 +143,11 @@
   </section>
 
   <footer class="footer">
-    <p>© 2024 BrandGate. All rights reserved.</p>
+    <p>© <span id="year">2026</span> BrandGate. All rights reserved.</p>
   </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
