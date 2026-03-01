@@ -1,20 +1,33 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-// i18n configuration for BrandGate
-// Root (/) = English (default)
-// /sv/* = Swedish
+// SEO BEST PRACTICES FOR LANGUAGE HANDLING:
+// 1. DON'T auto-redirect based on IP (Googlebot gets confused)
+// 2. DO use hreflang tags to indicate language versions
+// 3. DO show language banner/switcher for user choice
+// 4. DO use subdirectories (/sv/) not subdomains
+// 5. DO let users override with cookie preference
 
 const locales = ['en', 'sv']
 const defaultLocale = 'en'
 
-// Paths that should skip locale handling
-const ignorePaths = ['/api/', '/_next/', '/favicon.ico', '/robots.txt', '/sitemap', '/blog/']
+// Paths that should skip locale handling (static files, API, etc)
+const ignorePaths = [
+  '/api/', 
+  '/_next/', 
+  '/favicon.ico', 
+  '/robots.txt', 
+  '/sitemap',
+  '/blog/',  // Blog is static HTML, don't interfere
+  '/tools/',
+  '/images/',
+  '/fonts/'
+]
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
-  // Skip API routes, static files, and blog posts (static HTML)
+  // Skip API routes, static files, and blog posts
   if (ignorePaths.some(path => pathname.startsWith(path))) {
     return NextResponse.next()
   }
@@ -28,39 +41,27 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
-  // Check for country (Vercel provides this header)
-  const country = request.headers.get('x-vercel-ip-country') || 
-                  request.headers.get('cf-ipcountry') ||
-                  request.geo?.country || 
-                  'US'
-  
-  // Check for Swedish preference
-  const swedishCookie = request.cookies.get('NEXT_LOCALE')?.value
-  const acceptLanguage = request.headers.get('accept-language') || ''
-  
-  // Redirect to Swedish if:
-  // 1. User is in Sweden (SE)
-  // 2. User has Swedish cookie preference
-  // 3. Browser language is Swedish
-  const shouldRedirectToSwedish = 
-    country === 'SE' ||
-    swedishCookie === 'sv' || 
-    acceptLanguage.includes('sv') ||
-    acceptLanguage.includes('Swedish')
+  // NOTE: We DON'T auto-redirect based on country/IP
+  // This is bad for SEO - Googlebot gets confused
+  // Instead, we let users choose via language switcher
+  // Or use the cookie preference if they've chosen before
 
-  // Redirect to Swedish if preferred and not already on Swedish
-  if (shouldRedirectToSwedish && !pathname.startsWith('/sv')) {
-    const newUrl = new URL(`/sv${pathname}`, request.url)
+  // Check for user language preference cookie
+  const userLocale = request.cookies.get('NEXT_LOCALE')?.value
+  
+  // Only redirect if user has explicitly set a preference
+  if (userLocale && userLocale !== 'en' && !pathname.startsWith(`/${userLocale}`)) {
+    const newUrl = new URL(`/${userLocale}${pathname}`, request.url)
     return NextResponse.redirect(newUrl)
   }
 
-  // Otherwise, keep on root (English)
+  // Otherwise, stay on current URL (no redirect)
   return NextResponse.next()
 }
 
 export const config = {
   matcher: [
-    // Skip all internal paths (_next, api, etc)
-    '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap|blog).*)',
+    // Skip all internal paths
+    '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap|blog|tools|images|fonts).*)',
   ],
 }
