@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hur man Väljer Rätt B2B E-handelsplattform | BrandGate Blogg</title>
+  <meta name="description" content="Viktiga funktioner att leta efter vid val av B2B e-handelsplattform. Jämför alternativ och hitta den bästa lösningen för dina distributionsbehov.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F5F5F5; color: #4D4D4D; line-height: 1.6; }
+    .nav { position: sticky; top: 0; background: #F5F5F5; border-bottom: 1px solid #E3E3E3; z-index: 50; }
+    .nav-inner { max-width: 800px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+    .nav a { display: inline-flex; align-items: center; gap: 0.5rem; color: #6E6B6B; text-decoration: none; font-size: 0.875rem; }
+    .nav a:hover { color: #003822; }
+    .lang-switcher { display: flex; gap: 0.5rem; }
+    .lang-btn { padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; text-decoration: none; border: 1px solid #E3E3E3; }
+    .lang-btn.active { background: #003822; color: white; border-color: #003822; }
+    .lang-btn:not(.active) { background: white; color: #6E6B6B; }
+    .lang-btn:not(.active):hover { background: #F5F5F5; }
+    .hero { position: relative; height: 300px; background: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200') center/cover; }
+    .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,56,34,0.8), transparent); }
+    .content-wrap { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 10; margin-top: -6rem; }
+    .content { background: white; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); padding: 2rem; }
+    @media (min-width: 768px) { .content { padding: 3rem; } .hero { height: 400px; } }
+    .meta { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; font-size: 0.875rem; color: #6E6B6B; margin-bottom: 1.5rem; }
+    .tag { background: rgba(229,164,0,0.1); color: #E5A400; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; }
+    h1 { font-size: 2rem; color: #003822; font-weight: 700; line-height: 1.2; margin-bottom: 1.5rem; }
+    @media (min-width: 768px) { h1 { font-size: 2.5rem; } }
+    .author { display: flex; align-items: center; gap: 1rem; padding-bottom: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid #E3E3E3; }
+    .author-avatar { width: 48px; height: 48px; border-radius: 50%; background: #003822; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; }
+    .author-name { font-weight: 600; color: #003822; }
+    .author-role { font-size: 0.875rem; color: #6E6B6B; }
+    .prose { font-size: 1.125rem; }
+    .prose h2 { font-size: 1.5rem; color: #003822; font-weight: 700; margin: 2rem 0 1rem; }
+    .prose h3 { font-size: 1.25rem; color: #003822; font-weight: 600; margin: 1.5rem 0 0.75rem; }
+    .prose p { margin-bottom: 1.25rem; }
+    .prose ul { margin: 1rem 0; padding-left: 1.5rem; }
+    .prose li { margin-bottom: 0.5rem; }
+    .prose strong { color: #003822; }
+    .prose a { color: #E5A400; text-decoration: none; }
+    .prose a:hover { text-decoration: underline; }
+    .cta { background: #003822; border-radius: 0.75rem; padding: 2rem; text-align: center; margin-top: 2rem; }
+    .cta h3 { color: white; font-size: 1.5rem; margin-bottom: 1rem; }
+    .cta a { display: inline-block; background: #E5A400; color: #1A1A1A; padding: 0.875rem 2rem; border-radius: 9999px; font-weight: 600; text-decoration: none; }
+    .cta a:hover { background: #d49500; }
+    .footer { border-top: 1px solid #E3E3E3; margin-top: 3rem; padding: 2rem; text-align: center; color: #6E6B6B; font-size: 0.875rem; }
+    .related { max-width: 800px; margin: 3rem auto; padding: 0 1.5rem; }
+    .related h2 { font-size: 1.5rem; color: #003822; font-weight: 700; margin-bottom: 1.5rem; }
+    .related-grid { display: grid; gap: 1rem; }
+    @media (min-width: 640px) { .related-grid { grid-template-columns: repeat(2, 1fr); } }
+    .related-card { background: white; border: 1px solid #E3E3E3; border-radius: 0.75rem; overflow: hidden; text-decoration: none; }
+    .related-card:hover { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+    .related-img { height: 160px; background: center/cover; }
+    .related-content { padding: 1rem; }
+    .related-title { font-weight: 700; color: #003822; }
+    .related-card:hover .related-title { color: #E5A400; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/sv/blog">← Tillbaka till Bloggen</a>
+      <div class="lang-switcher">
+        <a href="/blog/choose-b2b-ecommerce-platform/index.html" class="lang-btn">🇬🇧 EN</a>
+        <a href="/blog/sv/choose-b2b-ecommerce-platform/index.html" class="lang-btn active">🇸🇪 SV</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero"></div>
+
+  <div class="content-wrap">
+    <article class="content">
+      <div class="meta">
+        <span class="tag">B2B E-handel</span>
+        <span>28 feb 2026</span>
+        <span>6 min läsning</span>
+      </div>
+
+      <h1>Hur man Väljer Rätt B2B E-handelsplattform</h1>
+
+      <div class="author">
+        <div class="author-avatar">W</div>
+        <div>
+          <div class="author-name">Will</div>
+          <div class="author-role">Distributionsexpert</div>
+        </div>
+      </div>
+
+      <div class="prose">
+        <p>Att välja en B2B e-handelsplattform är ett av de viktigaste teknikbesluten ett växande varumärke kan fatta. Rätt plattform kan effektivisera operationer, förbättra distributörernas tillfredsställelse och accelerera tillväxten.</p>
+
+        <h2>Förstå Dina Krav Först</h2>
+        <p>Innan du jämför plattformar, dokumentera dina specifika behov:</p>
+        <ul>
+          <li>Hur många distributörer har du för närvarande? Hur många om 2-3 år?</li>
+          <li>Vad är din genomsnittliga ordervärde och volym?</li>
+          <li>Behöver du stöd för flera valutor eller språk?</li>
+          <li>Vilka integrationer är nödvändiga (ERP, CRM, redovisning)?</li>
+        </ul>
+
+        <h2>Viktiga Funktioner att Leta Efter</h2>
+
+        <h3>1. Distributörsportal</h3>
+        <p>Dina distributörer behöver en dedikerad plats för att bläddra bland produkter, lägga beställningar och spåra leveranser.</p>
+
+        <h3>2. Orderhantering</h3>
+        <p>Manuell orderbearbetning är den största tidsförbrukaren inom distribution.</p>
+
+        <h3>3. Prissättning & Offert</h3>
+        <p>B2B-prissättning är komplex – nivåbaserade priser, volymrabatter och avtalsprissättning är standard.</p>
+
+        <h2>Slutsats</h2>
+        <p>Rätt B2B e-handelsplattform blir grunden för dina distributionsoperationer.</p>
+
+        <p><strong>Redo att se hur BrandGate jämför?</strong> <a href="/sv/demo">Boka en personlig demo</a> och vi visar hur vår plattform hanterar dina specifika krav.</p>
+      </div>
+
+      <div class="cta">
+        <h3>Redo att effektivisera din distribution?</h3>
+        <a href="/sv/signup">Starta Gratis Provperiod</a>
+      </div>
+    </article>
+  </div>
+
+  <footer class="footer">
+    <p>© <span id="year">2026</span> BrandGate. Alla rättigheter förbehållna.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
