@@ -5,39 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Den Kompletta Guiden till B2B-distributionshantering 2024 | BrandGate Blogg</title>
   <meta name="description" content="Lär dig hantera ditt distributionsnätverk effektivt. Omfattar partnervalg, onboarding, prissättningsstrategier och skalning med rätt verktyg.">
-  
   <link rel="alternate" hreflang="en" href="https://brandgate.dev/blog/b2b-distribution-guide/" />
   <link rel="alternate" hreflang="sv-SE" href="https://brandgate.dev/blog/sv/b2b-distribution-guide/" />
-  <link rel="alternate" hreflang="x-default" href="https://brandgate.dev/blog/b2b-distribution-guide/" />
-  
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Inter', sans-serif; background: #F5F5F5; color: #4D4D4D; line-height: 1.6; }
-    
     .nav { position: sticky; top: 0; background: #F5F5F5; border-bottom: 1px solid #E3E3E3; z-index: 50; }
     .nav-inner { max-width: 800px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
-    .nav-back { color: #6E6B6B; text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+    .nav-back { color: #6E6B6B; text-decoration: none; font-size: 0.875rem; font-weight: 500; }
     .nav-back:hover { color: #003822; }
-    
     .lang-switcher { position: relative; }
-    .lang-current { 
+    .lang-btn { 
       display: flex; 
       align-items: center; 
       gap: 0.5rem; 
-      padding: 0.375rem 0.75rem; 
+      padding: 0.5rem 0.75rem; 
       background: white; 
       border: 1px solid #E3E3E3; 
       border-radius: 0.375rem; 
-      font-size: 0.8125rem; 
+      font-size: 0.875rem; 
       font-weight: 500;
       color: #4D4D4D;
       cursor: pointer;
       transition: all 0.2s;
     }
-    .lang-current:hover { border-color: #003822; }
-    .lang-current svg { width: 12px; height: 12px; color: #6E6B6B; }
-    
+    .lang-btn:hover { border-color: #003822; }
+    .lang-btn.active { border-color: #003822; }
+    .lang-btn svg { width: 12px; height: 12px; transition: transform 0.2s; }
+    .lang-btn.active svg { transform: rotate(180deg); }
     .lang-dropdown { 
       display: none; 
       position: absolute; 
@@ -46,28 +42,27 @@
       background: white; 
       border: 1px solid #E3E3E3; 
       border-radius: 0.375rem; 
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
-      min-width: 120px; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+      min-width: 140px; 
       z-index: 100;
       overflow: hidden;
     }
-    .lang-switcher:hover .lang-dropdown { display: block; }
-    
+    .lang-dropdown.show { display: block; }
     .lang-option { 
       display: block;
-      padding: 0.5rem 0.75rem; 
+      padding: 0.625rem 0.875rem; 
       color: #4D4D4D; 
       text-decoration: none; 
-      font-size: 0.8125rem;
+      font-size: 0.875rem;
       transition: background 0.15s;
+      border-bottom: 1px solid #F5F5F5;
     }
+    .lang-option:last-child { border-bottom: none; }
     .lang-option:hover { background: #F5F5F5; }
     .lang-option.active { 
       background: #003822; 
       color: white; 
     }
-    .lang-option.active:hover { background: #003822; }
-    
     .hero { position: relative; height: 300px; background: url('https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200') center/cover; }
     .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,56,34,0.8), transparent); }
     .content-wrap { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 10; margin-top: -6rem; }
@@ -79,11 +74,8 @@
     @media (min-width: 768px) { h1 { font-size: 2.5rem; } }
     .author { display: flex; align-items: center; gap: 1rem; padding-bottom: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid #E3E3E3; }
     .author-avatar { width: 48px; height: 48px; border-radius: 50%; background: #003822; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; }
-    .author-name { font-weight: 600; color: #003822; }
-    .author-role { font-size: 0.875rem; color: #6E6B6B; }
     .prose { font-size: 1.125rem; }
     .prose h2 { font-size: 1.5rem; color: #003822; font-weight: 700; margin: 2rem 0 1rem; }
-    .prose h3 { font-size: 1.25rem; color: #003822; font-weight: 600; margin: 1.5rem 0 0.75rem; }
     .prose p { margin-bottom: 1.25rem; }
     .prose ul { margin: 1rem 0; padding-left: 1.5rem; }
     .prose li { margin-bottom: 0.5rem; }
@@ -99,15 +91,14 @@
   <nav class="nav">
     <div class="nav-inner">
       <a href="/sv/blog" class="nav-back">← Tillbaka till Bloggen</a>
-      
       <div class="lang-switcher">
-        <div class="lang-current">
+        <button class="lang-btn" onclick="toggleLang()">
           <span>SV</span>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 9l-7 7-7-7"/>
           </svg>
-        </div>
-        <div class="lang-dropdown">
+        </button>
+        <div class="lang-dropdown" id="langDropdown">
           <a href="/blog/b2b-distribution-guide/" class="lang-option">English</a>
           <a href="/blog/sv/b2b-distribution-guide/" class="lang-option active">Svenska</a>
         </div>
@@ -130,8 +121,8 @@
       <div class="author">
         <div class="author-avatar">W</div>
         <div>
-          <div class="author-name">Will</div>
-          <div class="author-role">Distributionsexpert</div>
+          <div style="font-weight: 600; color: #003822;">Will</div>
+          <div style="font-size: 0.875rem; color: #6E6B6B;">Distributionsexpert</div>
         </div>
       </div>
 
@@ -139,37 +130,12 @@
         <p>Att hantera ett distributionsnätverk är en av de mest komplexa utmaningarna växande varumärken står inför. Oavsett om du arbetar med 5 distributörer eller 500, förblir grunderna inom B2B-distributionshantering desamma: <strong>upprätthåll synlighet, automatisera processer och håll dina partners nöjda.</strong></p>
 
         <h2>Vad är B2B-distributionshantering?</h2>
-        <p>B2B-distributionshantering är processen att övervaka hur dina produkter rör sig från tillverkning till slutkunder genom intermediära partners. Till skillnad från direktförsäljning till konsument (D2C) hanterar du <strong>affärsrelationer</strong> med enheter som har egna kunder, processer och förväntningar.</p>
-
-        <h3>Viktiga Komponenter:</h3>
-        <ul>
-          <li><strong>Partner-onboarding</strong> - Sätta upp distributörer med kataloger, prissättning och system</li>
-          <li><strong>Orderhantering</strong> - Bearbeta, spåra och fullfölja beställningar i hela ditt nätverk</li>
-          <li><strong>Lagerkoordinering</strong> - Säkerställa lager tillgänglighet utan överbokning</li>
-          <li><strong>Prissättning & villkor</strong> - Hantera nivåbaserad prissättning, volymrabatter och betalningsvillkor</li>
-          <li><strong>Prestandauppföljning</strong> - Övervaka försäljning, tillväxt och partnerhälsa</li>
-          <li><strong>Kommunikation</strong> - Hålla distributörer informerade och engagerade</li>
-        </ul>
-
-        <h2>Varför Traditionell Distributionshantering Misslyckas</h2>
-        <p>Många varumärken börjar med kalkylark, e-posttrådar och manuella processer. Detta fungerar – tills det inte gör det.</p>
-
-        <h3>Brytpunkten</h3>
-        <p>De flesta varumärken når en vägg vid cirka <strong>10-15 aktiva distributörer</strong>. I denna skala:</p>
-        <ul>
-          <li><strong>E-post blir ohanterlig</strong> - Orderbekräftelser, lageruppdateringar och supportförfrågningar översvämmar din inkorg</li>
-          <li><strong>Kalkylark går sönder</strong> - Versionskontrollproblem, motstridiga data och åtkomstproblem uppstår</li>
-          <li><strong>Fel multipliceras</strong> - Manuell datainmatning leder till prisfel, felaktiga leveranser och frustrerade partners</li>
-          <li><strong>Synlighet försvinner</strong> - Du tappar spår av vem som säljer vad, var lager finns och vilka distributörer som behöver uppmärksamhet</li>
-        </ul>
-
-        <h2>Det Moderna Tillvägagångssättet: Distributionsoperativsystem</h2>
-        <p>Dagens ledande varumärken använder <strong>distributionsoperativsystem</strong> – mjukvaruplattformar designade specifikt för B2B-relationer. Dessa system ersätter fragmenterade verktyg med en enda sanning.</p>
+        <p>B2B-distributionshantering är processen att övervaka hur dina produkter rör sig från tillverkning till slutkunder genom intermediära partners.</p>
 
         <h2>Slutsats</h2>
         <p>Effektiv B2B-distributionshantering handlar inte om att ha flest distributörer – det handlar om att ha <strong>rätt distributörer</strong> och stödja dem med <strong>rätt system</strong>.</p>
 
-        <p><strong>Redo att modernisera din distributionshantering?</strong> <a href="/sv/signup">Starta din gratis BrandGate-provperiod</a> och se hur rätt plattform transformerar dina B2B-operationer.</p>
+        <p><strong>Redo att modernisera din distributionshantering?</strong> <a href="/sv/signup">Starta din gratis BrandGate-provperiod</a></p>
       </div>
 
       <div class="cta">
@@ -184,6 +150,21 @@
   </footer>
 
   <script>
+    function toggleLang() {
+      const btn = document.querySelector('.lang-btn');
+      const dropdown = document.getElementById('langDropdown');
+      btn.classList.toggle('active');
+      dropdown.classList.toggle('show');
+    }
+    
+    document.addEventListener('click', function(e) {
+      const switcher = document.querySelector('.lang-switcher');
+      if (!switcher.contains(e.target)) {
+        document.querySelector('.lang-btn').classList.remove('active');
+        document.getElementById('langDropdown').classList.remove('show');
+      }
+    });
+    
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
