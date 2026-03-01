@@ -10,9 +10,14 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Inter', sans-serif; background: #F5F5F5; color: #4D4D4D; line-height: 1.6; }
     .nav { position: sticky; top: 0; background: #F5F5F5; border-bottom: 1px solid #E3E3E3; z-index: 50; }
-    .nav-inner { max-width: 800px; margin: 0 auto; padding: 1rem 1.5rem; }
+    .nav-inner { max-width: 800px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
     .nav a { display: inline-flex; align-items: center; gap: 0.5rem; color: #6E6B6B; text-decoration: none; font-size: 0.875rem; }
     .nav a:hover { color: #003822; }
+    .lang-switcher { display: flex; gap: 0.5rem; }
+    .lang-btn { padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; text-decoration: none; border: 1px solid #E3E3E3; }
+    .lang-btn.active { background: #003822; color: white; border-color: #003822; }
+    .lang-btn:not(.active) { background: white; color: #6E6B6B; }
+    .lang-btn:not(.active):hover { background: #F5F5F5; }
     .hero { position: relative; height: 300px; background: url('https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200') center/cover; }
     .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,56,34,0.8), transparent); }
     .content-wrap { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 10; margin-top: -6rem; }
@@ -56,6 +61,10 @@
   <nav class="nav">
     <div class="nav-inner">
       <a href="/blog">← Back to Blog</a>
+      <div class="lang-switcher">
+        <a href="/blog/b2b-distribution-guide/index.html" class="lang-btn active">🇬🇧 EN</a>
+        <a href="/blog/sv/b2b-distribution-guide/index.html" class="lang-btn">🇸🇪 SV</a>
+      </div>
     </div>
   </nav>
 
@@ -126,13 +135,13 @@
   <section class="related">
     <h2>More Articles</h2>
     <div class="related-grid">
-      <a href="/blog/choose-b2b-ecommerce-platform" class="related-card">
+      <a href="/blog/choose-b2b-ecommerce-platform/index.html" class="related-card">
         <div class="related-img" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600')"></div>
         <div class="related-content">
           <div class="related-title">How to Choose the Right B2B E-commerce Platform</div>
         </div>
       </a>
-      <a href="/blog/sweden-b2b-distribution-guide" class="related-card">
+      <a href="/blog/sweden-b2b-distribution-guide/index.html" class="related-card">
         <div class="related-img" style="background-image: url('https://images.unsplash.com/photo-1520769945061-0a448c463865?w=600')"></div>
         <div class="related-content">
           <div class="related-title">B2B Distribution in Sweden: A Complete Guide</div>
@@ -142,7 +151,12 @@
   </section>
 
   <footer class="footer">
-    <p>© 2024 BrandGate. All rights reserved.</p>
+    <p>© <span id="year">2026</span> BrandGate. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
