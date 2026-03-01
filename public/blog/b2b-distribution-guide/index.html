@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Complete Guide to B2B Distribution Management in 2024 | BrandGate Blog</title>
   <meta name="description" content="Learn how to manage your distribution network efficiently. Covers partner selection, onboarding, pricing strategies, and scaling with the right tools.">
+  
+  <!-- Hreflang tags for SEO -->
+  <link rel="alternate" hreflang="en" href="https://brandgate.dev/blog/b2b-distribution-guide/" />
+  <link rel="alternate" hreflang="sv-SE" href="https://brandgate.dev/blog/sv/b2b-distribution-guide/" />
+  <link rel="alternate" hreflang="x-default" href="https://brandgate.dev/blog/b2b-distribution-guide/" />
+  
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -13,11 +19,19 @@
     .nav-inner { max-width: 800px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
     .nav a { display: inline-flex; align-items: center; gap: 0.5rem; color: #6E6B6B; text-decoration: none; font-size: 0.875rem; }
     .nav a:hover { color: #003822; }
-    .lang-switcher { display: flex; gap: 0.5rem; }
-    .lang-btn { padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; text-decoration: none; border: 1px solid #E3E3E3; }
-    .lang-btn.active { background: #003822; color: white; border-color: #003822; }
-    .lang-btn:not(.active) { background: white; color: #6E6B6B; }
-    .lang-btn:not(.active):hover { background: #F5F5F5; }
+    
+    /* Dropdown Language Switcher */
+    .lang-dropdown { position: relative; }
+    .lang-btn { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: white; border: 1px solid #E3E3E3; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; color: #4D4D4D; cursor: pointer; }
+    .lang-btn:hover { background: #F5F5F5; }
+    .lang-dropdown-content { display: none; position: absolute; right: 0; top: 100%; margin-top: 0.5rem; background: white; border: 1px solid #E3E3E3; border-radius: 0.75rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); min-width: 160px; z-index: 100; }
+    .lang-dropdown:hover .lang-dropdown-content { display: block; }
+    .lang-option { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; color: #4D4D4D; text-decoration: none; font-size: 0.875rem; }
+    .lang-option:hover { background: #F5F5F5; }
+    .lang-option:first-child { border-radius: 0.75rem 0.75rem 0 0; }
+    .lang-option:last-child { border-radius: 0 0 0.75rem 0.75rem; }
+    .lang-option.active { background: #003822; color: white; }
+    
     .hero { position: relative; height: 300px; background: url('https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200') center/cover; }
     .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,56,34,0.8), transparent); }
     .content-wrap { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 10; margin-top: -6rem; }
@@ -61,9 +75,22 @@
   <nav class="nav">
     <div class="nav-inner">
       <a href="/blog">← Back to Blog</a>
-      <div class="lang-switcher">
-        <a href="/blog/b2b-distribution-guide/index.html" class="lang-btn active">🇬🇧 EN</a>
-        <a href="/blog/sv/b2b-distribution-guide/index.html" class="lang-btn">🇸🇪 SV</a>
+      <div class="lang-dropdown">
+        <button class="lang-btn">
+          <span>🌐</span>
+          <span>English</span>
+          <span>▼</span>
+        </button>
+        <div class="lang-dropdown-content">
+          <a href="/blog/b2b-distribution-guide/" class="lang-option active" hreflang="en">
+            <span>🇬🇧</span>
+            <span>English</span>
+          </a>
+          <a href="/blog/sv/b2b-distribution-guide/" class="lang-option" hreflang="sv-SE">
+            <span>🇸🇪</span>
+            <span>Svenska</span>
+          </a>
+        </div>
       </div>
     </div>
   </nav>
@@ -135,13 +162,13 @@
   <section class="related">
     <h2>More Articles</h2>
     <div class="related-grid">
-      <a href="/blog/choose-b2b-ecommerce-platform/index.html" class="related-card">
+      <a href="/blog/choose-b2b-ecommerce-platform/" class="related-card">
         <div class="related-img" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600')"></div>
         <div class="related-content">
           <div class="related-title">How to Choose the Right B2B E-commerce Platform</div>
         </div>
       </a>
-      <a href="/blog/sweden-b2b-distribution-guide/index.html" class="related-card">
+      <a href="/blog/sweden-b2b-distribution-guide/" class="related-card">
         <div class="related-img" style="background-image: url('https://images.unsplash.com/photo-1520769945061-0a448c463865?w=600')"></div>
         <div class="related-content">
           <div class="related-title">B2B Distribution in Sweden: A Complete Guide</div>
@@ -155,7 +182,6 @@
   </footer>
 
   <script>
-    // Dynamic year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
