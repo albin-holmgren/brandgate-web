@@ -75,22 +75,6 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-[#F5F5F5]">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-[#F5F5F5] border-b border-[#E3E3E3]">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <img src="/logo-cropped.png" alt="BrandGate" className="h-8 w-auto" />
-          </Link>
-          <nav className="hidden md:flex items-center gap-8">
-            <Link href="/features" className="text-sm font-medium text-[#6E6B6B] hover:text-[#003822] transition-colors">Features</Link>
-            <Link href="/pricing" className="text-sm font-medium text-[#6E6B6B] hover:text-[#003822] transition-colors">Pricing</Link>
-            <Link href="/blog" className="text-sm font-medium text-[#003822]">Blog</Link>
-            <Link href="/contact" className="text-sm font-medium text-[#6E6B6B] hover:text-[#003822] transition-colors">Contact</Link>
-          </nav>
-          <Link href="/signup" className="hidden md:inline-flex items-center justify-center text-sm font-semibold bg-[#E5A400] text-[#1A1A1A] hover:bg-[#E5A400]/90 rounded-full px-6 h-10 transition-all">Get Started</Link>
-        </div>
-      </header>
-
       {/* Hero */}
       <section className="bg-[#F5F5F5] border-b border-[#E3E3E3] py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6 text-center">

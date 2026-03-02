@@ -3,112 +3,81 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronRight } from "lucide-react";
 
-const megaMenuItems = [
-  {
+const megaMenuData = {
+  product: {
     label: "Product",
-    href: "/features",
-    columns: [
+    sections: [
       {
-        title: "Core Features",
-        links: [
-          { label: "Distributor Portal", href: "/features#portal" },
-          { label: "Order Management", href: "/features#orders" },
-          { label: "Product Catalog", href: "/features#catalog" },
-          { label: "Store Builder", href: "/features#store" },
-          { label: "Auto Invoicing", href: "/features#invoicing" },
-          { label: "Analytics", href: "/features#analytics" },
+        title: "Platform",
+        items: [
+          { label: "Distributor Portal", desc: "Self-service portal for retailers", href: "/features#portal" },
+          { label: "Order Management", desc: "Process and track orders", href: "/features#orders" },
+          { label: "Product Catalog", desc: "Manage your product range", href: "/features#catalog" },
+          { label: "Store Builder", desc: "Create B2B storefronts", href: "/features#store" },
         ],
       },
       {
-        title: "Solutions",
-        links: [
-          { label: "Growing Brands", href: "/solutions" },
-          { label: "Enterprise", href: "/solutions" },
-          { label: "International", href: "/solutions" },
-          { label: "Multi-Channel", href: "/solutions" },
-        ],
-      },
-      {
-        title: "Integrations",
-        links: [
-          { label: "Shopify", href: "/integrations" },
-          { label: "WooCommerce", href: "/integrations" },
-          { label: "Fortnox", href: "/integrations" },
-          { label: "Visma", href: "/integrations" },
-          { label: "View All →", href: "/integrations" },
+        title: "Operations",
+        items: [
+          { label: "Auto Invoicing", desc: "Automated billing", href: "/features#invoicing" },
+          { label: "Analytics", desc: "Insights and reports", href: "/features#analytics" },
+          { label: "Integrations", desc: "Connect your tools", href: "/integrations" },
+          { label: "API Access", desc: "Build custom solutions", href: "/integrations" },
         ],
       },
     ],
   },
-  {
+  solutions: {
     label: "Solutions",
-    href: "/solutions",
-    columns: [
+    sections: [
       {
         title: "By Industry",
-        links: [
-          { label: "Fashion & Apparel", href: "/solutions/fashion" },
-          { label: "Home & Design", href: "/solutions" },
-          { label: "Food & Beverage", href: "/solutions/food-beverage" },
-          { label: "Health & Beauty", href: "/solutions" },
-          { label: "Electronics", href: "/solutions" },
+        items: [
+          { label: "Fashion & Apparel", desc: "Clothing & accessories", href: "/solutions/fashion" },
+          { label: "Food & Beverage", desc: "Food products", href: "/solutions/food-beverage" },
+          { label: "Home & Design", desc: "Furniture & decor", href: "/solutions/home-design" },
+          { label: "Health & Beauty", desc: "Cosmetics & wellness", href: "/solutions/health-beauty" },
+          { label: "Electronics", desc: "Tech products", href: "/solutions/electronics" },
         ],
       },
       {
         title: "By Size",
-        links: [
-          { label: "Startups", href: "/solutions" },
-          { label: "Growing Brands", href: "/solutions" },
-          { label: "Enterprise", href: "/solutions" },
-        ],
-      },
-      {
-        title: "By Challenge",
-        links: [
-          { label: "Scaling Wholesale", href: "/solutions" },
-          { label: "Global Expansion", href: "/solutions" },
-          { label: "Retailer Management", href: "/solutions" },
-          { label: "B2B E-commerce", href: "/solutions" },
+        items: [
+          { label: "Startups", desc: "Growing brands", href: "/solutions" },
+          { label: "Growing Brands", desc: "Scale operations", href: "/solutions" },
+          { label: "Enterprise", desc: "Large operations", href: "/solutions" },
         ],
       },
     ],
   },
-  {
+  resources: {
     label: "Resources",
-    href: "/blog",
-    columns: [
+    sections: [
       {
         title: "Learn",
-        links: [
-          { label: "Blog", href: "/blog" },
-          { label: "Guides & E-books", href: "/blog" },
-          { label: "Webinars", href: "/blog" },
-          { label: "Case Studies", href: "/blog" },
+        items: [
+          { label: "Blog", desc: "Latest insights", href: "/blog" },
+          { label: "Guides & E-books", desc: "In-depth resources", href: "/blog" },
+          { label: "Case Studies", desc: "Success stories", href: "/blog" },
+          { label: "Webinars", desc: "Online training", href: "/blog" },
         ],
       },
       {
         title: "Tools",
-        links: [
-          { label: "ROI Calculator", href: "/tools/distribution-roi-calculator" },
-          { label: "Templates", href: "/blog" },
-        ],
-      },
-      {
-        title: "Support",
-        links: [
-          { label: "Help Center", href: "/contact" },
-          { label: "Documentation", href: "/contact" },
-          { label: "API Reference", href: "/contact" },
-          { label: "Contact Support", href: "/contact" },
+        items: [
+          { label: "ROI Calculator", desc: "Calculate savings", href: "/tools/distribution-roi-calculator" },
+          { label: "Help Center", desc: "Get support", href: "/contact" },
+          { label: "Documentation", desc: "Technical docs", href: "/contact" },
+          { label: "API Reference", desc: "Developer resources", href: "/contact" },
         ],
       },
     ],
   },
-];
+};
 
 const simpleLinks = [
   { href: "/pricing", label: "Pricing" },
@@ -117,8 +86,14 @@ const simpleLinks = [
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const pathname = usePathname();
+
+  // Close menu on route change
+  useEffect(() => {
+    setActiveMenu(null);
+    setMobileOpen(false);
+  }, [pathname]);
 
   return (
     <header className="sticky top-0 z-50 bg-primary border-b border-primary-foreground/10 shadow-sm">
@@ -129,68 +104,32 @@ export function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-1">
-          {/* Mega Menu Items */}
-          {megaMenuItems.map((item) => (
+        <nav className="hidden lg:flex items-center">
+          {Object.entries(megaMenuData).map(([key, data]) => (
             <div
-              key={item.label}
+              key={key}
               className="relative"
-              onMouseEnter={() => setActiveMegaMenu(item.label)}
-              onMouseLeave={() => setActiveMegaMenu(null)}
+              onMouseEnter={() => setActiveMenu(key)}
+              onMouseLeave={() => setActiveMenu(null)}
             >
-              <Link
-                href={item.href}
-                className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors hover:text-primary-foreground ${
-                  pathname.startsWith(item.href)
+              <button
+                className={`px-4 py-2 text-sm font-medium transition-colors hover:text-primary-foreground flex items-center gap-1 ${
+                  pathname.startsWith(key === 'product' ? '/features' : key === 'solutions' ? '/solutions' : '/blog')
                     ? "text-primary-foreground"
                     : "text-primary-foreground/60"
                 }`}
               >
-                {item.label}
-                <ChevronDown className="w-4 h-4" />
-              </Link>
-
-              {/* Mega Menu Dropdown */}
-              {activeMegaMenu === item.label && (
-                <div className="absolute top-full left-0 w-[600px] bg-white rounded-lg shadow-xl border border-gray-100 p-6 grid grid-cols-3 gap-6">
-                  {item.columns?.map((column) => (
-                    <div key={column.title}>
-                      <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
-                        {column.title}
-                      </h3>
-                      <ul className="space-y-2">
-                        {column.links.map((link) => (
-                          <li key={link.label}>
-                            <Link
-                              href={link.href}
-                              className="text-sm text-gray-700 hover:text-primary transition-colors flex items-center gap-1 group"
-                            >
-                              <span className="group-hover:translate-x-1 transition-transform">
-                                {link.label}
-                              </span>
-                              {link.label.includes("→") && (
-                                <span className="text-gold">→</span>
-                              )}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              )}
+                {data.label}
+              </button>
             </div>
           ))}
-
-          {/* Simple Links */}
+          
           {simpleLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={`px-4 py-2 text-sm font-medium transition-colors hover:text-primary-foreground ${
-                pathname === link.href
-                  ? "text-primary-foreground"
-                  : "text-primary-foreground/60"
+                pathname === link.href ? "text-primary-foreground" : "text-primary-foreground/60"
               }`}
             >
               {link.label}
@@ -218,60 +157,90 @@ export function Navbar() {
         </button>
       </div>
 
+      {/* Full-width Mega Menu */}
+      {activeMenu && (
+        <div
+          className="hidden lg:block absolute left-0 right-0 top-16 bg-white border-b border-gray-100 shadow-lg"
+          onMouseEnter={() => setActiveMenu(activeMenu)}
+          onMouseLeave={() => setActiveMenu(null)}
+        >
+          <div className="max-w-7xl mx-auto px-6 py-8">
+            <div className="grid grid-cols-2 gap-8">
+              {megaMenuData[activeMenu as keyof typeof megaMenuData].sections.map((section) => (
+                <div key={section.title}>
+                  <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">
+                    {section.title}
+                  </h3>
+                  <ul className="space-y-3">
+                    {section.items.map((item) => (
+                      <li key={item.label}>
+                        <Link
+                          href={item.href}
+                          className="group flex items-start gap-3 p-2 -m-2 rounded-lg hover:bg-gray-50 transition-colors"
+                        >
+                          <div className="flex-1">
+                            <div className="font-medium text-gray-900 group-hover:text-primary transition-colors">
+                              {item.label}
+                            </div>
+                            <div className="text-sm text-gray-500">
+                              {item.desc}
+                            </div>
+                          </div>
+                          <ChevronRight className="w-5 h-5 text-gray-300 group-hover:text-gold group-hover:translate-x-1 transition-all flex-shrink-0 mt-0.5" />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Mobile drawer */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-primary-foreground/10 bg-primary px-6 py-4 space-y-3 max-h-[80vh] overflow-y-auto">
-          {/* Mega Menu Items - Mobile */}
-          {megaMenuItems.map((item) => (
-            <div key={item.label} className="space-y-2">
+        <div className="lg:hidden fixed inset-0 top-16 bg-primary z-40 overflow-y-auto">
+          <div className="px-6 py-4 space-y-6">
+            {Object.entries(megaMenuData).map(([key, data]) => (
+              <div key={key} className="space-y-2">
+                <div className="text-sm font-medium text-primary-foreground/80 uppercase tracking-wider">
+                  {data.label}
+                </div>
+                <div className="space-y-1 pl-4">
+                  {data.sections.flatMap(s => s.items).map((item) => (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="block py-2 text-sm text-primary-foreground/60 hover:text-primary-foreground"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+            
+            {simpleLinks.map((link) => (
               <Link
-                href={item.href}
+                key={link.href}
+                href={link.href}
                 onClick={() => setMobileOpen(false)}
                 className="block py-2 text-sm font-medium text-primary-foreground"
               >
-                {item.label}
+                {link.label}
               </Link>
-              <div className="pl-4 space-y-1 border-l border-primary-foreground/20">
-                {item.columns?.map((column) => (
-                  <div key={column.title} className="py-2">
-                    <h4 className="text-xs text-primary-foreground/50 uppercase mb-2">{column.title}</h4>
-                    {column.links.slice(0, 3).map((link) => (
-                      <Link
-                        key={link.label}
-                        href={link.href}
-                        onClick={() => setMobileOpen(false)}
-                        className="block py-1 text-sm text-primary-foreground/70 hover:text-primary-foreground"
-                      >
-                        {link.label.replace(" →", "")}
-                      </Link>
-                    ))}
-                  </div>
-                ))}
-              </div>
+            ))}
+
+            <div className="pt-4 border-t border-primary-foreground/10 flex flex-col gap-2">
+              <a href="https://app.brandgate.dev/login" onClick={() => setMobileOpen(false)} className="text-sm font-medium text-primary-foreground/60">
+                Login
+              </a>
+              <Button asChild size="sm" className="w-full bg-gold text-gold-foreground hover:bg-gold/90 rounded-full font-semibold">
+                <a href="https://app.brandgate.dev/signup" onClick={() => setMobileOpen(false)}>Get Started</a>
+              </Button>
             </div>
-          ))}
-
-          {/* Simple Links */}
-          {simpleLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className={`block py-2 text-sm font-medium ${
-                pathname === link.href ? "text-primary-foreground" : "text-primary-foreground/60"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
-
-          <div className="pt-3 border-t border-primary-foreground/10 flex flex-col gap-2">
-            <a href="https://app.brandgate.dev/login" onClick={() => setMobileOpen(false)} className="text-sm font-medium text-primary-foreground/60">
-              Login
-            </a>
-            <Button asChild size="sm" className="w-full bg-gold text-gold-foreground hover:bg-gold/90 rounded-full font-semibold">
-              <a href="https://app.brandgate.dev/signup" onClick={() => setMobileOpen(false)}>Get Started</a>
-            </Button>
           </div>
         </div>
       )}
