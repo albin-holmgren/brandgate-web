@@ -2,89 +2,149 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { FadeIn, ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion/fade-in";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, TrendingUp, Building2, Users, Globe, CheckCircle2, BarChart3, Sparkles } from "lucide-react";
+import { TrendingUp, Building2, Users, Globe, CheckCircle2, BarChart3 } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "B2B Wholesale for Growing Brands | BrandGate",
-  description: "Scale your wholesale operations with advanced features, automation, and analytics. Perfect for brands expanding their retailer network.",
-  keywords: ["growing brand wholesale", "scale B2B operations", "wholesale automation", "mid-size brand distribution"],
+  description: "Scale your wholesale operations with advanced features, automation, and analytics.",
   alternates: { canonical: "https://brandgate.dev/solutions/growing-brands" },
-  openGraph: {
-    title: "B2B Wholesale for Growing Brands | BrandGate",
-    description: "Advanced wholesale platform for scaling brands.",
-    url: "https://brandgate.dev/solutions/growing-brands",
-  },
 };
 
-const growthFeatures = [
+// Growth Dashboard Preview
+function GrowthDashboard() {
+  return (
+    <div className="bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-200">
+      <div className="bg-[#003822] px-4 py-3 flex items-center justify-between">
+        <span className="text-white font-semibold text-sm">Growth Dashboard</span>
+        <span className="bg-[#E5A400] text-[#003822] text-xs px-2 py-1 rounded-full font-medium">+127%</span>
+      </div>
+      <div className="p-4">
+        <div className="flex items-end gap-2 h-24 mb-4">
+          {[30, 45, 40, 60, 55, 80, 95].map((h, i) => (
+            <div key={i} className="flex-1 bg-[#003822]/10 rounded-t-md relative">
+              <div className="absolute bottom-0 left-0 right-0 bg-[#003822] rounded-t-md transition-all" style={{ height: `${h}%` }} />
+            </div>
+          ))}
+        </div>
+        <div className="grid grid-cols-3 gap-2 text-center text-xs">
+          <div className="bg-[#E5A400]/10 p-2 rounded">
+            <p className="font-bold text-[#003822]">Unlimited</p>
+            <p className="text-gray-500">Retailers</p>
+          </div>
+          <div className="bg-[#003822]/10 p-2 rounded">
+            <p className="font-bold text-[#003822]">24/7</p>
+            <p className="text-gray-500">Support</p>
+          </div>
+          <div className="bg-[#E5A400]/10 p-2 rounded">
+            <p className="font-bold text-[#003822]">API</p>
+            <p className="text-gray-500">Access</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const features = [
   {
     icon: Users,
     title: "Unlimited Retailers",
-    description: "No caps on your growth. Add as many retailers as you need as you expand into new markets.",
+    description: "No caps on your growth. Add as many retailers as you need.",
+    color: "bg-[#003822]/10 text-[#003822]",
   },
   {
     icon: BarChart3,
     title: "Advanced Analytics",
-    description: "Deep insights into sales trends, top-performing products, and retailer behavior.",
+    description: "Deep insights into sales trends and retailer behavior.",
+    color: "bg-[#E5A400]/10 text-[#003822]",
   },
   {
     icon: Globe,
-    title: "Multi-Region Support",
-    description: "Expand internationally with multi-currency, multi-language, and regional pricing.",
+    title: "Multi-Region",
+    description: "Expand internationally with multi-currency and regional pricing.",
+    color: "bg-[#003822]/10 text-[#003822]",
   },
   {
     icon: Building2,
     title: "Team Collaboration",
-    description: "Add team members with role-based permissions. Sales, support, and operations working together.",
+    description: "Add team members with role-based permissions.",
+    color: "bg-[#E5A400]/10 text-[#003822]",
   },
-];
-
-const benefits = [
-  "Automated order processing saves hours daily",
-  "Smart inventory alerts prevent stockouts",
-  "Tiered pricing for different retailer types",
-  "Advanced reporting and business intelligence",
-  "Priority support and dedicated account manager",
-  "API access for custom integrations",
 ];
 
 export default function GrowingBrandsPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="overflow-x-hidden">
         {/* Hero */}
-        <section className="relative bg-primary text-primary-foreground overflow-hidden">
-          <div className="absolute inset-0 opacity-[0.04]" style={{
+        <section className="relative bg-[#003822] text-white overflow-hidden">
+          <div className="absolute inset-0 opacity-[0.03]" style={{
             backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
             backgroundSize: '40px 40px'
           }} />
-          <div className="relative max-w-5xl mx-auto px-6 py-24 md:py-32 text-center">
-            <FadeIn>
-              <div className="inline-block bg-gold text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                For Growing Brands
+          
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 items-center py-16 md:py-24 lg:py-32">
+              <div className="text-center lg:text-left">
+                <FadeIn>
+                  <div className="inline-flex items-center gap-2 bg-[#E5A400]/20 text-[#E5A400] px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                    <TrendingUp className="w-4 h-4" />
+                    For Growing Brands
+                  </div>
+                </FadeIn>
+                
+                <FadeIn delay={0.1}>
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
+                    Scale Your
+                    <span className="block text-[#E5A400]">Wholesale Operations</span>
+                  </h1>
+                </FadeIn>
+                
+                <FadeIn delay={0.2}>
+                  <p className="text-white/60 text-base sm:text-lg mt-6 max-w-xl">
+                    Advanced tools and automation for brands expanding their B2B reach. Handle 10x more retailers without 10x the work.
+                  </p>
+                </FadeIn>
+                
+                <FadeIn delay={0.3}>
+                  <Button asChild size="lg" className="bg-[#E5A400] text-[#003822] hover:bg-[#E5A400]/90 rounded-full px-8 mt-8">
+                    <Link href="/contact">See Growth Plan</Link>
+                  </Button>
+                </FadeIn>
               </div>
-            </FadeIn>
-            <FadeIn delay={0.1}>
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight uppercase leading-[1.1]">
-                Scale Your
-                <br />Wholesale Operations
-              </h1>
-            </FadeIn>
-            <FadeIn delay={0.2}>
-              <p className="text-primary-foreground/50 text-lg md:text-xl mt-8 max-w-2xl mx-auto font-light">
-                Advanced tools and automation for brands expanding their B2B reach. Handle 10x more retailers without 10x the work.
-              </p>
-            </FadeIn>
-            <FadeIn delay={0.3}>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-                <Button asChild size="lg" className="bg-gold text-primary hover:bg-gold/90 rounded-full px-8">
-                  <Link href="/contact">See Growth Plan</Link>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 rounded-full px-8">
-                  <Link href="/pricing">Compare Plans</Link>
+              
+              <FadeIn delay={0.2}>
+                <GrowthDashboard />
+              </FadeIn>
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing */}
+        <section className="py-12 bg-[#003822]/5">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <FadeIn>
+              <div className="max-w-sm mx-auto bg-white rounded-2xl shadow-xl p-8 border-2 border-[#003822]">
+                <div className="text-center mb-6">
+                  <h3 className="text-xl font-bold text-[#003822]">Growth Plan</h3>
+                  <div className="mt-4">
+                    <span className="text-5xl font-bold text-[#003822]">€149</span>
+                    <span className="text-gray-500">/month</span>
+                  </div>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  {["Unlimited retailers", "Unlimited products", "Advanced analytics", "Priority support", "API access"].map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-sm text-gray-600">
+                      <CheckCircle2 className="w-4 h-4 text-[#E5A400]" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Button asChild className="w-full bg-[#003822] text-white hover:bg-[#003822]/90">
+                  <Link href="/contact">Get Started</Link>
                 </Button>
               </div>
             </FadeIn>
@@ -92,26 +152,23 @@ export default function GrowingBrandsPage() {
         </section>
 
         {/* Features */}
-        <section className="py-24 bg-background">
-          <div className="max-w-7xl mx-auto px-6">
+        <section className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
-              <div className="text-center mb-16">
-                <div className="w-16 h-1 bg-gold mx-auto mb-8" />
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground">Tools for Scaling</h2>
-                <p className="text-muted-foreground mt-4 text-lg max-w-2xl mx-auto">
-                  Everything you need to manage growth efficiently
-                </p>
+              <div className="text-center mb-12">
+                <h2 className="text-2xl sm:text-3xl font-bold text-[#003822]">Tools for Scaling</h2>
               </div>
             </FadeIn>
-            <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {growthFeatures.map((feature) => (
+            
+            <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {features.map((feature) => (
                 <StaggerItem key={feature.title}>
-                  <div className="bg-card border rounded-2xl p-8 h-full hover:shadow-lg transition-shadow">
-                    <div className="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-6">
-                      <feature.icon className="w-7 h-7 text-gold" />
+                  <div className="bg-gray-50 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
+                    <div className={`w-12 h-14 ${feature.color} rounded-xl flex items-center justify-center mx-auto mb-4`}>
+                      <feature.icon className="w-6 h-6" />
                     </div>
-                    <h3 className="text-lg font-bold text-foreground mb-3">{feature.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
+                    <h3 className="font-bold text-[#003822] mb-2">{feature.title}</h3>
+                    <p className="text-sm text-gray-600">{feature.description}</p>
                   </div>
                 </StaggerItem>
               ))}
@@ -119,99 +176,23 @@ export default function GrowingBrandsPage() {
           </div>
         </section>
 
-        {/* Benefits + Pricing */}
-        <section className="py-24 bg-muted">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div>
-                <FadeIn>
-                  <div className="w-16 h-1 bg-gold mb-8" />
-                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                    Handle growth without the growing pains
-                  </h2>
-                  <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                    Growing brands need more than just features—they need a platform that scales with them. BrandGate grows as you grow.
-                  </p>
-                </FadeIn>
-                <StaggerContainer className="space-y-4">
-                  {benefits.map((benefit) => (
-                    <StaggerItem key={benefit}>
-                      <div className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-gold mt-0.5 shrink-0" />
-                        <span className="text-foreground">{benefit}</span>
-                      </div>
-                    </StaggerItem>
-                  ))}
-                </StaggerContainer>
-              </div>
-              <FadeIn>
-                <div className="bg-card border rounded-2xl p-8">
-                  <div className="text-center mb-8">
-                    <h3 className="text-2xl font-bold text-foreground">Growth Plan</h3>
-                    <div className="mt-4">
-                      <span className="text-5xl font-bold text-foreground">€149</span>
-                      <span className="text-muted-foreground">/month</span>
-                    </div>
-                  </div>
-                  <ul className="space-y-3 mb-8">
-                    {[
-                      "Unlimited retailers",
-                      "Unlimited products",
-                      "Advanced analytics",
-                      "Priority support",
-                      "All integrations",
-                      "API access",
-                    ].map((item) => (
-                      <li key={item} className="flex items-center gap-2 text-sm">
-                        <CheckCircle2 className="w-4 h-4 text-gold" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button asChild className="w-full bg-gold text-primary hover:bg-gold/90">
-                    <Link href="/contact">Get Started</Link>
-                  </Button>
-                </div>
-              </FadeIn>
-            </div>
-          </div>
-        </section>
-
         {/* Stats */}
-        <section className="py-20 bg-primary text-primary-foreground">
-          <div className="max-w-7xl mx-auto px-6">
-            <StaggerContainer className="grid md:grid-cols-3 gap-8 text-center">
-              <StaggerItem>
-                <div className="text-4xl md:text-5xl font-bold text-gold mb-2">3x</div>
-                <p className="text-primary-foreground/60">Faster retailer onboarding</p>
-              </StaggerItem>
-              <StaggerItem>
-                <div className="text-4xl md:text-5xl font-bold text-gold mb-2">10x</div>
-                <p className="text-primary-foreground/60">More orders processed</p>
-              </StaggerItem>
-              <StaggerItem>
-                <div className="text-4xl md:text-5xl font-bold text-gold mb-2">50%</div>
-                <p className="text-primary-foreground/60">Less admin time</p>
-              </StaggerItem>
-            </StaggerContainer>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-24 bg-background">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <FadeIn>
-              <Sparkles className="w-12 h-12 text-gold mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Ready to scale your wholesale?
-              </h2>
-              <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-                Join growing brands using BrandGate to expand their retailer network and streamline operations.
-              </p>
-              <Button asChild size="lg" className="bg-gold text-primary hover:bg-gold/90 rounded-full px-10 font-semibold">
-                <Link href="/contact">Book a Demo</Link>
-              </Button>
-            </FadeIn>
+        <section className="py-16 bg-[#003822] text-white">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="grid grid-cols-3 gap-8 text-center">
+              <div>
+                <div className="text-4xl font-bold text-[#E5A400]">3x</div>
+                <p className="text-white/60 text-sm">Faster onboarding</p>
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-[#E5A400]">10x</div>
+                <p className="text-white/60 text-sm">More orders</p>
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-[#E5A400]">50%</div>
+                <p className="text-white/60 text-sm">Less admin time</p>
+              </div>
+            </div>
           </div>
         </section>
       </main>
