@@ -23,6 +23,27 @@ const steps = [
   { step: "03", title: "Manage orders", desc: "Receive and process orders, generate invoices, and track everything from your central dashboard." },
 ];
 
+const testimonials = [
+  { 
+    quote: "BrandGate transformed our wholesale operations. We went from managing spreadsheets to having a professional B2B portal that our retailers love.", 
+    author: "Sarah Lindqvist",
+    role: "CEO, Nordic Apparel",
+    metric: "3x faster order processing"
+  },
+  { 
+    quote: "The batch tracking feature is a game-changer for us. We can trace any product instantly, which gives us and our retailers complete confidence.", 
+    author: "Marcus Berg",
+    role: "Operations Director, Baltic Foods",
+    metric: "100% traceability achieved"
+  },
+  { 
+    quote: "We evaluated several platforms and BrandGate was the only one that truly understood B2B wholesale. The size matrix alone saved us hours every week.", 
+    author: "Emma Chen",
+    role: "Founder, Stockholm Style Co",
+    metric: "40% reduction in errors"
+  },
+];
+
 export function HomePage() {
   return (
     <>
@@ -117,6 +138,41 @@ export function HomePage() {
                 <span className="text-6xl md:text-7xl font-bold text-gold/20 block mb-4" aria-hidden="true">{s.step}</span>
                 <h3 className="text-xl font-bold mb-4">{s.title}</h3>
                 <p className="text-primary-foreground/50 text-sm leading-relaxed max-w-sm mx-auto">{s.desc}</p>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section aria-label="Customer testimonials" className="py-24 md:py-32 bg-card border-y border-border">
+        <div className="max-w-7xl mx-auto px-6">
+          <ScrollReveal className="text-center mb-16">
+            <div className="w-12 h-1 bg-gold mx-auto mb-6 shadow-[0_0_12px_hsl(45,93%,47%,0.4)]" />
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tight">Loved by brands</h2>
+            <p className="text-muted-foreground mt-5 text-lg max-w-xl mx-auto">See what our customers have to say about BrandGate.</p>
+          </ScrollReveal>
+          <StaggerContainer staggerDelay={0.1} className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((t, i) => (
+              <StaggerItem key={i}>
+                <article className="bg-card border border-border rounded-2xl p-8 h-full flex flex-col hover:shadow-xl transition-shadow">
+                  <div className="text-gold text-4xl font-serif mb-4">"</div>
+                  <p className="text-foreground flex-1 mb-6 leading-relaxed">{t.quote}</p>
+                  <div className="pt-6 border-t border-border">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                        <span className="text-primary font-semibold">{t.author.charAt(0)}</span>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-foreground">{t.author}</p>
+                        <p className="text-sm text-muted-foreground">{t.role}</p>
+                      </div>
+                    </div>
+                    <div className="mt-3 inline-flex items-center gap-2 bg-gold/10 text-gold px-3 py-1 rounded-full text-sm font-medium">
+                      {t.metric}
+                    </div>
+                  </div>
+                </article>
               </StaggerItem>
             ))}
           </StaggerContainer>
