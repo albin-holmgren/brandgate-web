@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Mail, ArrowRight } from "lucide-react";
 
 const footerLinks = {
   product: {
@@ -24,6 +25,7 @@ const footerLinks = {
     links: [
       { label: "Blog", href: "/blog" },
       { label: "Guides", href: "/guides" },
+      { label: "FAQ", href: "/faq" },
       { label: "Help Center", href: "/help" },
       { label: "ROI Calculator", href: "/tools/distribution-roi-calculator" },
     ],
@@ -48,22 +50,51 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="max-w-7xl mx-auto px-6 py-16">
+    <footer className="bg-[#003822] text-white">
+      {/* Newsletter Section */}
+      <div className="border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                <Mail className="w-5 h-5 text-[#E5A400]" />
+                <span className="font-semibold text-lg">Stay Updated</span>
+              </div>
+              <p className="text-white/60">
+                Get the latest B2B wholesale tips, product updates, and industry insights delivered to your inbox.
+              </p>
+            </div>
+            <div className="flex gap-3">
+              <input 
+                type="email" 
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:border-[#E5A400]"
+              />
+              <button className="px-6 py-3 bg-[#E5A400] text-[#003822] font-semibold rounded-lg hover:bg-[#E5A400]/90 transition-colors flex items-center gap-2">
+                Subscribe
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Footer */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <Link href="/" className="inline-block">
               <span className="text-2xl font-bold">BrandGate</span>
             </Link>
-            <p className="mt-4 text-primary-foreground/60 max-w-sm">
+            <p className="mt-4 text-white/60 max-w-sm">
               The all-in-one B2B distribution platform for brands. Manage distributors, orders, and scale your wholesale business.
             </p>
             <div className="mt-6 flex gap-4">
-              <a href="https://linkedin.com" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+              <a href="https://linkedin.com" className="text-white/60 hover:text-white transition-colors">
                 LinkedIn
               </a>
-              <a href="https://twitter.com" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+              <a href="https://twitter.com" className="text-white/60 hover:text-white transition-colors">
                 Twitter
               </a>
             </div>
@@ -75,7 +106,7 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.product.links.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+                  <Link href={link.href} className="text-sm text-white/60 hover:text-white transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -89,7 +120,7 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.solutions.links.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+                  <Link href={link.href} className="text-sm text-white/60 hover:text-white transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -103,7 +134,7 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.resources.links.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+                  <Link href={link.href} className="text-sm text-white/60 hover:text-white transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -117,7 +148,7 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.company.links.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+                  <Link href={link.href} className="text-sm text-white/60 hover:text-white transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -126,13 +157,13 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-primary-foreground/60">
+        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-white/60">
             © 2026 BrandGate. All rights reserved.
           </p>
           <div className="flex gap-6">
             {footerLinks.legal.links.map((link) => (
-              <Link key={link.href} href={link.href} className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+              <Link key={link.href} href={link.href} className="text-sm text-white/60 hover:text-white transition-colors">
                 {link.label}
               </Link>
             ))}
