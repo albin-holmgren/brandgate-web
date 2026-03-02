@@ -26,7 +26,7 @@ const megaMenuData = {
           { label: "Auto Invoicing", desc: "Automated billing", href: "/features#invoicing" },
           { label: "Analytics", desc: "Insights and reports", href: "/features#analytics" },
           { label: "Integrations", desc: "Connect your tools", href: "/integrations" },
-          { label: "API Access", desc: "Build custom solutions", href: "/integrations" },
+          { label: "API Access", desc: "Build custom solutions", href: "/api" },
         ],
       },
     ],
@@ -47,9 +47,9 @@ const megaMenuData = {
       {
         title: "By Size",
         items: [
-          { label: "Startups", desc: "Growing brands", href: "/solutions" },
-          { label: "Growing Brands", desc: "Scale operations", href: "/solutions" },
-          { label: "Enterprise", desc: "Large operations", href: "/solutions" },
+          { label: "Startups", desc: "Growing brands", href: "/solutions/startups" },
+          { label: "Growing Brands", desc: "Scale operations", href: "/solutions/growing-brands" },
+          { label: "Enterprise", desc: "Large operations", href: "/solutions/enterprise" },
         ],
       },
     ],

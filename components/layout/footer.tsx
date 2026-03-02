@@ -7,7 +7,7 @@ const footerLinks = {
       { label: "Features", href: "/features" },
       { label: "Pricing", href: "/pricing" },
       { label: "Integrations", href: "/integrations" },
-      { label: "API", href: "/contact" },
+      { label: "API", href: "/api" },
     ],
   },
   solutions: {
@@ -15,16 +15,16 @@ const footerLinks = {
     links: [
       { label: "Fashion & Apparel", href: "/solutions/fashion" },
       { label: "Food & Beverage", href: "/solutions/food-beverage" },
-      { label: "Home & Design", href: "/solutions" },
-      { label: "Health & Beauty", href: "/solutions" },
+      { label: "Home & Design", href: "/solutions/home-design" },
+      { label: "Health & Beauty", href: "/solutions/health-beauty" },
     ],
   },
   resources: {
     title: "Resources",
     links: [
       { label: "Blog", href: "/blog" },
-      { label: "Guides", href: "/blog" },
-      { label: "Help Center", href: "/contact" },
+      { label: "Guides", href: "/guides" },
+      { label: "Help Center", href: "/help" },
       { label: "ROI Calculator", href: "/tools/distribution-roi-calculator" },
     ],
   },
