@@ -112,9 +112,9 @@ export function Navbar() {
               onMouseEnter={() => setActiveMenu(key)}
             >
               <button
-                className={`px-4 py-2 text-sm font-medium transition-all duration-200 hover:text-primary-foreground flex items-center gap-1 h-16 cursor-pointer hover:bg-primary-foreground/5 rounded-md ${
+                className={`px-3 py-1.5 text-sm font-medium transition-all duration-200 hover:text-primary-foreground flex items-center gap-1 cursor-pointer hover:bg-primary-foreground/10 rounded ${
                   activeMenu === key || pathname.startsWith(key === 'product' ? '/features' : key === 'solutions' ? '/solutions' : '/blog')
-                    ? "text-primary-foreground bg-primary-foreground/5"
+                    ? "text-primary-foreground bg-primary-foreground/10"
                     : "text-primary-foreground/60"
                 }`}
               >
@@ -127,8 +127,8 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`px-4 py-2 text-sm font-medium transition-colors hover:text-primary-foreground ${
-                pathname === link.href ? "text-primary-foreground" : "text-primary-foreground/60"
+              className={`px-3 py-1.5 text-sm font-medium transition-all duration-200 hover:text-primary-foreground hover:bg-primary-foreground/10 rounded ${
+                pathname === link.href ? "text-primary-foreground bg-primary-foreground/10" : "text-primary-foreground/60"
               }`}
             >
               {link.label}
