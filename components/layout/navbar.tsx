@@ -110,11 +110,10 @@ export function Navbar() {
               key={key}
               className="relative"
               onMouseEnter={() => setActiveMenu(key)}
-              onMouseLeave={() => setActiveMenu(null)}
             >
               <button
-                className={`px-4 py-2 text-sm font-medium transition-colors hover:text-primary-foreground flex items-center gap-1 ${
-                  pathname.startsWith(key === 'product' ? '/features' : key === 'solutions' ? '/solutions' : '/blog')
+                className={`px-4 py-2 text-sm font-medium transition-colors hover:text-primary-foreground flex items-center gap-1 h-16 ${
+                  activeMenu === key || pathname.startsWith(key === 'product' ? '/features' : key === 'solutions' ? '/solutions' : '/blog')
                     ? "text-primary-foreground"
                     : "text-primary-foreground/60"
                 }`}
@@ -160,7 +159,7 @@ export function Navbar() {
       {/* Full-width Mega Menu */}
       {activeMenu && (
         <div
-          className="hidden lg:block absolute left-0 right-0 top-16 bg-white border-b border-gray-100 shadow-lg"
+          className="hidden lg:block absolute left-0 right-0 top-[63px] bg-primary border-b border-primary-foreground/10 shadow-lg pt-1"
           onMouseEnter={() => setActiveMenu(activeMenu)}
           onMouseLeave={() => setActiveMenu(null)}
         >
@@ -168,7 +167,7 @@ export function Navbar() {
             <div className="grid grid-cols-2 gap-8">
               {megaMenuData[activeMenu as keyof typeof megaMenuData].sections.map((section) => (
                 <div key={section.title}>
-                  <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">
+                  <h3 className="text-xs font-semibold text-primary-foreground/40 uppercase tracking-wider mb-4">
                     {section.title}
                   </h3>
                   <ul className="space-y-3">
@@ -176,17 +175,17 @@ export function Navbar() {
                       <li key={item.label}>
                         <Link
                           href={item.href}
-                          className="group flex items-start gap-3 p-2 -m-2 rounded-lg hover:bg-gray-50 transition-colors"
+                          className="group flex items-start gap-3 p-2 -m-2 rounded-lg hover:bg-primary-foreground/10 transition-colors cursor-pointer"
                         >
                           <div className="flex-1">
-                            <div className="font-medium text-gray-900 group-hover:text-primary transition-colors">
+                            <div className="font-medium text-primary-foreground group-hover:text-gold transition-colors">
                               {item.label}
                             </div>
-                            <div className="text-sm text-gray-500">
+                            <div className="text-sm text-primary-foreground/50">
                               {item.desc}
                             </div>
                           </div>
-                          <ChevronRight className="w-5 h-5 text-gray-300 group-hover:text-gold group-hover:translate-x-1 transition-all flex-shrink-0 mt-0.5" />
+                          <ChevronRight className="w-5 h-5 text-primary-foreground/30 group-hover:text-gold group-hover:translate-x-1 transition-all flex-shrink-0 mt-0.5" />
                         </Link>
                       </li>
                     ))}
