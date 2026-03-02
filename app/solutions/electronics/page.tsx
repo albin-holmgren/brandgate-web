@@ -1,248 +1,348 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { FadeIn, ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion/fade-in";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion/fade-in";
 import { Button } from "@/components/ui/button";
-import { Laptop, Shield, FileText, Zap, Box, CheckCircle2 } from "lucide-react";
+import { 
+  Laptop, Shield, FileText, Zap, Box, CheckCircle2,
+  Cpu, Wrench, BarChart3, ArrowRight
+} from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Electronics B2B Wholesale | BrandGate",
-  description: "B2B wholesale platform for electronics and tech brands. Warranty tracking, serial numbers, and technical specs.",
+  title: "Electronics Wholesale | BrandGate",
+  description: "B2B platform for electronics brands. Warranty tracking, serial numbers, technical specs, and firmware management.",
   alternates: { canonical: "https://brandgate.dev/solutions/electronics" },
-  openGraph: {
-    title: "Electronics B2B Wholesale | BrandGate",
-    description: "Wholesale platform for electronics brands.",
-    url: "https://brandgate.dev/solutions/electronics",
-  },
 };
 
-// Warranty Tracking Preview
-function WarrantyTrackingPreview() {
+// SERIAL NUMBER TRACKING - Unique to Electronics
+function SerialTrackerVisual() {
   return (
     <div className="bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-200">
-      <div className="bg-[#003822] px-4 py-3">
-        <span className="text-white font-semibold text-sm">Warranty & Serial Tracking</span>
+      <div className="bg-slate-800 px-4 py-3 flex items-center justify-between">
+        <span className="text-white font-semibold text-sm flex items-center gap-2">
+          <Cpu className="w-4 h-4" />
+          Serial Number Tracking
+        </span>
+        <span className="bg-cyan-400 text-slate-900 text-xs px-2 py-1 rounded font-bold">LIVE</span>
       </div>
       <div className="p-4">
         <div className="space-y-3">
           {[
-            { serial: "SN-7829-1029", product: "Wireless Headphones", warranty: "24 months", status: "Active" },
-            { serial: "SN-7829-1030", product: "Smart Watch Pro", warranty: "12 months", status: "Active" },
-            { serial: "SN-7829-1031", product: "Bluetooth Speaker", warranty: "12 months", status: "Expiring" },
-          ].map((item) => (
-            <div key={item.serial} className="flex items-center justify-between bg-gray-50 p-3 rounded-lg text-sm">
-              <div>
-                <p className="font-medium text-[#003822]">{item.product}</p>
-                <p className="text-gray-500 text-xs font-mono">{item.serial}</p>
-              </div>
-              <div className="text-right">
-                <span className={`text-xs px-2 py-1 rounded-full ${
-                  item.status === "Active" ? "bg-green-100 text-green-700" : "bg-yellow-100 text-yellow-700"
+            { serial: "SN-X200-78A2-B9F1", product: "Wireless Headphones Pro", status: "active", warranty: "18 months left" },
+            { serial: "SN-X200-78A2-B9F2", product: "Wireless Headphones Pro", status: "active", warranty: "18 months left" },
+            { serial: "SN-X200-78A2-B9F3", product: "Wireless Headphones Pro", status: "repair", warranty: "Claim filed" },
+          ].map((item, i) => (
+            <div key={item.serial} className="bg-slate-50 p-3 rounded-lg">
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-mono text-slate-600">{item.serial}</span>
+                <span className={`text-xs px-2 py-0.5 rounded-full ${
+                  item.status === 'active' ? 'bg-green-100 text-green-700' : 'bg-orange-100 text-orange-700'
                 }`}>{item.status}</span>
-                <p className="text-xs text-gray-500 mt-1">{item.warranty}</p>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-medium text-slate-900">{item.product}</span>
+                <span className="text-xs text-cyan-600">{item.warranty}</span>
               </div>
             </div>
           ))}
+        </div>
+        <div className="mt-4 p-3 bg-cyan-50 rounded-lg border border-cyan-200">
+          <div className="flex items-center gap-2 text-sm text-cyan-800">
+            <CheckCircle2 className="w-4 h-4" />
+            <span className="font-medium">Block scanning enabled</span>
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-// Product Specs Preview
-function ProductSpecsPreview() {
+// TECHNICAL SPECS SHEET - Unique to Electronics
+function TechSpecsVisual() {
   return (
     <div className="bg-white rounded-xl shadow-xl p-5 border border-gray-200">
-      <p className="text-sm font-semibold text-[#003822] mb-4">Technical Specifications</p>
-      <div className="space-y-3">
-        {[
-          { label: "Model", value: "PRO-X200" },
-          { label: "Connectivity", value: "Bluetooth 5.2, WiFi 6" },
-          { label: "Battery", value: "5000mAh, 24hr life" },
-          { label: "Warranty", value: "2 Years" },
-        ].map((spec) => (
-          <div key={spec.label} className="flex justify-between text-sm border-b border-gray-100 pb-2 last:border-0">
-            <span className="text-gray-500">{spec.label}</span>
-            <span className="font-medium text-[#003822]">{spec.value}</span>
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-2">
+          <div className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center">
+            <Laptop className="w-5 h-5 text-cyan-400" />
           </div>
-        ))}
+          <div>
+            <p className="text-sm font-bold text-gray-900">ProBook X200</p>
+            <p className="text-xs text-gray-500">Model: PB-X200-15</p>
+          </div>
+        </div>
+        <span className="bg-cyan-100 text-cyan-700 text-xs px-2 py-1 rounded font-medium">TECH SPECS</span>
       </div>
-      <div className="mt-4 p-3 bg-[#E5A400]/10 rounded-lg">
-        <p className="text-xs text-[#003822] font-medium">Datasheet PDF</p>
-        <p className="text-xs text-gray-500">Download technical documentation</p>
+      
+      <div className="space-y-3">
+        <div className="grid grid-cols-2 gap-3">
+          <div className="bg-slate-50 p-3 rounded-lg">
+            <p className="text-xs text-gray-500 mb-1">Processor</p>
+            <p className="text-sm font-semibold text-gray-900">M2 Pro Chip</p>
+          </div>
+          <div className="bg-slate-50 p-3 rounded-lg">
+            <p className="text-xs text-gray-500 mb-1">Memory</p>
+            <p className="text-sm font-semibold text-gray-900">16GB RAM</p>
+          </div>
+          <div className="bg-slate-50 p-3 rounded-lg">
+            <p className="text-xs text-gray-500 mb-1">Storage</p>
+            <p className="text-sm font-semibold text-gray-900">512GB SSD</p>
+          </div>
+          <div className="bg-slate-50 p-3 rounded-lg">
+            <p className="text-xs text-gray-500 mb-1">Display</p>
+            <p className="text-sm font-semibold text-gray-900">15.6" 4K OLED</p>
+          </div>
+        </div>
+        
+        <div className="flex items-center gap-2 pt-2 border-t">
+          <FileText className="w-4 h-4 text-cyan-600" />
+          <span className="text-sm text-cyan-600">Download full spec sheet (PDF)</span>
+        </div>
       </div>
     </div>
   );
 }
 
-const features = [
-  {
-    icon: Shield,
-    title: "Warranty Tracking",
-    description: "Track warranty periods, serial numbers, and manage claims from purchase to expiration.",
-    color: "bg-[#003822]/10 text-[#003822]",
-  },
-  {
-    icon: FileText,
-    title: "Technical Specifications",
-    description: "Share detailed specs, datasheets, and compatibility information with retailers.",
-    color: "bg-[#E5A400]/10 text-[#003822]",
-  },
-  {
-    icon: Zap,
-    title: "Model Variants",
-    description: "Manage different models, colors, storage capacities, and configurations.",
-    color: "bg-[#003822]/10 text-[#003822]",
-  },
-  {
-    icon: Box,
-    title: "Accessory Bundles",
-    description: "Create and manage product bundles, kits, and promotional packages.",
-    color: "bg-[#E5A400]/10 text-[#003822]",
-  },
-  {
-    icon: Laptop,
-    title: "Repair Management",
-    description: "Track RMAs, repairs, and replacements. Keep customers informed.",
-    color: "bg-[#003822]/10 text-[#003822]",
-  },
-  {
-    icon: Zap,
-    title: "Firmware Updates",
-    description: "Distribute firmware and software updates to your retail network.",
-    color: "bg-[#E5A400]/10 text-[#003822]",
-  },
-];
-
-const benefits = [
-  "Serial number tracking for every unit sold",
-  "Automated warranty validation",
-  "Technical documentation repository",
-  "Compatibility matrices",
-  "Bulk import for large catalogs",
-  "Logistics integration",
-];
-
 export default function ElectronicsPage() {
   return (
     <>
       <Navbar />
-      <main className="overflow-x-hidden">
-        {/* Hero */}
-        <section className="relative bg-[#003822] text-white overflow-hidden">
-          <div className="absolute inset-0 opacity-[0.03]" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
-            backgroundSize: '40px 40px'
-          }} />
-          
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center py-16 md:py-24 lg:py-32">
-              <div className="text-center lg:text-left">
+      <main>
+        {/* HERO - Tech Focus */}
+        <section className="bg-slate-900 text-white py-20 lg:py-32">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
                 <FadeIn>
-                  <div className="inline-flex items-center gap-2 bg-[#E5A400]/20 text-[#E5A400] px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                    <Laptop className="w-4 h-4" />
-                    Electronics
+                  <div className="inline-flex items-center gap-2 bg-cyan-400/20 px-4 py-2 rounded-full text-sm mb-6 text-cyan-300">
+                    <Cpu className="w-4 h-4" />
+                    Electronics & Tech
                   </div>
-                </FadeIn>
-                
-                <FadeIn delay={0.1}>
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight uppercase leading-[1.1]">
-                    For Tech
-                    <span className="block text-[#E5A400]">Brands</span>
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold uppercase leading-tight">
+                    Serial-Level
+                    <span className="text-cyan-400 block">Tracking</span>
                   </h1>
-                </FadeIn>
-                
-                <FadeIn delay={0.2}>
-                  <p className="text-white/60 text-base sm:text-lg mt-6 max-w-xl">
-                    B2B wholesale platform for electronics brands. Warranty tracking, serial numbers, and technical specs management.
+                  <p className="text-slate-400 text-lg mt-6 max-w-lg">
+                    Track every unit by serial number. Manage warranties, handle RMAs, 
+                    and keep firmware updated across your entire distribution network.
                   </p>
-                </FadeIn>
-                
-                <FadeIn delay={0.3}>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-8">
-                    <Button asChild size="lg" className="bg-[#E5A400] text-[#003822] hover:bg-[#E5A400]/90 rounded-full px-8">
+                  <div className="flex flex-wrap gap-4 mt-8">
+                    <Button className="bg-cyan-400 text-slate-900 hover:bg-cyan-300 rounded-full px-8 font-semibold">
                       <Link href="/contact">Start Free Trial</Link>
+                    </Button>
+                    <Button variant="outline" className="border-slate-600 text-slate-300 hover:bg-slate-800 rounded-full px-8">
+                      <Link href="/features">See API</Link>
                     </Button>
                   </div>
                 </FadeIn>
               </div>
-              
               <FadeIn delay={0.2}>
-                <WarrantyTrackingPreview />
+                <SerialTrackerVisual />
               </FadeIn>
             </div>
           </div>
         </section>
 
-        {/* Features */}
-        <section className="py-16 md:py-24 bg-white">
+        {/* TECH SPECS BANNER */}
+        <section className="py-8 bg-slate-800 border-y border-slate-700">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+              {[
+                { label: "Warranty Tracking", value: "Per Serial" },
+                { label: "Firmware OTA", value: "Supported" },
+                { label: "RMA Management", value: "Built-in" },
+                { label: "API Access", value: "REST + GraphQL" },
+              ].map((stat) => (
+                <div key={stat.label}>
+                  <p className="text-cyan-400 font-bold text-lg">{stat.value}</p>
+                  <p className="text-slate-400 text-sm">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* DIAGONAL/ZIGZAG LAYOUT */}
+        <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
-              <div className="text-center mb-12 md:mb-16">
-                <span className="text-[#E5A400] font-semibold text-sm uppercase tracking-wider">Features</span>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#003822] mt-4">Electronics Features</h2>
+              <div className="text-center max-w-2xl mx-auto mb-16">
+                <span className="text-cyan-600 font-semibold text-sm uppercase">Tech-Specific Features</span>
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-3">
+                  Built for Hardware Distribution
+                </h2>
               </div>
             </FadeIn>
-            
-            <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {features.map((feature) => (
-                <StaggerItem key={feature.title}>
-                  <div className="group bg-gray-50 border border-gray-100 rounded-2xl p-6 md:p-8 h-full hover:shadow-xl transition-all hover:-translate-y-1">
-                    <div className={`w-14 h-14 ${feature.color} rounded-xl flex items-center justify-center mb-6`}>
-                      <feature.icon className="w-7 h-7" />
+
+            <div className="space-y-20">
+              {/* Feature 1 - Left aligned */}
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <FadeIn>
+                  <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+                    <div className="w-14 h-14 bg-slate-800 rounded-xl flex items-center justify-center mb-6">
+                      <Shield className="w-7 h-7 text-cyan-400" />
                     </div>
-                    <h3 className="text-lg md:text-xl font-bold text-[#003822] mb-3">{feature.title}</h3>
-                    <p className="text-gray-600 text-sm md:text-base">{feature.description}</p>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-4">Warranty by Serial</h3>
+                    <p className="text-slate-600 mb-6">
+                      Every unit gets its own warranty timeline. Track activation dates, 
+                      validate claims instantly, and prevent warranty fraud.
+                    </p>
+                    <ul className="space-y-3">
+                      {["Automatic warranty validation", "Claims history per serial", "Repair tracking", "Replacement management"].map((item) => (
+                        <li key={item} className="flex items-center gap-3">
+                          <CheckCircle2 className="w-5 h-5 text-cyan-600 shrink-0" />
+                          <span className="text-slate-700">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
+                </FadeIn>
+                <FadeIn delay={0.1}>
+                  <div className="bg-gradient-to-br from-cyan-50 to-slate-50 rounded-2xl p-8">
+                    <TechSpecsVisual />
+                  </div>
+                </FadeIn>
+              </div>
+
+              {/* Feature 2 - Right aligned */}
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <FadeIn className="order-2 lg:order-1">
+                  <div className="bg-cyan-50 rounded-2xl p-8 border border-cyan-100">
+                    <div className="space-y-4">
+                      <div className="bg-white p-4 rounded-xl shadow-sm">
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                            <Zap className="w-4 h-4 text-green-600" />
+                          </div>
+                          <span className="font-semibold text-slate-900">Firmware v2.4.1 Released</span>
+                        </div>
+                        <p className="text-sm text-slate-600 ml-11">Pushed to 2,847 devices</p>
+                      </div>
+                      <div className="bg-white p-4 rounded-xl shadow-sm">
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <BarChart3 className="w-4 h-4 text-blue-600" />
+                          </div>
+                          <span className="font-semibold text-slate-900">Update Analytics</span>
+                        </div>
+                        <p className="text-sm text-slate-600 ml-11">94% adoption rate</p>
+                      </div>
+                    </div>
+                  </div>
+                </FadeIn>
+                <FadeIn delay={0.1} className="order-1 lg:order-2">
+                  <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+                    <div className="w-14 h-14 bg-cyan-500 rounded-xl flex items-center justify-center mb-6">
+                      <Zap className="w-7 h-7 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-4">Firmware Distribution</h3>
+                    <p className="text-slate-600 mb-6">
+                      Push OTA updates to your entire retail network. Track adoption rates 
+                      and ensure all devices run the latest software.
+                    </p>
+                    <div className="bg-white p-4 rounded-lg border border-slate-200">
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-slate-600">Current firmware</span>
+                        <span className="font-mono text-cyan-600">v2.4.1</span>
+                      </div>
+                    </div>
+                  </div>
+                </FadeIn>
+              </div>
+
+              {/* Feature 3 - Left aligned */}
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <FadeIn>
+                  <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+                    <div className="w-14 h-14 bg-slate-700 rounded-xl flex items-center justify-center mb-6">
+                      <Box className="w-7 h-7 text-cyan-400" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-4">Bundle Management</h3>
+                    <p className="text-slate-600 mb-6">
+                      Create product bundles and kits. Track component inventory and 
+                      manage promotional packages with ease.
+                    </p>
+                    <div className="bg-white p-4 rounded-lg border border-slate-200">
+                      <p className="text-sm font-medium text-slate-900 mb-2">Starter Kit Bundle</p>
+                      <div className="flex gap-2 text-xs">
+                        <span className="bg-slate-100 px-2 py-1 rounded">Headphones</span>
+                        <span className="bg-slate-100 px-2 py-1 rounded">Case</span>
+                        <span className="bg-slate-100 px-2 py-1 rounded">Cable</span>
+                      </div>
+                    </div>
+                  </div>
+                </FadeIn>
+                <FadeIn delay={0.1}>
+                  <div className="bg-orange-50 rounded-2xl p-8 border border-orange-100">
+                    <div className="w-14 h-14 bg-orange-500 rounded-xl flex items-center justify-center mb-6">
+                      <Wrench className="w-7 h-7 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-4">RMA Management</h3>
+                    <p className="text-slate-600 mb-6">
+                      Handle returns and repairs efficiently. Track RMA status, 
+                      communicate with retailers, and manage repair workflows.
+                    </p>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between bg-white p-3 rounded-lg">
+                        <span className="text-sm text-slate-600">Open RMAs</span>
+                        <span className="font-bold text-orange-600">12</span>
+                      </div>
+                      <div className="flex items-center justify-between bg-white p-3 rounded-lg">
+                        <span className="text-sm text-slate-600">Avg. Resolution</span>
+                        <span className="font-bold text-green-600">3.2 days</span>
+                      </div>
+                    </div>
+                  </div>
+                </FadeIn>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* Benefits Section */}
-        <section className="py-16 md:py-24 bg-gray-50">
+        {/* API SECTION */}
+        <section className="py-20 bg-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <FadeIn>
-                <ProductSpecsPreview />
-              </FadeIn>
-              
-              <div>
-                <FadeIn>
-                  <span className="text-[#E5A400] font-semibold text-sm uppercase tracking-wider">Why Choose Us</span>
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#003822] mt-4 mb-6">
-                    Why tech brands choose us
-                  </h2>
-                </FadeIn>
-                
-                <StaggerContainer className="space-y-4">
-                  {benefits.map((benefit) => (
-                    <StaggerItem key={benefit}>
-                      <div className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-[#E5A400] mt-0.5 shrink-0" />
-                        <span className="text-[#003822]">{benefit}</span>
-                      </div>
-                    </StaggerItem>
-                  ))}
-                </StaggerContainer>
+            <FadeIn>
+              <div className="bg-slate-900 rounded-2xl p-8 md:p-12 text-center md:text-left">
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <div>
+                    <Cpu className="w-12 h-12 text-cyan-400 mb-6" />
+                    <h2 className="text-3xl font-bold text-white mb-4">Built for Integration</h2>
+                    <p className="text-slate-400 mb-6">
+                      Connect with your existing systems. Our REST and GraphQL APIs 
+                      make integration with your ERP, CRM, and logistics platforms simple.
+                    </p>
+                    <Button className="bg-cyan-400 text-slate-900 hover:bg-cyan-300 rounded-full">
+                      <Link href="/api">View API Docs</Link>
+                    </Button>
+                  </div>
+                  <div className="bg-slate-800 rounded-xl p-6 font-mono text-sm">
+                    <p className="text-cyan-400 mb-2">// Get product by serial</p>
+                    <p className="text-slate-300">GET /api/v1/products/serial/{'{sn}'}</p>
+                    <p className="text-slate-500 mt-4 mb-2">Response:</p>
+                    <div className="text-slate-300 space-y-1">
+                      <p>{`{`}</p>
+                      <p className="pl-4">"serial": "SN-X200-78A2",</p>
+                      <p className="pl-4">"warranty_status": "active",</p>
+                      <p className="pl-4">"firmware_version": "2.4.1"</p>
+                      <p>{`}`}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+            </FadeIn>
           </div>
         </section>
 
         {/* CTA */}
-        <section className="py-16 md:py-24 bg-[#003822] text-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <FadeIn>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
-                Ready to scale your tech brand?
-              </h2>
-              <Button asChild size="lg" className="bg-[#E5A400] text-[#003822] hover:bg-[#E5A400]/90 rounded-full px-10 font-semibold">
-                <Link href="/contact">Book a Demo</Link>
-              </Button>
-            </FadeIn>
+        <section className="py-20 bg-slate-900 text-white text-center">
+          <div className="max-w-3xl mx-auto px-4">
+            <Cpu className="w-12 h-12 text-cyan-400 mx-auto mb-6" />
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to scale your tech distribution?</h2>
+            <Button className="bg-cyan-400 text-slate-900 hover:bg-cyan-300 rounded-full px-10 py-6 text-lg font-semibold">
+              <Link href="/contact">Get Started Free</Link>
+            </Button>
           </div>
         </section>
       </main>
