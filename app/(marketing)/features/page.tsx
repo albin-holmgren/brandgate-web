@@ -9,6 +9,7 @@ import { FadeIn, ScrollReveal, StaggerContainer, StaggerItem } from "@/component
 
 const features = [
   {
+    id: "portal",
     icon: Users,
     title: "Distributor Portal",
     desc: "Give every distributor a branded, personalized experience with their own login, product catalog, and order history.",
@@ -20,6 +21,7 @@ const features = [
     ],
   },
   {
+    id: "orders",
     icon: ShoppingCart,
     title: "Order Management",
     desc: "Process, track, and fulfill every order with confidence using real-time status tracking and batch actions.",
@@ -31,6 +33,7 @@ const features = [
     ],
   },
   {
+    id: "catalog",
     icon: Package,
     title: "Product Catalog",
     desc: "Manage your entire product range with unlimited SKUs, variant support, and tiered pricing per distributor group.",
@@ -42,6 +45,7 @@ const features = [
     ],
   },
   {
+    id: "invoicing",
     icon: FileText,
     title: "Automated Invoicing",
     desc: "Generate invoices from confirmed orders automatically. Track payments and send overdue reminders.",
@@ -53,6 +57,7 @@ const features = [
     ],
   },
   {
+    id: "analytics",
     icon: BarChart3,
     title: "Analytics & Reports",
     desc: "Data-driven insights with revenue dashboards, distributor rankings, and product performance reports.",
@@ -64,6 +69,7 @@ const features = [
     ],
   },
   {
+    id: "store",
     icon: Store,
     title: "Online Store Editor",
     desc: "Build your B2B storefront without writing code using a drag-and-drop section editor.",
@@ -110,6 +116,7 @@ export default function FeaturesPage() {
             {features.map((feature, i) => (
               <article
                 key={feature.title}
+                id={feature.id}
                 className={`flex flex-col md:flex-row items-center gap-16 ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}
               >
                 {/* Illustration placeholder */}
