@@ -163,7 +163,7 @@ export default function EnterprisePage() {
           </div>
         </section>
 
-        {/* Benefits + Contact */}
+        {/* Pricing Reference + Contact */}
         <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -186,11 +186,20 @@ export default function EnterprisePage() {
               
               <FadeIn>
                 <div className="bg-white rounded-2xl shadow-xl p-8 border border-[#003822]/10">
-                  <div className="w-14 h-14 bg-[#E5A400]/10 rounded-xl flex items-center justify-center mb-6">
+                  <div className="text-center mb-6">
+                    <h3 className="text-xl font-bold text-[#003822]">Scale Plan</h3>
+                    <div className="mt-4">
+                      <span className="text-4xl font-bold text-[#003822]">€615</span>
+                      <span className="text-gray-500">/month</span>
+                    </div>
+                    <p className="text-sm text-gray-500 mt-2">€492/month billed annually</p>
+                    <p className="text-xs text-gray-400 mt-2">or contact us for Enterprise pricing</p>
+                  </div>
+                  <div className="w-14 h-14 bg-[#E5A400]/10 rounded-xl flex items-center justify-center mb-6 mx-auto">
                     <Headphones className="w-7 h-7 text-[#003822]" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#003822] mb-4">Talk to Our Team</h3>
-                  <p className="text-gray-600 mb-6">Schedule a consultation to discuss your requirements.</p>
+                  <h3 className="text-xl font-bold text-[#003822] mb-4 text-center">Talk to Our Team</h3>
+                  <p className="text-gray-600 mb-6 text-center">Schedule a consultation to discuss your requirements.</p>
                   <Button asChild className="w-full bg-[#003822] text-white hover:bg-[#003822]/90">
                     <Link href="/contact">Schedule Consultation</Link>
                   </Button>

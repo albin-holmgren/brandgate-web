@@ -138,16 +138,17 @@ export default function StartupsPage() {
                 <div className="text-center mb-6">
                   <h3 className="text-xl font-bold text-[#003822]">Starter Plan</h3>
                   <div className="mt-4">
-                    <span className="text-5xl font-bold text-[#003822]">€49</span>
+                    <span className="text-5xl font-bold text-[#003822]">€35</span>
                     <span className="text-gray-500">/month</span>
                   </div>
+                  <p className="text-sm text-gray-500 mt-2">€28/month billed annually</p>
                 </div>
                 <ul className="space-y-3 mb-8">
-                  {["Up to 10 retailers", "100 products", "Basic analytics", "Email support"].map((item) => (
+                  {["Up to 100 products", "Order management", "Product catalog", "Basic analytics", "Email support"].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-sm text-gray-600">
                       <CheckCircle2 className="w-4 h-4 text-[#E5A400]" />
                       {item}
-                    </li>
+                  </li>
                   ))}
                 </ul>
                 <Button asChild className="w-full bg-[#003822] text-white hover:bg-[#003822]/90">
