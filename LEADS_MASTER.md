@@ -5,6 +5,7 @@
 - 🟢 Active (contacted/responded)
 - 🟡 Bounced (recovery in progress)
 - 🔴 Inactive (no response/closed)
+- 🚫 Not Interested - DO NOT CONTACT
 - ✅ Converted (meeting/opportunity)
 
 ---
@@ -167,6 +168,21 @@
 
 ---
 
+## Duplicate Prevention Checklist
+
+**Before adding ANY new company:**
+
+- [ ] Search this file for company name
+- [ ] Check Attio CRM for existing entry
+- [ ] Check memory files (memory/2026-*.md)
+- [ ] Check DO_NOT_CONTACT.md
+- [ ] Verify not already contacted
+- [ ] Verify not marked "Not Interested"
+
+**If found ANYWHERE:** DO NOT ADD - Skip this company
+
+---
+
 ## Statistics
 
 | Metric | Count |
@@ -175,6 +191,7 @@
 | Active | 12 |
 | Bounced (Recovery) | 2 |
 | Inactive | 3 |
+| Not Interested | 0 |
 | Converted | 0 |
 
 ---
