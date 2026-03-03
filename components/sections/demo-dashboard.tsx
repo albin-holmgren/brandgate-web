@@ -158,7 +158,7 @@ const DemoDashboard = () => {
         </div>
       </div>
 
-      <div className="flex" style={{ height: "520px" }}>
+      <div className="flex overflow-x-hidden" style={{ height: "520px", maxWidth: "100vw" }}>
         {/* Sidebar — hidden on mobile */}
         <div className="hidden md:flex w-[160px] bg-primary text-primary-foreground flex-col shrink-0">
           <div className="px-4 py-4 border-b border-primary-foreground/10">
@@ -200,7 +200,7 @@ const DemoDashboard = () => {
         </div>
 
         {/* Main content */}
-        <div className="flex-1 flex flex-col min-w-0">
+        <div className="flex-1 flex flex-col min-w-0 overflow-x-hidden">
           {/* TopBar */}
           <div className="h-10 bg-card border-b border-border flex items-center justify-between px-4 shrink-0">
             <div className="flex md:hidden items-center gap-1 overflow-x-auto">

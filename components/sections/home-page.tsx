@@ -84,9 +84,11 @@ export function HomePage() {
       </section>
 
       {/* Interactive Demo */}
-      <section aria-label="Interactive product demo" className="bg-card -mt-16 relative z-10 pb-8">
-        <ScrollReveal className="max-w-6xl mx-auto px-6">
-          <DemoDashboard />
+      <section aria-label="Interactive product demo" className="bg-card -mt-16 relative z-10 pb-8 overflow-x-hidden">
+        <ScrollReveal className="max-w-6xl mx-auto px-6 overflow-x-hidden">
+          <div className="overflow-x-auto md:overflow-x-visible">
+            <DemoDashboard />
+          </div>
           <p className="text-center text-xs text-muted-foreground mt-4">
             ↑ Interactive demo — click the sidebar to explore different views
           </p>

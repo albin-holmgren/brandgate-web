@@ -35,11 +35,13 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Navbar />
-      <main>
-        <HomePage />
-      </main>
-      <Footer />
+      <div className="overflow-x-hidden">
+        <Navbar />
+        <main className="overflow-x-hidden">
+          <HomePage />
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }
