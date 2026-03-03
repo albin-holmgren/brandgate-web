@@ -129,14 +129,15 @@ export default function GrowingBrandsPage() {
             <FadeIn>
               <div className="max-w-sm mx-auto bg-white rounded-2xl shadow-xl p-8 border-2 border-[#003822]">
                 <div className="text-center mb-6">
-                  <h3 className="text-xl font-bold text-[#003822]">Growth Plan</h3>
+                  <h3 className="text-xl font-bold text-[#003822]">Pro Plan</h3>
                   <div className="mt-4">
-                    <span className="text-5xl font-bold text-[#003822]">€149</span>
+                    <span className="text-5xl font-bold text-[#003822]">€281</span>
                     <span className="text-gray-500">/month</span>
                   </div>
+                  <p className="text-sm text-gray-500 mt-2">€225/month billed annually</p>
                 </div>
                 <ul className="space-y-3 mb-8">
-                  {["Unlimited retailers", "Unlimited products", "Advanced analytics", "Priority support", "API access"].map((item) => (
+                  {["Up to 500 products", "Online store builder", "Automated invoicing", "Advanced analytics", "Priority support", "API access"].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-sm text-gray-600">
                       <CheckCircle2 className="w-4 h-4 text-[#E5A400]" />
                       {item}
