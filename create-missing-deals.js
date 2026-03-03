@@ -1,9 +1,11 @@
 #!/usr/bin/env node
-// Create Deals with Owner field included
+// Create Deals for companies that don't have them yet
+// Then set stage to "Contacted"
 
 const ATTIO_TOKEN = '8f79f663efe9dbd2d59e51810690358c9529b1f0beb229ea857ea715945931cb';
 const ATTIO_BASE = 'https://api.attio.com/v2';
 
+// Companies that need deals created
 const companiesNeedingDeals = [
   { name: "Noord Coffee", companyId: "a9ee276f-d2bc-4624-ac63-a894d2c3ed9b" },
   { name: "Colorful Standard", companyId: "6c51a814-b222-4fa6-8dd6-8fa1dacddac4" },
@@ -16,8 +18,6 @@ const companiesNeedingDeals = [
   { name: "Fine Little Day", companyId: "14d40dc9-56f9-427c-8d8e-1c5266380d58" },
   { name: "A Day's March", companyId: "42685a56-0c09-48b2-b431-39baf20f95c6" }
 ];
-
-const OWNER_ID = "efd2bb65-df7e-4857-8482-a59b6523969c";
 
 async function attioRequest(endpoint, method = 'GET', body = null) {
   const url = `${ATTIO_BASE}${endpoint}`;
@@ -47,11 +47,7 @@ async function createDeal(company) {
     data: {
       values: {
         name: [{ value: `${company.name} - BrandGate Outreach` }],
-        stage: [{ status: "Contacted" }],
-        owner: [{
-          referenced_actor_type: "workspace-member",
-          referenced_actor_id: OWNER_ID
-        }]
+        stage: [{ status: "Contacted" }]
       }
     }
   };
@@ -59,7 +55,7 @@ async function createDeal(company) {
   const result = await attioRequest('/objects/deals/records', 'POST', createData);
   
   if (result.error) {
-    console.log(`  ❌ Failed:`, result.error.message || JSON.stringify(result.error).substring(0, 150));
+    console.log(`  ❌ Failed:`, result.error.message || JSON.stringify(result.error).substring(0, 100));
     return null;
   }
   
@@ -71,9 +67,8 @@ async function createDeal(company) {
 }
 
 async function main() {
-  console.log('=== CREATING DEALS WITH OWNER ===\n');
-  console.log(`Companies: ${companiesNeedingDeals.length}`);
-  console.log(`Owner ID: ${OWNER_ID}\n`);
+  console.log('=== CREATING DEALS FOR REMAINING COMPANIES ===\n');
+  console.log(`Companies to create deals for: ${companiesNeedingDeals.length}\n`);
   
   let success = 0;
   let failed = 0;
@@ -92,8 +87,7 @@ async function main() {
   console.log(`📊 Total: ${companiesNeedingDeals.length}`);
   
   if (success > 0) {
-    console.log('\n🎉 Deals created successfully!');
-    console.log('   Check Attio: https://app.attio.com/workspace/brandgate/entries');
+    console.log('\n🎉 All companies now have deals in "Contacted" stage!');
   }
 }
 
