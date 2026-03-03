@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 function BatchTimelineVisual() {
   return (
     <div className="bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-200">
-      <div className="bg-green-700 px-4 py-3 flex items-center justify-between">
+      <div className="bg-[#003822] px-4 py-3 flex items-center justify-between">
         <span className="text-white font-semibold text-sm flex items-center gap-2">
           <Shield className="w-4 h-4" />
           Batch Traceability
@@ -29,7 +29,7 @@ function BatchTimelineVisual() {
       <div className="p-4">
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-green-200" />
+          <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gray-200" />
           
           {/* Timeline Items */}
           {[
@@ -40,7 +40,7 @@ function BatchTimelineVisual() {
           ].map((item, i) => (
             <div key={i} className="relative flex items-start gap-4 mb-4 last:mb-0">
               <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 relative z-10 ${
-                item.status === 'complete' ? 'bg-green-500' : 'bg-yellow-500'
+                item.status === 'complete' ? 'bg-gray-500' : 'bg-[#E5A400]'
               }`}>
                 <CheckCircle2 className="w-4 h-4 text-white" />
               </div>
@@ -65,10 +65,10 @@ function ExpiryAlertVisual() {
     <div className="bg-white rounded-xl shadow-xl p-4 border border-gray-200">
       <div className="flex items-center justify-between mb-4">
         <span className="text-sm font-semibold text-gray-900 flex items-center gap-2">
-          <Clock className="w-4 h-4 text-orange-500" />
+          <Clock className="w-4 h-4 text-[#E5A400]" />
           Expiry Monitoring
         </span>
-        <span className="bg-red-100 text-red-700 text-xs px-2 py-1 rounded-full font-medium">3 Alerts</span>
+        <span className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full font-medium">3 Alerts</span>
       </div>
       
       <div className="space-y-3">
@@ -78,9 +78,9 @@ function ExpiryAlertVisual() {
           { product: "Artisan Cheese", expiry: "14 days", level: "ok", batch: "CH-2026-045" },
         ].map((item) => (
           <div key={item.batch} className={`p-3 rounded-lg border-l-4 ${
-            item.level === 'critical' ? 'bg-red-50 border-red-500' :
-            item.level === 'warning' ? 'bg-yellow-50 border-yellow-500' :
-            'bg-green-50 border-green-500'
+            item.level === 'critical' ? 'bg-gray-50 border-red-500' :
+            item.level === 'warning' ? 'bg-gray-50 border-yellow-500' :
+            'bg-gray-50 border-green-500'
           }`}>
             <div className="flex items-center justify-between">
               <div>
@@ -89,9 +89,9 @@ function ExpiryAlertVisual() {
               </div>
               <div className="text-right">
                 <p className={`text-sm font-bold ${
-                  item.level === 'critical' ? 'text-red-600' :
-                  item.level === 'warning' ? 'text-yellow-600' :
-                  'text-green-600'
+                  item.level === 'critical' ? 'text-gray-600' :
+                  item.level === 'warning' ? 'text-[#E5A400]' :
+                  'text-gray-600'
                 }`}>{item.expiry}</p>
                 <p className="text-xs text-gray-500">remaining</p>
               </div>
@@ -109,7 +109,7 @@ export default function FoodBeveragePage() {
       <Navbar />
       <main>
         {/* HERO - Food Safety Focus */}
-        <section className="bg-green-700 text-white py-20 lg:py-32">
+        <section className="bg-[#003822] text-white py-20 lg:py-32">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -120,14 +120,14 @@ export default function FoodBeveragePage() {
                   </div>
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold uppercase leading-tight">
                     Trace Every
-                    <span className="text-yellow-300 block">Batch</span>
+                    <span className="text-[#E5A400] block">Batch</span>
                   </h1>
                   <p className="text-white/80 text-lg mt-6 max-w-lg">
                     From farm to shelf, track every batch with complete traceability. 
                     Be recall-ready in minutes, not days.
                   </p>
                   <div className="flex flex-wrap gap-4 mt-8">
-                    <Button className="bg-yellow-400 text-green-900 hover:bg-yellow-300 rounded-full px-8 font-semibold">
+                    <Button className="bg-[#E5A400] text-[#003822] hover:bg-[#E5A400]/30 rounded-full px-8 font-semibold">
                       <Link href="/contact">Start Free Trial</Link>
                     </Button>
                   </div>
@@ -141,9 +141,9 @@ export default function FoodBeveragePage() {
         </section>
 
         {/* COMPLIANCE BADGES */}
-        <section className="py-8 bg-green-50 border-y border-green-100">
+        <section className="py-8 bg-gray-50 border-y border-green-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-wrap justify-center gap-6 text-sm text-green-800">
+            <div className="flex flex-wrap justify-center gap-6 text-sm text-[#003822]">
               <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
                 <CheckCircle2 className="w-4 h-4" /> EU Food Safety
               </span>
@@ -165,7 +165,7 @@ export default function FoodBeveragePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
               <div className="text-center max-w-2xl mx-auto mb-16">
-                <span className="text-green-700 font-semibold text-sm uppercase">Food-Specific Features</span>
+                <span className="text-gray-700 font-semibold text-sm uppercase">Food-Specific Features</span>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3">
                   Built for Food Safety
                 </h2>
@@ -174,8 +174,8 @@ export default function FoodBeveragePage() {
 
             <div className="grid md:grid-cols-12 gap-6">
               {/* Large Card - Batch Tracking */}
-              <div className="md:col-span-7 bg-green-50 rounded-2xl p-8 border border-green-100">
-                <div className="w-14 h-14 bg-green-500 rounded-xl flex items-center justify-center mb-6">
+              <div className="md:col-span-7 bg-gray-50 rounded-2xl p-8 border border-green-100">
+                <div className="w-14 h-14 bg-gray-500 rounded-xl flex items-center justify-center mb-6">
                   <Shield className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">Complete Batch Traceability</h3>
@@ -184,7 +184,7 @@ export default function FoodBeveragePage() {
                   identify affected products instantly with full chain of custody.
                 </p>
                 <div className="bg-white p-4 rounded-lg">
-                  <div className="flex items-center gap-2 text-sm text-green-700">
+                  <div className="flex items-center gap-2 text-sm text-gray-700">
                     <Clock className="w-4 h-4" />
                     <span className="font-semibold">2-minute</span> recall identification
                   </div>
@@ -193,8 +193,8 @@ export default function FoodBeveragePage() {
 
               {/* Stacked Cards */}
               <div className="md:col-span-5 space-y-6">
-                <div className="bg-yellow-50 rounded-2xl p-6 border border-yellow-100">
-                  <div className="w-12 h-12 bg-yellow-500 rounded-xl flex items-center justify-center mb-4">
+                <div className="bg-gray-50 rounded-2xl p-6 border border-yellow-100">
+                  <div className="w-12 h-12 bg-[#E5A400] rounded-xl flex items-center justify-center mb-4">
                     <Calendar className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">Expiry Management</h3>
@@ -203,8 +203,8 @@ export default function FoodBeveragePage() {
                   </p>
                 </div>
 
-                <div className="bg-blue-50 rounded-2xl p-6 border border-blue-100">
-                  <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-4">
+                <div className="bg-gray-50 rounded-2xl p-6 border border-blue-100">
+                  <div className="w-12 h-12 bg-[#003822] rounded-xl flex items-center justify-center mb-4">
                     <Thermometer className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">Temperature Logs</h3>
@@ -215,8 +215,8 @@ export default function FoodBeveragePage() {
               </div>
 
               {/* Bottom Cards */}
-              <div className="md:col-span-4 bg-green-50 rounded-2xl p-6 border border-green-100">
-                <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mb-4">
+              <div className="md:col-span-4 bg-gray-50 rounded-2xl p-6 border border-green-100">
+                <div className="w-12 h-12 bg-[#003822] rounded-xl flex items-center justify-center mb-4">
                   <Leaf className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Certifications</h3>
@@ -225,8 +225,8 @@ export default function FoodBeveragePage() {
                 </p>
               </div>
 
-              <div className="md:col-span-4 bg-orange-50 rounded-2xl p-6 border border-orange-100">
-                <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4">
+              <div className="md:col-span-4 bg-gray-50 rounded-2xl p-6 border border-orange-100">
+                <div className="w-12 h-12 bg-gray-500 rounded-xl flex items-center justify-center mb-4">
                   <Truck className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Delivery Windows</h3>
@@ -235,8 +235,8 @@ export default function FoodBeveragePage() {
                 </p>
               </div>
 
-              <div className="md:col-span-4 bg-purple-50 rounded-2xl p-6 border border-purple-100">
-                <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mb-4">
+              <div className="md:col-span-4 bg-gray-50 rounded-2xl p-6 border border-purple-100">
+                <div className="w-12 h-12 bg-gray-500 rounded-xl flex items-center justify-center mb-4">
                   <Apple className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Nutritional Data</h3>
@@ -254,7 +254,7 @@ export default function FoodBeveragePage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
                 <FadeIn>
-                  <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
+                  <div className="inline-flex items-center gap-2 bg-gray-100 text-[#003822] px-3 py-1 rounded-full text-sm font-medium mb-4">
                     <AlertTriangle className="w-4 h-4" />
                     Proactive Alerts
                   </div>
@@ -273,7 +273,7 @@ export default function FoodBeveragePage() {
                       "Waste reduction analytics"
                     ].map((item) => (
                       <li key={item} className="flex items-center gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-green-600 shrink-0" />
+                        <CheckCircle2 className="w-5 h-5 text-gray-600 shrink-0" />
                         <span className="text-gray-700">{item}</span>
                       </li>
                     ))}
@@ -290,11 +290,11 @@ export default function FoodBeveragePage() {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-green-700 text-white text-center">
+        <section className="py-20 bg-[#003822] text-white text-center">
           <div className="max-w-3xl mx-auto px-4">
-            <Shield className="w-12 h-12 text-yellow-300 mx-auto mb-6" />
+            <Shield className="w-12 h-12 text-[#E5A400] mx-auto mb-6" />
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Food safety starts with traceability</h2>
-            <Button className="bg-yellow-400 text-green-900 hover:bg-yellow-300 rounded-full px-10 py-6 text-lg font-semibold">
+            <Button className="bg-[#E5A400] text-[#003822] hover:bg-[#E5A400]/30 rounded-full px-10 py-6 text-lg font-semibold">
               <Link href="/contact">Get Started Free</Link>
             </Button>
           </div>

@@ -31,18 +31,18 @@ function SizeMatrixVisual() {
           ))}
           {[12, 24, 48, 36, 18, 8].map((stock, i) => (
             <div key={i} className={`p-2 rounded font-bold ${
-              stock < 10 ? 'bg-red-100 text-red-600' : 
-              stock < 20 ? 'bg-yellow-100 text-yellow-700' : 
-              'bg-green-100 text-green-700'
+              stock < 10 ? 'bg-gray-100 text-gray-600' : 
+              stock < 20 ? 'bg-[#E5A400]/10 text-[#E5A400]' : 
+              'bg-gray-100 text-gray-700'
             }`}>
               {stock}
             </div>
           ))}
         </div>
         <div className="mt-3 flex items-center gap-2 text-xs">
-          <span className="w-3 h-3 bg-green-100 rounded" /> In Stock
-          <span className="w-3 h-3 bg-yellow-100 rounded" /> Low
-          <span className="w-3 h-3 bg-red-100 rounded" /> Critical
+          <span className="w-3 h-3 bg-gray-100 rounded" /> In Stock
+          <span className="w-3 h-3 bg-[#E5A400]/10 rounded" /> Low
+          <span className="w-3 h-3 bg-gray-100 rounded" /> Critical
         </div>
       </div>
     </div>
@@ -59,15 +59,15 @@ function LookbookVisual() {
       </div>
       <div className="grid grid-cols-2 gap-3">
         <div className="space-y-3">
-          <div className="bg-gradient-to-br from-pink-100 to-purple-100 h-32 rounded-lg flex items-center justify-center">
-            <Shirt className="w-10 h-10 text-pink-400" />
+          <div className="bg-gradient-to-br from-gray-100 to-gray-50 h-32 rounded-lg flex items-center justify-center">
+            <Shirt className="w-10 h-10 text-gray-400" />
           </div>
           <p className="text-xs font-medium text-gray-700">Floral Dress</p>
           <p className="text-xs text-gray-500">€45 wholesale</p>
         </div>
         <div className="space-y-3">
-          <div className="bg-gradient-to-br from-blue-100 to-cyan-100 h-32 rounded-lg flex items-center justify-center">
-            <Layers className="w-10 h-10 text-blue-400" />
+          <div className="bg-gradient-to-br from-gray-100 to-gray-50 h-32 rounded-lg flex items-center justify-center">
+            <Layers className="w-10 h-10 text-gray-400" />
           </div>
           <p className="text-xs font-medium text-gray-700">Linen Blazer</p>
           <p className="text-xs text-gray-500">€89 wholesale</p>
@@ -75,7 +75,7 @@ function LookbookVisual() {
       </div>
       <div className="mt-4 flex items-center gap-2">
         <span className="bg-[#E5A400]/20 text-[#003822] text-xs px-2 py-1 rounded-full">New Arrival</span>
-        <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full">In Stock</span>
+        <span className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">In Stock</span>
       </div>
     </div>
   );
@@ -137,8 +137,8 @@ export default function FashionPage() {
               {/* Size Matrix - Unique to Fashion */}
               <FadeIn>
                 <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow">
-                  <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                    <Ruler className="w-7 h-7 text-blue-600" />
+                  <div className="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center mb-6">
+                    <Ruler className="w-7 h-7 text-[#003822]" />
                   </div>
                   <h3 className="text-xl font-bold text-[#003822] mb-3">Size Matrix Management</h3>
                   <p className="text-gray-600 mb-4">
@@ -160,18 +160,18 @@ export default function FashionPage() {
               {/* Colorways - Unique to Fashion */}
               <FadeIn delay={0.1}>
                 <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow">
-                  <div className="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
-                    <Palette className="w-7 h-7 text-purple-600" />
+                  <div className="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center mb-6">
+                    <Palette className="w-7 h-7 text-[#003822]" />
                   </div>
                   <h3 className="text-xl font-bold text-[#003822] mb-3">Colorway Management</h3>
                   <p className="text-gray-600 mb-4">
                     Manage multiple colors per style with visual swatches. Retailers see exactly what they are ordering.
                   </p>
                   <div className="flex gap-2 mt-4">
-                    <div className="w-8 h-8 rounded-full bg-red-500 border-2 border-white shadow" />
-                    <div className="w-8 h-8 rounded-full bg-blue-500 border-2 border-white shadow" />
-                    <div className="w-8 h-8 rounded-full bg-green-500 border-2 border-white shadow" />
-                    <div className="w-8 h-8 rounded-full bg-yellow-500 border-2 border-white shadow" />
+                    <div className="w-8 h-8 rounded-full bg-[#E5A400] border-2 border-white shadow" />
+                    <div className="w-8 h-8 rounded-full bg-[#003822] border-2 border-white shadow" />
+                    <div className="w-8 h-8 rounded-full bg-gray-500 border-2 border-white shadow" />
+                    <div className="w-8 h-8 rounded-full bg-[#E5A400] border-2 border-white shadow" />
                     <div className="w-8 h-8 rounded-full bg-gray-200 border-2 border-white shadow flex items-center justify-center text-xs">+5</div>
                   </div>
                 </div>
@@ -180,8 +180,8 @@ export default function FashionPage() {
               {/* Pre-orders - Unique to Fashion */}
               <FadeIn delay={0.2}>
                 <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow">
-                  <div className="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6">
-                    <Clock className="w-7 h-7 text-green-600" />
+                  <div className="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center mb-6">
+                    <Clock className="w-7 h-7 text-gray-600" />
                   </div>
                   <h3 className="text-xl font-bold text-[#003822] mb-3">Pre-order & Drops</h3>
                   <p className="text-gray-600 mb-4">
@@ -199,8 +199,8 @@ export default function FashionPage() {
               {/* Tiered Pricing - Unique to Fashion */}
               <FadeIn delay={0.3}>
                 <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow">
-                  <div className="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
-                    <Tag className="w-7 h-7 text-orange-600" />
+                  <div className="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center mb-6">
+                    <Tag className="w-7 h-7 text-[#E5A400]" />
                   </div>
                   <h3 className="text-xl font-bold text-[#003822] mb-3">Boutique vs Department</h3>
                   <p className="text-gray-600 mb-4">
@@ -222,8 +222,8 @@ export default function FashionPage() {
               {/* Digital Lookbooks */}
               <FadeIn delay={0.4}>
                 <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow">
-                  <div className="w-14 h-14 bg-pink-100 rounded-xl flex items-center justify-center mb-6">
-                    <Layers className="w-7 h-7 text-pink-600" />
+                  <div className="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center mb-6">
+                    <Layers className="w-7 h-7 text-[#003822]" />
                   </div>
                   <h3 className="text-xl font-bold text-[#003822] mb-3">Digital Lookbooks</h3>
                   <p className="text-gray-600 mb-4">
@@ -235,8 +235,8 @@ export default function FashionPage() {
               {/* Trend Analytics */}
               <FadeIn delay={0.5}>
                 <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow">
-                  <div className="w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center mb-6">
-                    <TrendingUp className="w-7 h-7 text-cyan-600" />
+                  <div className="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center mb-6">
+                    <TrendingUp className="w-7 h-7 text-[#003822]" />
                   </div>
                   <h3 className="text-xl font-bold text-[#003822] mb-3">Trend Analytics</h3>
                   <p className="text-gray-600 mb-4">

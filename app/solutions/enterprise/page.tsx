@@ -36,15 +36,15 @@ function EnterpriseDashboard() {
         </div>
         <div className="space-y-2">
           <div className="flex items-center gap-2 text-xs text-gray-600">
-            <Shield className="w-4 h-4 text-green-500" />
+            <Shield className="w-4 h-4 text-[#003822]" />
             SOC 2 Compliant
           </div>
           <div className="flex items-center gap-2 text-xs text-gray-600">
-            <Lock className="w-4 h-4 text-green-500" />
+            <Lock className="w-4 h-4 text-[#003822]" />
             SSO Enabled
           </div>
           <div className="flex items-center gap-2 text-xs text-gray-600">
-            <Globe className="w-4 h-4 text-green-500" />
+            <Globe className="w-4 h-4 text-[#003822]" />
             Multi-Region
           </div>
         </div>
