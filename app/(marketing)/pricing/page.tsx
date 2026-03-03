@@ -32,6 +32,7 @@ const tiers = [
     features: ["Up to 100 products", "Order management", "Product catalog", "Basic analytics", "Email support", "0% tx fee discount"],
     cta: "Start Free Trial",
     highlight: false,
+    badge: null,
   },
   {
     name: "Pro" as const,
@@ -39,6 +40,7 @@ const tiers = [
     features: ["Up to 500 products", "Online store builder", "Automated invoicing", "Advanced analytics", "Priority support", "Custom price lists", "8% tx fee discount"],
     cta: "Start Free Trial",
     highlight: true,
+    badge: "Most Popular",
   },
   {
     name: "Scale" as const,
@@ -46,6 +48,7 @@ const tiers = [
     features: ["Unlimited products", "API access", "Dedicated support", "22% tx fee discount", "Everything in Pro", "Custom integrations"],
     cta: "Start Free Trial",
     highlight: false,
+    badge: "Best Value",
   },
 ];
 
@@ -154,10 +157,14 @@ export default function PricingPage() {
                         background: 'linear-gradient(135deg, hsl(160 100% 11%) 0%, hsl(160 80% 14%) 100%)'
                       } : undefined}
                     >
-                      {tier.highlight && (
-                        <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold text-gold-foreground text-xs font-bold px-5 py-1.5 rounded-full flex items-center gap-1.5">
+                      {tier.badge && (
+                        <span className={`absolute -top-4 left-1/2 -translate-x-1/2 text-xs font-bold px-5 py-1.5 rounded-full flex items-center gap-1.5 ${
+                          tier.name === "Pro" 
+                            ? "bg-gold text-gold-foreground" 
+                            : "bg-slate-700 text-white"
+                        }`}>
                           <ThumbsUp className="w-3.5 h-3.5" />
-                          Most Popular
+                          {tier.badge}
                         </span>
                       )}
                       <p className={`text-xs uppercase tracking-wider font-medium ${tier.highlight ? "text-primary-foreground/50" : "text-muted-foreground"}`}>

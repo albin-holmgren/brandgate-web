@@ -201,45 +201,58 @@ export function Navbar() {
 
       {/* Mobile drawer */}
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-0 top-16 bg-primary z-40 overflow-y-auto">
-          <div className="px-6 py-4 space-y-6">
+        <div className="lg:hidden fixed inset-0 top-16 bg-[#003822] z-40 overflow-y-auto animate-in slide-in-from-right duration-300">
+          <div className="px-6 py-6 space-y-6">
             {Object.entries(megaMenuData).map(([key, data]) => (
-              <div key={key} className="space-y-2">
-                <div className="text-sm font-medium text-primary-foreground/80 uppercase tracking-wider">
+              <div key={key} className="space-y-3">
+                <div className="text-sm font-bold text-[#E5A400] uppercase tracking-wider">
                   {data.label}
                 </div>
-                <div className="space-y-1 pl-4">
-                  {data.sections.flatMap(s => s.items).map((item) => (
+                <div className="space-y-2 pl-2 border-l-2 border-white/10">
+                  {data.sections.flatMap(s => s.items).slice(0, 5).map((item) => (
                     <Link
                       key={item.label}
                       href={item.href}
                       onClick={() => setMobileOpen(false)}
-                      className="block py-2 text-sm text-primary-foreground/60 hover:text-primary-foreground"
+                      className="flex items-center justify-between py-2 text-sm text-white/80 hover:text-white transition-colors"
                     >
-                      {item.label}
+                      <span>{item.label}</span>
+                      <ChevronRight className="w-4 h-4 text-white/40" />
                     </Link>
                   ))}
                 </div>
               </div>
             ))}
             
-            {simpleLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="block py-2 text-sm font-medium text-primary-foreground"
-              >
-                {link.label}
-              </Link>
-            ))}
+            <div className="pt-4 border-t border-white/10 space-y-3">
+              {simpleLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center justify-between py-2 text-sm font-medium text-white hover:text-[#E5A400] transition-colors"
+                >
+                  <span>{link.label}</span>
+                  <ChevronRight className="w-4 h-4 text-white/40" />
+                </Link>
+              ))}
+            </div>
 
-            <div className="pt-4 border-t border-primary-foreground/10 flex flex-col gap-2">
-              <a href="https://app.brandgate.dev/login" onClick={() => setMobileOpen(false)} className="text-sm font-medium text-primary-foreground/60">
+            <div className="pt-6 space-y-3">
+              <a 
+                href="https://app.brandgate.dev/login" 
+                onClick={() => setMobileOpen(false)} 
+                className="block w-full text-center py-3 text-sm font-medium text-white/80 hover:text-white border border-white/20 rounded-lg transition-colors"
+              >
                 Login
               </a>
-              <Button asChild size="sm" className="w-full bg-gold text-gold-foreground hover:bg-gold/90 rounded-full font-semibold">
-                <a href="https://app.brandgate.dev/signup" onClick={() => setMobileOpen(false)}>Get Started</a>
+              <Button 
+                asChild 
+                className="w-full bg-[#E5A400] text-[#003822] hover:bg-[#E5A400]/90 rounded-lg font-semibold py-3"
+              >
+                <a href="https://app.brandgate.dev/signup" onClick={() => setMobileOpen(false)}>
+                  Get Started Free
+                </a>
               </Button>
             </div>
           </div>
