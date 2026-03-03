@@ -6,7 +6,7 @@ import { ShoppingCart, Users, Store, ArrowRight, Package, BarChart3, FileText } 
 import { FadeIn, ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion/fade-in";
 import DemoDashboard from "@/components/sections/demo-dashboard";
 
-const DEMO_MAILTO = `mailto:albin.holmgren97@gmail.com?subject=Book%20a%20Demo%20-%20BrandGate&body=Hi%2C%20I'd%20like%20to%20book%20a%20demo%20of%20BrandGate.`;
+const DEMO_LINK = "/contact";
 
 const features = [
   { icon: Users, title: "Distributor Portal", desc: "Give each distributor their own branded portal to browse products, place orders, and track deliveries." },
@@ -76,7 +76,7 @@ export function HomePage() {
                 <a href="https://app.brandgate.dev/signup">Get Started <ArrowRight className="w-4 h-4 ml-2" /></a>
               </Button>
               <Button asChild size="lg" variant="outline" className="text-base px-10 bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground rounded-full h-12">
-                <a href={DEMO_MAILTO}>Book a Demo</a>
+                <Link href={DEMO_LINK}>Book a Demo</Link>
               </Button>
             </div>
           </FadeIn>
@@ -144,41 +144,6 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section aria-label="Customer testimonials" className="py-24 md:py-32 bg-card border-y border-border">
-        <div className="max-w-7xl mx-auto px-6">
-          <ScrollReveal className="text-center mb-16">
-            <div className="w-12 h-1 bg-gold mx-auto mb-6 shadow-[0_0_12px_hsl(45,93%,47%,0.4)]" />
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tight">Loved by brands</h2>
-            <p className="text-muted-foreground mt-5 text-lg max-w-xl mx-auto">See what our customers have to say about BrandGate.</p>
-          </ScrollReveal>
-          <StaggerContainer staggerDelay={0.1} className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((t, i) => (
-              <StaggerItem key={i}>
-                <article className="bg-card border border-border rounded-2xl p-8 h-full flex flex-col hover:shadow-xl transition-shadow">
-                  <div className="text-gold text-4xl font-serif mb-4">"</div>
-                  <p className="text-foreground flex-1 mb-6 leading-relaxed">{t.quote}</p>
-                  <div className="pt-6 border-t border-border">
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                        <span className="text-primary font-semibold">{t.author.charAt(0)}</span>
-                      </div>
-                      <div>
-                        <p className="font-semibold text-foreground">{t.author}</p>
-                        <p className="text-sm text-muted-foreground">{t.role}</p>
-                      </div>
-                    </div>
-                    <div className="mt-3 inline-flex items-center gap-2 bg-gold/10 text-gold px-3 py-1 rounded-full text-sm font-medium">
-                      {t.metric}
-                    </div>
-                  </div>
-                </article>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
-
       {/* CTA */}
       <section aria-label="Call to action" className="bg-primary text-primary-foreground py-24 md:py-32">
         <ScrollReveal className="max-w-4xl mx-auto px-6 text-center">
@@ -190,7 +155,7 @@ export function HomePage() {
               <a href="https://app.brandgate.dev/signup">Get Started Free <ArrowRight className="w-4 h-4 ml-2" /></a>
             </Button>
             <Button asChild size="lg" variant="outline" className="text-base px-10 bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground rounded-full h-12">
-              <a href={DEMO_MAILTO}>Book a Demo</a>
+              <Link href={DEMO_LINK}>Book a Demo</Link>
             </Button>
           </div>
         </ScrollReveal>
