@@ -168,6 +168,32 @@
 
 ---
 
+## CRM Update Status
+
+**⚠️ PENDING ATTIO UPDATES:**
+The following companies were contacted but NOT YET updated in Attio CRM:
+
+| Company | Contact Date | CRM Status | Action Needed |
+|---------|--------------|------------|---------------|
+| Noord Coffee | 2026-03-03 | ❌ Not Updated | Change to "Contacted" |
+| Colorful Standard | 2026-03-03 | ❌ Not Updated | Change to "Contacted" |
+| Dedicated | 2026-03-03 | ❌ Not Updated | Change to "Contacted" |
+| Sandqvist | 2026-03-03 | ❌ Not Updated | Change to "Contacted" |
+| L:A Bruket | 2026-03-03 | ❌ Not Updated | Change to "Contacted" |
+| Nudie Jeans | 2026-03-03 | ❌ Not Updated | Change to "Contacted" |
+| Organic Basics | 2026-03-03 | ❌ Not Updated | Change to "Contacted" |
+| Rodebjer | 2026-03-03 | ❌ Not Updated | Change to "Contacted" |
+| Maria Nila | 2026-03-03 | ❌ Not Updated | Change to "Contacted" |
+| Skandinavisk | 2026-03-03 | ❌ Not Updated | Change to "Contacted" |
+| Fine Little Day | 2026-03-03 | ❌ Not Updated | Change to "Contacted" |
+| A Day's March | 2026-03-03 | ❌ Not Updated | Change to "Contacted" |
+
+**Manual Update Required:**
+Go to: https://app.attio.com/workspace/brandgate/entries
+See: ATTIO_UPDATE_REQUIRED.md for detailed instructions
+
+---
+
 ## Duplicate Prevention Checklist
 
 **Before adding ANY new company:**
