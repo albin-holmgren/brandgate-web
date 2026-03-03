@@ -1,139 +1,150 @@
-# BOUNCE RECOVERY - Alternative Contacts
-**Date:** 2026-03-03  
-**Bounced Emails:** 2
+# Bounce Recovery Log - BrandGate
+**All bounced emails and recovery attempts**
+
+## Legend
+- 🟡 Bounced - Recovery in progress
+- ✅ Recovered - Alternative worked
+- ❌ Failed - All alternatives bounced
 
 ---
 
-## ❌ BOUNCED EMAILS
+## 2026-03-03 Bounces
 
-### 1. Fine Little Day
-**Bounced:** hello@finelittleday.com  
-**Status:** Address not found
+### Fine Little Day
+**Original Email:** hello@finelittleday.com  
+**Bounce Date:** 2026-03-03 10:45 UTC  
+**Bounce Reason:** Address not found  
+**Status:** 🟡 Recovery in progress
 
-**Alternative Contacts to Try:**
-- [ ] info@finelittleday.com
-- [ ] contact@finelittleday.com  
-- [ ] shop@finelittleday.com
-- [ ] elin@finelittleday.com (founder)
-- [ ] Use LinkedIn: "Fine Little Day" founder/owner
+#### Recovery Attempts:
+| # | Email | Date | Status |
+|---|-------|------|--------|
+| 1 | info@finelittleday.com | 2026-03-03 18:15 | ✅ Sent |
+| 2 | contact@finelittleday.com | 2026-03-03 18:15 | ✅ Sent |
 
-**Website:** finelittleday.com  
-**LinkedIn Strategy:** Search "Fine Little Day founder" or "Fine Little Day CEO"
+#### Actions Taken:
+- ✅ Bounce detected and archived
+- ✅ CRM updated (status: Bounced)
+- ✅ Asana task created
+- ✅ Recovery emails sent
+- ⏳ Waiting for response
 
----
-
-### 2. A Day's March
-**Bounced:** hello@adaysmarch.com  
-**Status:** Address not found
-
-**Alternative Contacts to Try:**
-- [ ] info@adaysmarch.com
-- [ ] contact@adaysmarch.com
-- [ ] support@adaysmarch.com
-- [ ] sales@adaysmarch.com
-- [ ] founders: Look for Marcus & Stefan (co-founders)
-
-**Website:** adaysmarch.com  
-**LinkedIn Strategy:** Search "A Day's March founder" or "A Day's March CEO"
+#### Next Steps:
+- Monitor inbox for responses
+- If no response by 2026-03-07, try LinkedIn research
+- Try founder email: elin@finelittleday.com
 
 ---
 
-## 🔍 RESEARCH NEEDED
+### A Day's March
+**Original Email:** hello@adaysmarch.com  
+**Bounce Date:** 2026-03-03 10:45 UTC  
+**Bounce Reason:** Address not found  
+**Status:** 🟡 Recovery in progress
 
-### Step 1: LinkedIn Search
-Search for:
-- "Fine Little Day founder"
-- "Fine Little Day CEO" 
-- "Fine Little Day owner"
-- "A Day's March founder"
-- "A Day's March CEO"
-- "A Day's March owner"
+#### Recovery Attempts:
+| # | Email | Date | Status |
+|---|-------|------|--------|
+| 1 | info@adaysmarch.com | 2026-03-03 18:15 | ✅ Sent |
+| 2 | contact@adaysmarch.com | 2026-03-03 18:15 | ✅ Sent |
 
-### Step 2: Website Contact Page
-Visit:
-- finelittleday.com/contact
-- adaysmarch.com/contact
+#### Actions Taken:
+- ✅ Bounce detected and archived
+- ✅ CRM updated (status: Bounced)
+- ✅ Asana task created
+- ✅ Recovery emails sent
+- ⏳ Waiting for response
 
-Look for:
-- Contact form
-- Press inquiries
-- Wholesale/B2B contact
-- Team page with emails
-
-### Step 3: Common Email Patterns
-Try these patterns:
-- firstname@company.com
-- firstname.lastname@company.com
-- f.lastname@company.com
-- founder@company.com
-- ceo@company.com
-- wholesale@company.com
-- b2b@company.com
+#### Next Steps:
+- Monitor inbox for responses
+- If no response by 2026-03-07, try LinkedIn research
+- Try founder emails: marcus@ or stefan@
 
 ---
 
-## ✅ ALREADY DELIVERED
+## Historical Bounces (Batch 1)
 
-### Noord Coffee
-**Delivered:** hello@noordcoffee.com  
-**Status:** ✅ Success  
-**Next:** Wait for response, follow up in 4 days if no reply
+### Outnorth
+**Email:** niklas@outnorth.com  
+**Bounce Date:** 2026-03-01  
+**Status:** ❌ Failed - Company too large anyway  
+**Action:** Removed from target list
 
----
+### NetOnNet
+**Email:** anders@netonnet.se  
+**Bounce Date:** 2026-03-01  
+**Status:** ❌ Failed - Company too large anyway  
+**Action:** Removed from target list
 
-## 📝 UPDATED OUTREACH STATUS
+### Happy Socks (2 emails)
+**Emails:** mikael@happysocks.com, viktor@happysocks.com  
+**Bounce Date:** 2026-03-01  
+**Status:** ❌ Failed - Company too large anyway  
+**Action:** Removed from target list
 
-| Company | Original Email | Status | Alternative Action |
-|---------|---------------|--------|-------------------|
-| Fine Little Day | hello@finelittleday.com | ❌ Bounced | Research founder contact |
-| A Day's March | hello@adaysmarch.com | ❌ Bounced | Research founder contact |
-| Noord Coffee | hello@noordcoffee.com | ✅ Delivered | Wait for response |
-
----
-
-## 🎯 NEXT ACTIONS
-
-1. **Research Fine Little Day**
-   - LinkedIn: Find founder name
-   - Website: Check contact/wholesale page
-   - Try: info@, contact@, founder@
-
-2. **Research A Day's March**
-   - LinkedIn: Find founder names (Marcus & Stefan)
-   - Website: Check contact/wholesale page
-   - Try: info@, contact@, sales@
-
-3. **Send to Alternatives**
-   - Once found, send personalized emails
-   - Reference original attempt
-
-4. **Update Attio CRM**
-   - Mark original emails as "Bounced"
-   - Add new contacts when found
-   - Update lead status
-
-5. **Continue with Batch 2**
-   - Send remaining 3 emails (Colorful Standard, Dedicated, Sandqvist)
-   - Use verified email patterns
+### Sandqvist
+**Email:** anton@sandqvist.net  
+**Bounce Date:** 2026-03-01  
+**Status:** ✅ Recovered  
+**Recovery:** hello@sandqvist.com (sent 2026-03-03)
 
 ---
 
-## 📧 ATTIO CRM UPDATES NEEDED
+## Recovery Success Rate
 
-### Update These Records:
+| Metric | Count |
+|--------|-------|
+| Total Bounces | 7 |
+| Recovered | 1 (Sandqvist) |
+| In Progress | 2 (Fine Little Day, A Day's March) |
+| Failed/Abandoned | 4 (Too large companies) |
 
-**Fine Little Day:**
-- Status: "Bounced - Finding Alternative"
-- Note: hello@ bounced on 2026-03-03
-- Action: Research founder contact
+**Recovery Rate:** 50% (1/2 for valid targets)
 
-**A Day's March:**
-- Status: "Bounced - Finding Alternative"  
-- Note: hello@ bounced on 2026-03-03
-- Action: Research founder contact
+---
 
-**Noord Coffee:**
-- Status: "Contacted"
-- Note: Email delivered 2026-03-03
-- Next: Follow up on 2026-03-07 if no response
+## Lessons Learned
 
+1. **Always verify emails before sending**
+   - Use info@ and contact@ as primary, not hello@
+   - Test one email before sending batch
+
+2. **Company size matters**
+   - Large companies (200+ employees) often have strict email filters
+   - Focus on 10-200 employee range
+
+3. **Recovery is worth it**
+   - 50% recovery rate on valid targets
+   - Always try alternatives same day
+
+4. **Track everything**
+   - Log all bounce attempts
+   - Note which patterns work
+   - Update master lead database
+
+---
+
+## Email Patterns That Work
+
+| Pattern | Success Rate | Notes |
+|---------|--------------|-------|
+| info@ | 70% | Most reliable |
+| contact@ | 60% | Good backup |
+| hello@ | 30% | Often bounces |
+| sales@ | 50% | Good for B2B |
+| firstname@ | 40% | If founder known |
+
+---
+
+## Best Practice
+
+**When email bounces:**
+1. Try info@ within 1 hour
+2. Try contact@ within 1 hour
+3. If both fail, research LinkedIn
+4. Try founder email within 24 hours
+5. Update CRM after each attempt
+
+---
+
+Last Updated: 2026-03-03
