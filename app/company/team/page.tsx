@@ -1,7 +1,6 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion/fade-in";
-import { Linkedin, Twitter } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,37 +8,6 @@ export const metadata: Metadata = {
   description: "Meet the team behind BrandGate. We're building the future of B2B distribution.",
   alternates: { canonical: "https://brandgate.dev/company/team" },
 };
-
-const team = [
-  {
-    name: "Albin Holmgren",
-    role: "Founder & CEO",
-    bio: "Former B2B sales lead with 10+ years in distribution. Built BrandGate to solve the problems he experienced firsthand.",
-    linkedin: "#",
-    twitter: "#",
-  },
-  {
-    name: "Sarah Chen",
-    role: "Head of Product",
-    bio: "Product veteran with experience at Shopify and Stripe. Passionate about building tools that help businesses grow.",
-    linkedin: "#",
-    twitter: "#",
-  },
-  {
-    name: "Marcus Berg",
-    role: "Lead Engineer",
-    bio: "Full-stack developer with expertise in scalable systems. Previously built platforms processing millions of orders.",
-    linkedin: "#",
-    twitter: "#",
-  },
-  {
-    name: "Emma Larsson",
-    role: "Customer Success",
-    bio: "Dedicated to helping brands succeed with B2B wholesale. Former consultant with deep industry knowledge.",
-    linkedin: "#",
-    twitter: "#",
-  },
-];
 
 const values = [
   {
@@ -78,7 +46,7 @@ export default function TeamPage() {
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-primary-foreground/50 text-lg mt-6 max-w-2xl mx-auto">
-                We're a small but mighty team building the future of B2B distribution. Based in Stockholm, serving brands worldwide.
+                We're building the future of B2B distribution. Based in Gothenburg, serving brands worldwide.
               </p>
             </FadeIn>
           </div>
@@ -99,40 +67,6 @@ export default function TeamPage() {
                   <div className="bg-card border rounded-2xl p-8 text-center">
                     <h3 className="text-xl font-bold text-foreground mb-3">{value.title}</h3>
                     <p className="text-muted-foreground">{value.description}</p>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          </div>
-        </section>
-
-        {/* Team Grid */}
-        <section className="py-20">
-          <div className="max-w-6xl mx-auto px-6">
-            <FadeIn>
-              <div className="text-center mb-16">
-                <h2 className="text-3xl font-bold text-foreground">Meet the Team</h2>
-                <p className="text-muted-foreground mt-4">The people building BrandGate</p>
-              </div>
-            </FadeIn>
-            <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {team.map((member) => (
-                <StaggerItem key={member.name}>
-                  <div className="bg-card border rounded-2xl p-6 text-center">
-                    <div className="w-24 h-24 bg-gold/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-2xl font-bold text-gold">{member.name.charAt(0)}</span>
-                    </div>
-                    <h3 className="text-lg font-bold text-foreground">{member.name}</h3>
-                    <p className="text-gold text-sm font-medium mb-3">{member.role}</p>
-                    <p className="text-muted-foreground text-sm mb-4">{member.bio}</p>
-                    <div className="flex justify-center gap-3">
-                      <a href={member.linkedin} className="text-muted-foreground hover:text-primary transition-colors">
-                        <Linkedin className="w-5 h-5" />
-                      </a>
-                      <a href={member.twitter} className="text-muted-foreground hover:text-primary transition-colors">
-                        <Twitter className="w-5 h-5" />
-                      </a>
-                    </div>
                   </div>
                 </StaggerItem>
               ))}

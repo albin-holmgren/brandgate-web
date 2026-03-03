@@ -23,27 +23,6 @@ const steps = [
   { step: "03", title: "Manage orders", desc: "Receive and process orders, generate invoices, and track everything from your central dashboard." },
 ];
 
-const testimonials = [
-  { 
-    quote: "BrandGate transformed our wholesale operations. We went from managing spreadsheets to having a professional B2B portal that our retailers love.", 
-    author: "Sarah Lindqvist",
-    role: "CEO, Nordic Apparel",
-    metric: "3x faster order processing"
-  },
-  { 
-    quote: "The batch tracking feature is a game-changer for us. We can trace any product instantly, which gives us and our retailers complete confidence.", 
-    author: "Marcus Berg",
-    role: "Operations Director, Baltic Foods",
-    metric: "100% traceability achieved"
-  },
-  { 
-    quote: "We evaluated several platforms and BrandGate was the only one that truly understood B2B wholesale. The size matrix alone saved us hours every week.", 
-    author: "Emma Chen",
-    role: "Founder, Stockholm Style Co",
-    metric: "40% reduction in errors"
-  },
-];
-
 export function HomePage() {
   return (
     <>

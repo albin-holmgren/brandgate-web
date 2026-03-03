@@ -90,14 +90,6 @@ export function Footer() {
             <p className="mt-4 text-white/60 max-w-sm">
               The all-in-one B2B distribution platform for brands. Manage distributors, orders, and scale your wholesale business.
             </p>
-            <div className="mt-6 flex gap-4">
-              <a href="https://linkedin.com" className="text-white/60 hover:text-white transition-colors">
-                LinkedIn
-              </a>
-              <a href="https://twitter.com" className="text-white/60 hover:text-white transition-colors">
-                Twitter
-              </a>
-            </div>
           </div>
 
           {/* Product */}

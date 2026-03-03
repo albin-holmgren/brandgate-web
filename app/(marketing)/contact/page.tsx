@@ -128,7 +128,7 @@ export default function ContactPage() {
                   <StaggerContainer className="space-y-6">
                     {[
                       { icon: Mail, label: "Email", value: "hello@brandgate.com", href: "mailto:hello@brandgate.com" },
-                      { icon: MapPin, label: "Office", value: "Stockholm, Sweden" },
+                      { icon: MapPin, label: "Office", value: "Gothenburg, Sweden" },
                     ].map((item) => (
                       <StaggerItem key={item.label}>
                         <div className="flex items-start gap-4">
@@ -187,12 +187,10 @@ export default function ContactPage() {
               }} />
               <div className="relative z-10 w-full h-full p-8 flex flex-col items-center justify-center text-center">
                 <MapPin className="w-12 h-12 text-gold mb-4" />
-                <p className="text-primary-foreground font-bold text-xl">Stockholm, Sweden</p>
-                <p className="text-primary-foreground/50 text-sm mt-1">Sveavägen 31, 111 34 Stockholm</p>
-                <p className="text-primary-foreground/30 text-xs mt-2">59.3366° N, 18.0731° E</p>
+                <p className="text-primary-foreground font-bold text-xl">Gothenburg, Sweden</p>
               </div>
             </div>
-            <p className="text-center text-sm text-muted-foreground mt-4">Our headquarters in Stockholm, Sweden</p>
+            <p className="text-center text-sm text-muted-foreground mt-4">Our headquarters in Gothenburg, Sweden</p>
           </ScrollReveal>
         </section>
       </main>
