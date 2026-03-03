@@ -32,10 +32,10 @@ function SimpleDashboard() {
         </div>
         <div className="space-y-2">
           <div className="bg-gray-50 p-2 rounded text-xs">
-            <span className="text-green-600">●</span> Quick setup in under 1 hour
+            <span className="text-gray-600">●</span> Quick setup in under 1 hour
           </div>
           <div className="bg-gray-50 p-2 rounded text-xs">
-            <span className="text-green-600">●</span> First 10 retailers free
+            <span className="text-gray-600">●</span> First 10 retailers free
           </div>
         </div>
       </div>
