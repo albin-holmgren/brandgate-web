@@ -174,11 +174,17 @@
 
 All companies now have **Deals** in **"Contacted"** stage in the Attio pipeline.
 
+### ⚠️ DUPLICATE CLEANUP COMPLETED
+**Issue Found:** 17 duplicate deals (34 total → 17 duplicates removed)
+**Status:** ✅ All duplicates deleted, 27 unique deals remaining
+**Prevention:** Duplicate check added to skill - always search before creating
+
 ### How It Was Done:
 1. **Identified:** Deals were in "Lead" stage (not Companies)
 2. **Updated:** 4 existing deals from "Lead" → "Contacted"
 3. **Created:** 10 new deals for companies missing them
-4. **Result:** All 12 companies now have deals in "Contacted" stage
+4. **Cleaned:** Removed 17 duplicate deals (kept best stage version)
+5. **Result:** All companies now have ONE unique deal in "Contacted" stage
 
 ### Deal Status by Company:
 
