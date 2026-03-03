@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food & Beverage Solutions - BrandGate | Wholesale for Food Brands</title>
+    <meta name="description" content="B2B wholesale distribution platform for food and beverage brands. Manage retailers, track orders, ensure compliance.">
+    
+    <!-- Mixpanel -->
+    <script src="https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"></script>
+    <script>
+        mixpanel.init("9277e80f2dc38a2e8bab577cc8f20268", { debug: false, track_pageview: true });
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GMPPJ71Y58"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-GMPPJ71Y58');
+    </script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #003822;
+            --accent: #E5A400;
+            --background: #F5F5F5;
+            --text: #1A1A1A;
+            --white: #FFFFFF;
+            --gray: #666666;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        .header {
+            background: var(--primary);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: var(--white);
+            font-size: 28px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 32px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #004d2e 100%);
+            color: var(--white);
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--text);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 22px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        .hero-cta {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--text);
+            padding: 18px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Features */
+        .features-section {
+            padding: 100px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .section-header h2 {
+            font-size: 42px;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+        
+        .section-header p {
+            font-size: 20px;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background: var(--white);
+            padding: 48px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(229, 164, 0, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin-bottom: 24px;
+        }
+        
+        .feature-card h3 {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        
+        .feature-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        /* Compliance Box */
+        .compliance-box {
+            background: rgba(0, 56, 34, 0.05);
+            border: 2px solid var(--primary);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 60px 0;
+            text-align: center;
+        }
+        
+        .compliance-box h3 {
+            color: var(--primary);
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+        
+        .compliance-box p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            text-align: center;
+            background: var(--white);
+        }
+        
+        .cta-section h2 {
+            font-size: 42px;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+        
+        .cta-section p {
+            font-size: 20px;
+            color: var(--gray);
+            margin-bottom: 40px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--text);
+            color: var(--white);
+            padding: 48px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            margin-bottom: 24px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 16px;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <a href="/" class="logo">BrandGate</a>
+            <nav class="nav-links">
+                <a href="/features">Features</a>
+                <a href="/pricing">Pricing</a>
+                <a href="/blog">Blog</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">🍽️ Food & Beverage</div>
+            <h1>Fresh Solutions for Food Brands</h1>
+            <p>B2B wholesale platform built for food and beverage brands. From artisan producers to scaling manufacturers.</p>
+            <a href="/contact" class="hero-cta">Start Free Trial</a>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Built for Food Industry Needs</h2>
+                <p>Specialized features for food and beverage wholesale</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3>Best-Before Tracking</h3>
+                    <p>Track expiry dates for every batch. Automatic alerts for products nearing expiration. Ensure food safety compliance effortlessly.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🌡️</div>
+                    <h3>Temperature Requirements</h3>
+                    <p>Flag temperature-sensitive products. Include storage instructions on every order. Keep cold chain intact.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Case & Pallet Management</h3>
+                    <p>Sell by unit, case, or pallet. Flexible quantity options for different retailer sizes. Automatic volume pricing.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🏷️</div>
+                    <h3>Batch & Lot Tracking</h3>
+                    <p>Full traceability from production to retailer. Essential for recalls and quality control. QR code integration ready.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Allergen Information</h3>
+                    <p>Display allergen data clearly on all products. Automatic inclusion on invoices and packing lists. Keep retailers informed.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Delivery Scheduling</h3>
+                    <p>Coordinate delivery dates with production. Manage lead times by product type. Keep retailers stocked without waste.</p>
+                </div>
+            </div>
+            
+            <div class="compliance-box">
+                <h3>✓ Food Safety Compliance Ready</h3>
+                <p>BrandGate helps you maintain HACCP, BRC, and other food safety standards with complete traceability and documentation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Scale Your Food Brand?</h2>
+            <p>Join food and beverage brands using BrandGate to streamline wholesale distribution.</p>
+            <a href="/contact" class="hero-cta">Book a Demo</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/features">Features</a>
+                <a href="/pricing">Pricing</a>
+                <a href="/blog">Blog</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <p>&copy; 2026 BrandGate. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

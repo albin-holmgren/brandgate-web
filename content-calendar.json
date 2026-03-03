@@ -1,0 +1,29 @@
+{
+  "published": [],
+  "scheduled": [
+    {
+      "title": "B2B Pricing Strategies That Scale",
+      "type": "guide",
+      "keywords": [
+        "b2b pricing",
+        "wholesale pricing"
+      ],
+      "scheduledDate": "2026-03-04",
+      "status": "planned",
+      "week": 9
+    },
+    {
+      "title": "Inventory Management Best Practices",
+      "type": "how-to",
+      "keywords": [
+        "inventory management",
+        "stock control"
+      ],
+      "scheduledDate": "2026-03-06",
+      "status": "planned",
+      "week": 9
+    }
+  ],
+  "ideas": [],
+  "performance": {}
+}

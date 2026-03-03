@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrations - BrandGate | Connect Your Tools</title>
+    <meta name="description" content="Connect BrandGate with Shopify, WooCommerce, Fortnox, Visma and more. Streamline your B2B wholesale workflow.">
+    
+    <!-- Mixpanel -->
+    <script src="https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"></script>
+    <script>
+        mixpanel.init("9277e80f2dc38a2e8bab577cc8f20268", { debug: false, track_pageview: true });
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GMPPJ71Y58"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-GMPPJ71Y58');
+    </script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #003822;
+            --accent: #E5A400;
+            --background: #F5F5F5;
+            --text: #1A1A1A;
+            --white: #FFFFFF;
+            --gray: #666666;
+            --light-bg: #f8f9fa;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        .header {
+            background: var(--primary);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: var(--white);
+            font-size: 28px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 32px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        
+        /* Hero */
+        .hero {
+            background: var(--primary);
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 22px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Section */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+        
+        .section-title h2 {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+        
+        .section-title p {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Integration Cards */
+        .integrations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+        
+        .integration-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .integration-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+        
+        .integration-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+        
+        .integration-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--light-bg);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+        
+        .integration-title h3 {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+        
+        .integration-title span {
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        .integration-features {
+            list-style: none;
+            margin: 0 0 24px;
+        }
+        
+        .integration-features li {
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+            color: var(--gray);
+        }
+        
+        .integration-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .integration-cta {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+        }
+        
+        .integration-cta::after {
+            content: " →";
+            transition: transform 0.2s;
+        }
+        
+        .integration-cta:hover::after {
+            margin-left: 4px;
+        }
+        
+        /* Category Headers */
+        .category-header {
+            margin: 64px 0 32px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .category-header h3 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+        
+        .cta-section p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--text);
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--text);
+            color: var(--white);
+            padding: 48px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            margin-bottom: 24px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 16px;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+            
+            .integrations-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <a href="/" class="logo">BrandGate</a>
+            <nav class="nav-links">
+                <a href="/features">Features</a>
+                <a href="/pricing">Pricing</a>
+                <a href="/blog">Blog</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Integrations</h1>
+            <p>Connect BrandGate with your favorite tools. Seamless workflows, automated data sync, and powerful APIs.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>E-commerce Platforms</h2>
+                <p>Sync your online store with your wholesale operations</p>
+            </div>
+            
+            <div class="integrations-grid">
+                <div class="integration-card">
+                    <div class="integration-header">
+                        <div class="integration-icon">🛒</div>
+                        <div class="integration-title">
+                            <h3>Shopify</h3>
+                            <span>POPULAR</span>
+                        </div>
+                    </div>
+                    <ul class="integration-features">
+                        <li>Sync products and inventory</li>
+                        <li>Automated order import</li>
+                        <li>Unified product catalog</li>
+                        <li>Real-time stock updates</li>
+                    </ul>
+                    <a href="/contact" class="integration-cta">Learn more</a>
+                </div>
+                
+                <div class="integration-card">
+                    <div class="integration-header">
+                        <div class="integration-icon">🛍️</div>
+                        <div class="integration-title">
+                            <h3>WooCommerce</h3>
+                            <span>WORDPRESS</span>
+                        </div>
+                    </div>
+                    <ul class="integration-features">
+                        <li>WordPress plugin available</li>
+                        <li>Two-way product sync</li>
+                        <li>Customer data integration</li>
+                        <li>Automated fulfillment</li>
+                    </ul>
+                    <a href="/contact" class="integration-cta">Learn more</a>
+                </div>
+            </div>
+            
+            <div class="category-header">
+                <h3>Accounting & ERP</h3>
+            </div>
+            
+            <div class="integrations-grid">
+                <div class="integration-card">
+                    <div class="integration-header">
+                        <div class="integration-icon">📊</div>
+                        <div class="integration-title">
+                            <h3>Fortnox</h3>
+                            <span>SWEDEN</span>
+                        </div>
+                    </div>
+                    <ul class="integration-features">
+                        <li>Automatic invoice creation</li>
+                        <li>Customer sync</li>
+                        <li>Payment tracking</li>
+                        <li>Swedish accounting standards</li>
+                    </ul>
+                    <a href="/contact" class="integration-cta">Learn more</a>
+                </div>
+                
+                <div class="integration-card">
+                    <div class="integration-header">
+                        <div class="integration-icon">📈</div>
+                        <div class="integration-title">
+                            <h3>Visma</h3>
+                            <span>NORDICS</span>
+                        </div>
+                    </div>
+                    <ul class="integration-features">
+                        <li>Enterprise ERP integration</li>
+                        <li>Advanced reporting</li>
+                        <li>Multi-company support</li>
+                        <li>Automated bookkeeping</li>
+                    </ul>
+                    <a href="/contact" class="integration-cta">Learn more</a>
+                </div>
+            </div>
+            
+            <div class="category-header">
+                <h3>Shipping & Logistics</h3>
+            </div>
+            
+            <div class="integrations-grid">
+                <div class="integration-card">
+                    <div class="integration-header">
+                        <div class="integration-icon">🚚</div>
+                        <div class="integration-title">
+                            <h3>Shipmondo</h3>
+                            <span>SHIPPING</span>
+                        </div>
+                    </div>
+                    <ul class="integration-features">
+                        <li>Multi-carrier shipping</li>
+                        <li>Automatic label printing</li>
+                        <li>Tracking integration</li>
+                        <li>Rate shopping</li>
+                    </ul>
+                    <a href="/contact" class="integration-cta">Learn more</a>
+                </div>
+                
+                <div class="integration-card">
+                    <div class="integration-header">
+                        <div class="integration-icon">📦</div>
+                        <div class="integration-title">
+                            <h3>nShift</h3>
+                            <span>LOGISTICS</span>
+                        </div>
+                    </div>
+                    <ul class="integration-features">
+                        <li>Delivery management</li>
+                        <li>Returns handling</li>
+                        <li>International shipping</li>
+                        <li>Customs documentation</li>
+                    </ul>
+                    <a href="/contact" class="integration-cta">Learn more</a>
+                </div>
+            </div>
+            
+            <div class="category-header">
+                <h3>Custom Development</h3>
+            </div>
+            
+            <div class="integration-card" style="max-width: 600px; margin: 0 auto;">
+                <div class="integration-header">
+                    <div class="integration-icon">⚡</div>
+                    <div class="integration-title">
+                        <h3>BrandGate API</h3>
+                        <span>DEVELOPERS</span>
+                    </div>
+                </div>
+                <ul class="integration-features">
+                    <li>RESTful API with comprehensive documentation</li>
+                    <li>Webhooks for real-time updates</li>
+                    <li>SDKs for popular languages</li>
+                    <li>Dedicated developer support</li>
+                </ul>
+                <a href="/contact" class="integration-cta">View API Docs</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Need a Custom Integration?</h2>
+            <p>Our API and development team can connect BrandGate with any system you use.</p>
+            <a href="/contact" class="cta-button">Contact Us</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/features">Features</a>
+                <a href="/pricing">Pricing</a>
+                <a href="/blog">Blog</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <p>&copy; 2026 BrandGate. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

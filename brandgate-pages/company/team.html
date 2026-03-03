@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - BrandGate | Meet the People Behind the Platform</title>
+    <meta name="description" content="Meet the team behind BrandGate. We're building the future of B2B wholesale distribution.">
+    
+    <!-- Mixpanel -->
+    <script src="https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"></script>
+    <script>
+        mixpanel.init("9277e80f2dc38a2e8bab577cc8f20268", { debug: false, track_pageview: true });
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GMPPJ71Y58"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-GMPPJ71Y58');
+    </script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #003822;
+            --accent: #E5A400;
+            --background: #F5F5F5;
+            --text: #1A1A1A;
+            --white: #FFFFFF;
+            --gray: #666666;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        .header {
+            background: var(--primary);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: var(--white);
+            font-size: 28px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 32px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        
+        /* Hero */
+        .hero {
+            background: var(--primary);
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 22px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Mission */
+        .mission-section {
+            padding: 80px 0;
+            text-align: center;
+            background: var(--white);
+            margin: 60px auto;
+            border-radius: 16px;
+        }
+        
+        .mission-section h2 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 24px;
+        }
+        
+        .mission-section p {
+            font-size: 20px;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        /* Team Section */
+        .team-section {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+        
+        .section-header h2 {
+            font-size: 42px;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+        
+        .section-header p {
+            font-size: 18px;
+            color: var(--gray);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .team-member {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-4px);
+        }
+        
+        .member-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--primary), #004d2e);
+            border-radius: 50%;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--white);
+        }
+        
+        .team-member h3 {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        
+        .team-member .role {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        
+        .team-member p {
+            color: var(--gray);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        /* Values */
+        .values-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 32px;
+        }
+        
+        .value-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        
+        .value-card h3 {
+            color: var(--primary);
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+        
+        .value-card p {
+            color: var(--gray);
+            font-size: 15px;
+        }
+        
+        /* Join Us */
+        .join-section {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary) 0%, #004d2e 100%);
+            color: var(--white);
+            margin-top: 60px;
+        }
+        
+        .join-section h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .join-section p {
+            font-size: 20px;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .join-cta {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--text);
+            padding: 18px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--text);
+            color: var(--white);
+            padding: 48px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            margin-bottom: 24px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 16px;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <a href="/" class="logo">BrandGate</a>
+            <nav class="nav-links">
+                <a href="/features">Features</a>
+                <a href="/pricing">Pricing</a>
+                <a href="/blog">Blog</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Meet Our Team</h1>
+            <p>We're a passionate group of people building the future of B2B wholesale distribution from Stockholm, Sweden.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="mission-section">
+            <h2>Our Mission</h2>
+            <p>We believe that growing brands deserve better tools for managing wholesale distribution. Our mission is to make B2B commerce as easy as B2C, helping brands scale their retailer relationships efficiently and professionally.</p>
+        </section>
+
+        <section class="team-section">
+            <div class="section-header">
+                <h2>The People Behind BrandGate</h2>
+                <p>A small but mighty team dedicated to your success</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">👨‍💼</div>
+                    <h3>Albin Holmgren</h3>
+                    <div class="role">Founder & CEO</div>
+                    <p>Former wholesale operations manager who experienced the pain of managing retailers with spreadsheets. Started BrandGate to solve this problem for growing brands.</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-avatar">🤖</div>
+                    <h3>Will</h3>
+                    <div class="role">AI Operations</div>
+                    <p>BrandGate's AI assistant handling outreach, content, and continuous improvements. Working 24/7 to help the team scale efficiently.</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-avatar">👥</div>
+                    <h3>You?</h3>
+                    <div class="role">Join Us</div>
+                    <p>We're always looking for talented people who care about helping brands grow. Check out our open positions below.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Values</h2>
+                <p>The principles that guide everything we do</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Customer Obsessed</h3>
+                    <p>We exist to make our customers successful. Every feature, every decision starts with customer needs.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">⚡</div>
+                    <h3>Move Fast</h3>
+                    <p>Speed matters in business. We ship improvements daily and iterate based on feedback.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🔒</div>
+                    <h3>Trust & Transparency</h3>
+                    <p>We're honest about what we can and can't do. No hidden fees, no surprises.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🌍</div>
+                    <h3>Think Global</h3>
+                    <p>Starting in Sweden but thinking globally. Built for brands that want to expand internationally.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="join-section">
+        <div class="container">
+            <h2>Join Our Team</h2>
+            <p>We're always looking for talented people who want to help brands grow. Come build the future of B2B commerce with us.</p>
+            <a href="mailto:team@brandgate.dev?subject=Career Opportunity" class="join-cta">View Open Positions</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/features">Features</a>
+                <a href="/pricing">Pricing</a>
+                <a href="/blog">Blog</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <p>&copy; 2026 BrandGate. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

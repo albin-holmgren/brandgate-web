@@ -1,0 +1,15 @@
+{
+  "days": [
+    {
+      "date": "2026-03-01",
+      "emailsSent": 5,
+      "responsesReceived": 0,
+      "positiveResponses": 0,
+      "questions": 0,
+      "negativeResponses": 0,
+      "cumulativeSent": 5,
+      "cumulativeResponses": 0,
+      "responseRate": "0.0"
+    }
+  ]
+}

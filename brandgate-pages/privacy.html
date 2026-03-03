@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - BrandGate | GDPR Compliant</title>
+    <meta name="description" content="Privacy Policy for BrandGate B2B Distribution Platform. GDPR compliant data handling.">
+    
+    <!-- Mixpanel -->
+    <script src="https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"></script>
+    <script>
+        mixpanel.init("9277e80f2dc38a2e8bab577cc8f20268", { debug: false, track_pageview: true });
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GMPPJ71Y58"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-GMPPJ71Y58');
+    </script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #003822;
+            --accent: #E5A400;
+            --background: #F5F5F5;
+            --text: #1A1A1A;
+            --white: #FFFFFF;
+            --gray: #666666;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        .header {
+            background: var(--primary);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: var(--white);
+            font-size: 28px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 32px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        
+        /* Hero */
+        .hero {
+            background: var(--primary);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+        
+        .gdpr-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--text);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 16px;
+        }
+        
+        /* Content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .content {
+            background: var(--white);
+            padding: 64px;
+            margin: 48px auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .content h2 {
+            color: var(--primary);
+            font-size: 28px;
+            margin: 48px 0 24px;
+            font-weight: 600;
+        }
+        
+        .content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .content h3 {
+            color: var(--primary);
+            font-size: 20px;
+            margin: 32px 0 16px;
+            font-weight: 600;
+        }
+        
+        .content p {
+            margin-bottom: 16px;
+            font-size: 16px;
+            color: var(--text);
+        }
+        
+        .content ul {
+            margin: 16px 0 16px 32px;
+        }
+        
+        .content li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight-box {
+            background: rgba(229, 164, 0, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 24px;
+            margin: 24px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        
+        .right-item {
+            background: var(--background);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .right-item h4 {
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        .right-item p {
+            font-size: 14px;
+            margin: 0;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--text);
+            color: var(--white);
+            padding: 48px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            margin-bottom: 24px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 16px;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .content {
+                padding: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <a href="/" class="logo">BrandGate</a>
+            <nav class="nav-links">
+                <a href="/features">Features</a>
+                <a href="/pricing">Pricing</a>
+                <a href="/blog">Blog</a>
+                <a href="/contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p>Your data is safe with us. GDPR compliant.</p>
+            <div class="gdpr-badge">✓ GDPR Compliant</div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="content">
+            <h2>1. Introduction</h2>
+            <p>At BrandGate, we take your privacy seriously. This Privacy Policy explains how we collect, use, store, and protect your personal data when you use our B2B distribution platform. We are committed to compliance with the General Data Protection Regulation (GDPR) and other applicable privacy laws.</p>
+            
+            <div class="highlight-box">
+                <strong>Data Controller:</strong> BrandGate AB, Stockholm, Sweden<br>
+                <strong>Contact:</strong> team@brandgate.dev<br>
+                <strong>DPO:</strong> privacy@brandgate.dev
+            </div>
+
+            <h2>2. What Data We Collect</h2>
+            <h3>2.1 Account Information</h3>
+            <ul>
+                <li>Name and email address</li>
+                <li>Company name and business details</li>
+                <li>Billing information</li>
+                <li>Login credentials (encrypted)</li>
+            </ul>
+
+            <h3>2.2 Usage Data</h3>
+            <ul>
+                <li>Platform usage statistics</li>
+                <li>Order and transaction data</li>
+                <li>Feature usage patterns</li>
+                <li>Log files and analytics</li>
+            </ul>
+
+            <h3>2.3 Customer Data (Retailer Information)</h3>
+            <p>If you import retailer data into BrandGate, we process this data on your behalf as a data processor. You remain the data controller for this information.</p>
+
+            <h2>3. How We Use Your Data</h2>
+            <ul>
+                <li><strong>Service Provision:</strong> To provide and maintain the BrandGate platform</li>
+                <li><strong>Communication:</strong> To send service updates, security alerts, and support messages</li>
+                <li><strong>Improvement:</strong> To analyze usage and improve our services</li>
+                <li><strong>Legal Compliance:</strong> To comply with legal obligations</li>
+                <li><strong>Security:</strong> To protect against fraud and unauthorized access</li>
+            </ul>
+
+            <h2>4. Legal Basis for Processing (GDPR)</h2>
+            <p>We process your data based on:</p>
+            <ul>
+                <li><strong>Contract:</strong> Processing necessary to fulfill our service agreement</li>
+                <li><strong>Consent:</strong> Where you have given explicit consent</li>
+                <li><strong>Legitimate Interest:</strong> For service improvement and security</li>
+                <li><strong>Legal Obligation:</strong> To comply with applicable laws</li>
+            </ul>
+
+            <h2>5. Your Rights Under GDPR</h2>
+            <div class="rights-grid">
+                <div class="right-item">
+                    <h4>📁 Right to Access</h4>
+                    <p>Request a copy of your personal data</p>
+                </div>
+                <div class="right-item">
+                    <h4>✏️ Right to Rectification</h4>
+                    <p>Request correction of inaccurate data</p>
+                </div>
+                <div class="right-item">
+                    <h4>🗑️ Right to Erasure</h4>
+                    <p>Request deletion of your data</p>
+                </div>
+                <div class="right-item">
+                    <h4>🚫 Right to Restrict</h4>
+                    <p>Limit how we process your data</p>
+                </div>
+                <div class="right-item">
+                    <h4>📤 Right to Portability</h4>
+                    <p>Receive data in portable format</p>
+                </div>
+                <div class="right-item">
+                    <h4>❌ Right to Object</h4>
+                    <p>Object to certain processing</p>
+                </div>
+            </div>
+
+            <h2>6. Data Security</h2>
+            <p>We implement appropriate technical and organizational measures to protect your data:</p>
+            <ul>
+                <li>Encryption in transit (TLS 1.3) and at rest (AES-256)</li>
+                <li>Regular security audits and penetration testing</li>
+                <li>Access controls and authentication</li>
+                <li>Employee training on data protection</li>
+                <li>Incident response procedures</li>
+            </ul>
+
+            <h2>7. Data Retention</h2>
+            <p>We retain your data:</p>
+            <ul>
+                <li>For the duration of your active subscription</li>
+                <li>After cancellation: 30 days (unless legally required longer)</li>
+                <li>Accounting records: 7 years (Swedish legal requirement)</li>
+            </ul>
+
+            <h2>8. Third-Party Processors</h2>
+            <p>We use trusted third-party services:</p>
+            <ul>
+                <li>Stripe (payment processing)</li>
+                <li>AWS (cloud infrastructure)</li>
+                <li>Mixpanel (analytics)</li>
+                <li>SendGrid (email delivery)</li>
+            </ul>
+            <p>All processors are GDPR-compliant with appropriate Data Processing Agreements.</p>
+
+            <h2>9. International Transfers</h2>
+            <p>Your data is primarily stored within the EU. When necessary, we use Standard Contractual Clauses (SCCs) for any international data transfers.</p>
+
+            <h2>10. Cookies and Tracking</h2>
+            <p>We use:</p>
+            <ul>
+                <li><strong>Essential cookies:</strong> Required for platform functionality</li>
+                <li><strong>Analytics cookies:</strong> To understand usage (with consent)</li>
+                <li><strong>Preference cookies:</strong> To remember your settings</li>
+            </ul>
+
+            <h2>11. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy periodically. We will notify you of significant changes via email or platform notifications.</p>
+
+            <h2>12. Contact Us</h2>
+            <p>For privacy-related questions or to exercise your rights:</p>
+            <p><strong>Email:</strong> privacy@brandgate.dev<br>
+            <strong>Postal:</strong> BrandGate AB, Att: Data Protection Officer, Stockholm, Sweden<br>
+            <strong>Response Time:</strong> Within 30 days (as required by GDPR)</p>
+
+            <h2>13. Complaints</h2>
+            <p>If you believe we have not handled your data correctly, you have the right to lodge a complaint with the Swedish Authority for Privacy Protection (IMY).</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/features">Features</a>
+                <a href="/pricing">Pricing</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <p>&copy; 2026 BrandGate. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

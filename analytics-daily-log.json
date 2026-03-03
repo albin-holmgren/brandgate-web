@@ -1,0 +1,52 @@
+[
+  {
+    "date": "2026-03-02",
+    "timestamp": "2026-03-02T09:30:11.921Z",
+    "website": {
+      "status": 200,
+      "ok": true,
+      "loadTime": 856,
+      "headers": {
+        "server": "Vercel",
+        "cache": "HIT"
+      }
+    },
+    "pages": [
+      {
+        "name": "Homepage",
+        "path": "/",
+        "status": 200,
+        "ok": true,
+        "loadTime": 87
+      },
+      {
+        "name": "Blog Index",
+        "path": "/blog",
+        "status": 200,
+        "ok": true,
+        "loadTime": 19
+      },
+      {
+        "name": "ROI Calculator",
+        "path": "/tools/distribution-roi-calculator",
+        "status": 200,
+        "ok": true,
+        "loadTime": 29
+      },
+      {
+        "name": "Featured Blog Post",
+        "path": "/blog/b2b-distribution-guide/",
+        "status": 200,
+        "ok": true,
+        "loadTime": 27
+      }
+    ],
+    "vercel": {
+      "status": "ok",
+      "lastDeployment": "unknown",
+      "productionReady": true
+    },
+    "issues": [],
+    "status": "healthy"
+  }
+]

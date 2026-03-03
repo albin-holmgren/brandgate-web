@@ -1,0 +1,57 @@
+[
+  {
+    "date": "2026-03-02",
+    "timestamp": "2026-03-02T08:00:08.861Z",
+    "sitemap": {
+      "status": 200,
+      "ok": true,
+      "size": "877"
+    },
+    "robots": {
+      "status": 200,
+      "ok": true,
+      "hasSitemap": true,
+      "allowsAll": true
+    },
+    "vitals": {
+      "homepageLoadTime": 753,
+      "status": 200,
+      "ok": true
+    },
+    "blogPosts": [
+      {
+        "url": "/blog/b2b-distribution-guide/",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "/blog/choose-b2b-ecommerce-platform/",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "/blog/sweden-b2b-distribution-guide/",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "/blog/b2b-pricing-strategies/",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "/blog/inventory-management-distributors/",
+        "status": 200,
+        "ok": true
+      },
+      {
+        "url": "/blog/find-distributors-europe/",
+        "status": 200,
+        "ok": true
+      }
+    ],
+    "issues": [],
+    "warnings": [],
+    "status": "healthy"
+  }
+]

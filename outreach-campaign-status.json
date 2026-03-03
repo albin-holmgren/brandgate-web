@@ -1,0 +1,65 @@
+{
+  "sent": [
+    {
+      "timestamp": "2026-03-01T14:56:06.789Z",
+      "batch": 1,
+      "name": "Viktor Tell",
+      "company": "Happy Socks",
+      "email": "viktor@happysocks.com",
+      "role": "Co-Founder",
+      "score": 92,
+      "subject": "Streamlining Happy Socks' Global Wholesale Operations",
+      "messageId": "19ca9e64774b24d9",
+      "status": "sent"
+    },
+    {
+      "timestamp": "2026-03-01T14:57:51.032Z",
+      "batch": 1,
+      "name": "Mikael Söderlindh",
+      "company": "Happy Socks",
+      "email": "mikael@happysocks.com",
+      "role": "CEO",
+      "score": 92,
+      "subject": "Scaling Happy Socks B2B Distribution Efficiently",
+      "messageId": "19ca9e778df84c8e",
+      "status": "sent"
+    },
+    {
+      "timestamp": "2026-03-01T14:57:51.032Z",
+      "batch": 1,
+      "name": "Anders Eriksson",
+      "company": "NetOnNet",
+      "email": "anders@netonnet.se",
+      "role": "CEO",
+      "score": 90,
+      "subject": "Optimizing NetOnNet B2B Corporate Sales",
+      "messageId": "19ca9e785649c398",
+      "status": "sent"
+    },
+    {
+      "timestamp": "2026-03-01T14:57:51.032Z",
+      "batch": 1,
+      "name": "Niklas Carlsson",
+      "company": "Outnorth",
+      "email": "niklas@outnorth.com",
+      "role": "CEO",
+      "score": 89,
+      "subject": "Supporting Outnorth B2B Growth in Outdoor Retail",
+      "messageId": "19ca9e792e5fceff",
+      "status": "sent"
+    },
+    {
+      "timestamp": "2026-03-01T14:57:51.032Z",
+      "batch": 1,
+      "name": "Anton Sandqvist",
+      "company": "Sandqvist",
+      "email": "anton@sandqvist.net",
+      "role": "Founder",
+      "score": 88,
+      "subject": "Growing Sandqvist International B2B Presence",
+      "messageId": "19ca9e79f6462ed4",
+      "status": "sent"
+    }
+  ],
+  "startedAt": "2026-03-01T14:48:15.770Z"
+}
