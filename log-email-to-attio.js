@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Log email interaction to Attio CRM
-// Updates both Deal (stage) and Company (description)
+// Log email interaction to Attio CRM - Saves to DEALS (conversation_notes field)
+// AND Companies (description field) for complete history
 
 const ATTIO_TOKEN = '8f79f663efe9dbd2d59e51810690358c9529b1f0beb229ea857ea715945931cb';
 const ATTIO_BASE = 'https://api.attio.com/v2';
@@ -115,29 +115,59 @@ async function main() {
       logEntry = `${date} ${time} UTC [${type.toUpperCase()}] ${email}`;
   }
   
-  // Update Deal stage
-  if (deal && newStage) {
-    console.log(`Updating deal stage to: ${newStage}...`);
-    await attioRequest(`/objects/deals/records/${deal.id.record_id}`, 'PUT', {
-      data: { values: { stage: [{ status: newStage }] } }
-    });
-    console.log('✅ Deal stage updated');
+  // ==========================================
+  // PRIMARY: Update DEAL conversation_notes
+  // ==========================================
+  if (deal) {
+    console.log('Updating DEAL conversation history...');
+    
+    // Get current conversation_notes
+    const dealResult = await attioRequest(`/objects/deals/records/${deal.id.record_id}`);
+    const currentNotes = dealResult.data?.values?.conversation_notes?.[0]?.value || '';
+    
+    // Append new entry
+    const newNotes = currentNotes ? `${currentNotes}\n${logEntry}` : logEntry;
+    
+    const updateData = {
+      data: {
+        values: {
+          conversation_notes: [{ value: newNotes }]
+        }
+      }
+    };
+    
+    // Also update stage if needed
+    if (newStage) {
+      updateData.data.values.stage = [{ status: newStage }];
+      console.log(`   Stage update: → ${newStage}`);
+    }
+    
+    const result = await attioRequest(`/objects/deals/records/${deal.id.record_id}`, 'PUT', updateData);
+    
+    if (result.error) {
+      console.log(`  ❌ Failed to update deal:`, result.error.message || result.error);
+    } else {
+      console.log('  ✅ Deal conversation saved');
+    }
   }
   
-  // Update Company description (for conversation history)
+  // ==========================================
+  // SECONDARY: Update Company description
+  // ==========================================
   if (companyRecord) {
-    console.log('Updating company conversation history...');
+    console.log('Updating COMPANY description (backup)...');
     const currentDesc = companyRecord.values?.description?.[0]?.value || '';
     const newDesc = currentDesc ? `${currentDesc}\n${logEntry}` : logEntry;
     
     await attioRequest(`/objects/companies/records/${companyRecord.id.record_id}`, 'PUT', {
       data: { values: { description: [{ value: newDesc }] } }
     });
-    console.log('✅ Company conversation logged');
+    console.log('  ✅ Company description saved');
   }
   
   console.log('\n🎉 Email interaction saved!');
   console.log(`   Log: ${logEntry.substring(0, 70)}...`);
+  if (newStage) console.log(`   Stage: ${newStage}`);
 }
 
 main().catch(console.error);

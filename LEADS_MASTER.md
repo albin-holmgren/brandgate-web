@@ -179,6 +179,12 @@ All companies now have **Deals** in **"Contacted"** stage in the Attio pipeline.
 **Status:** ✅ All duplicates deleted, 27 unique deals remaining
 **Prevention:** Duplicate check added to skill - always search before creating
 
+### 📧 EMAIL CONVERSATION TRACKING SETUP
+**Location:** Deal `conversation_notes` field (custom field created)
+**Backup:** Company `description` field
+**Status:** ✅ Email logging script working, saves to BOTH Deal and Company
+**Script:** `log-email-to-attio.js`
+
 ### How It Was Done:
 1. **Identified:** Deals were in "Lead" stage (not Companies)
 2. **Updated:** 4 existing deals from "Lead" → "Contacted"
