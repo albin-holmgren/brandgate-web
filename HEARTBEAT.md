@@ -2,31 +2,46 @@
 
 ## Morning Daily Report (8:00 AM)
 
-### 🌐 Daily Website Improvements (5 Items)
-**Skill:** `/app/skills/daily-improvements/SKILL.md`
+### 📝 Daily SEO Article (Priority #1)
+**Skill:** `/app/skills/content-marketing/SKILL.md`
 
-Each day, implement 5 improvements to the website:
-1. Select from: SEO, Performance, UX, Content, Conversion, Design
-2. Implement changes
-3. Test (mobile, console errors, responsive)
-4. Commit with message: "Daily improvement: [description]"
-5. Push and verify deployment
-6. Update DAILY_IMPROVEMENTS.md
+**Publish 1 SEO article every day (30/month)**
 
-**Categories to rotate through:**
-- Monday: SEO & Performance
-- Tuesday: UX & Accessibility  
-- Wednesday: Content & Pages
-- Thursday: Conversion & CTAs
-- Friday: Design & Polish
+**Why Content Over General Improvements?**
+- ✅ Drives organic traffic long-term
+- ✅ Builds authority in B2B space
+- ✅ Generates leads passively
+- ✅ Compounds value over time
 
-**Verification Checklist:**
-- [ ] Changes committed to Git
-- [ ] Successfully deployed to Vercel
-- [ ] All pages return 200 status
-- [ ] Mobile responsive tested
-- [ ] No console errors
-- [ ] DAILY_IMPROVEMENTS.md updated
+**Daily Content Tasks:**
+1. **9:00 AM** - Research target keyword, check competition
+2. **10:00 AM** - Write 1,500+ word article with SEO structure
+3. **11:00 AM** - Add meta description, internal links, CTA
+4. **2:00 PM** - Create Swedish translation
+5. **3:00 PM** - Update sitemap, submit to Google Search Console
+6. **4:00 PM** - Share on LinkedIn
+
+**Article Checklist:**
+- [ ] Target keyword in title and H1
+- [ ] Keyword in first paragraph
+- [ ] 1,500+ words
+- [ ] H2/H3 structure
+- [ ] Meta description (150-160 chars)
+- [ ] 3-5 internal links to other articles
+- [ ] CTA to BrandGate
+- [ ] Swedish translation created (/sv/)
+- [ ] Updated sitemap.xml
+- [ ] Submitted to Google Search Console
+- [ ] Shared on LinkedIn
+- [ ] Logged in DAILY_IMPROVEMENTS.md
+
+**Content Calendar:**
+- **Week 1:** Educational/How-To articles
+- **Week 2:** Industry-specific content
+- **Week 3:** Comparison/Review articles
+- **Week 4:** Trends/Case studies
+
+See full strategy: `SEO_CONTENT_STRATEGY.md`
 
 ### 📊 Metrics Check
 - [ ] Mixpanel: Check overnight trial signups, activation rates, alerts
