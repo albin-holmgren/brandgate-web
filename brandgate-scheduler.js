@@ -15,36 +15,25 @@ const PID_FILE = '/tmp/brandgate-scheduler.pid';
 const SCHEDULE = {
   // Daily tasks (UTC)
   daily: [
-    { time: '08:00', name: 'SEO Daily Check', script: 'seo-daily-check.js' },
-    { time: '09:00', name: 'Morning Inbox Check', script: 'check-morning-inbox.js' },
+    { time: '08:00', name: 'Morning Daily Report', script: 'morning-daily-report.js' },
     { time: '09:15', name: 'CRM Daily Review', script: 'crm-daily-review.js' },
-    { time: '09:30', name: 'Analytics Check', script: 'analytics-daily-check.js' },
     { time: '10:00', name: 'Technical Health Check', script: 'technical-daily-check.js' },
     { time: '12:00', name: 'Lead Research', script: 'daily-lead-research.js' },
-    { time: '12:30', name: 'Content Calendar', script: 'content-calendar.js' },
     { time: '13:00', name: 'LinkedIn Daily Post', script: 'linkedin-daily.js' },
     { time: '15:00', name: 'Send Outreach Emails', script: 'send-daily-outreach.js' },
-    { time: '16:30', name: 'CRM Evening Update', script: 'crm-evening-update.js' },
-    { time: '17:00', name: 'Daily Report', script: 'generate-daily-report.js' }
+    { time: '17:00', name: 'Master Weekly Report', script: 'generate-master-weekly-report.js' }
   ],
-  
+
   // Weekly tasks (day of week 0-6, 0=Sunday, time)
   weekly: [
-    { day: 1, time: '09:00', name: 'Weekly Planning', script: 'weekly-planning.js' },
-    { day: 1, time: '10:00', name: 'SEO Weekly Report', script: 'seo-weekly-report.js' },
-    { day: 1, time: '11:00', name: 'Analytics Weekly Review', script: 'analytics-weekly-report.js' },
-    { day: 3, time: '15:00', name: 'Send Follow-ups', script: 'send-followups.js' },
-    { day: 5, time: '15:00', name: 'CRM Pipeline Review', script: 'crm-pipeline-review.js' },
-    { day: 5, time: '16:00', name: 'Weekly Outreach Report', script: 'generate-weekly-report.js' },
-    { day: 5, time: '17:00', name: 'Master Weekly Report', script: 'generate-master-weekly-report.js' },
-    { day: 5, time: '18:00', name: 'Pipeline Cleanup', script: 'pipeline-cleanup.js' }
+    { day: 1, time: '09:00', name: 'Weekly Planning', script: 'asana-task-checker.js' },
+    { day: 3, time: '15:00', name: 'Website Daily Audit', script: 'website-daily-audit.js' },
+    { day: 5, time: '17:00', name: 'Master Weekly Report', script: 'generate-master-weekly-report.js' }
   ],
-  
+
   // Monthly tasks (day of month)
   monthly: [
-    { day: 1, time: '10:00', name: 'Content Monthly Audit', script: 'content-monthly-audit.js' },
-    { day: 1, time: '11:00', name: 'Analytics Monthly Report', script: 'analytics-monthly-report.js' },
-    { day: 1, time: '14:00', name: 'SEO Monthly Review', script: 'seo-monthly-review.js' }
+    { day: 1, time: '10:00', name: 'Daily Improvement Report', script: 'daily-improvement-report.js' }
   ],
   
   // Continuous tasks (interval in minutes, only during business hours)
