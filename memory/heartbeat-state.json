@@ -1,0 +1,19 @@
+{
+  "lastChecks": {
+    "morning_report": 1741072080,
+    "website": 1741072080,
+    "scheduler": 1741072080,
+    "git_status": 1741072080
+  },
+  "dailyTargets": {
+    "outreach_emails": 16,
+    "outreach_target": 20,
+    "website_improvements": 0,
+    "website_target": 5
+  },
+  "scheduledTasks": {
+    "content_publish": "2026-03-04T12:00:00Z",
+    "outreach_send": "2026-03-04T15:00:00Z",
+    "evening_report": "2026-03-04T17:00:00Z"
+  }
+}
