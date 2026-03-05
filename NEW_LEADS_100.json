@@ -737,24 +737,4 @@
       "email": "info@busnel.se"
     }
   ]
-},
-  { "name": "Sudio", "category": "Electronics", "employees": "50-100", "website": "sudio.com", "email": "info@sudio.com" },
-  { "name": "Marshall Headphones", "category": "Electronics", "employees": "100-200", "website": "marshallheadphones.com", "email": "info@marshallheadphones.com" },
-  { "name": "Malmö Chokladfabrik", "category": "Food", "employees": "20-50", "website": "malmochokladfabrik.se", "email": "info@malmochokladfabrik.se" },
-  { "name": "Pärlans Konfektyr", "category": "Food", "employees": "20-50", "website": "parlans.se", "email": "info@parlans.se" },
-  { "name": "Lakritsfabriken", "category": "Food", "employees": "20-50", "website": "lakritsfabriken.se", "email": "info@lakritsfabriken.se" },
-  { "name": "Löfbergs", "category": "Coffee", "employees": "200-500", "website": "lofbergs.se", "email": "info@lofbergs.se" },
-  { "name": "Zoégas", "category": "Coffee", "employees": "100-200", "website": "zoegas.se", "email": "info@zoegas.se" },
-  { "name": "Arvid Nordquist", "category": "Coffee", "employees": "100-200", "website": "arvidnordquist.se", "email": "info@arvidnordquist.se" },
-  { "name": "Garant", "category": "Food", "employees": "200-500", "website": "garant.se", "email": "info@garant.se" },
-  { "name": "ICA Selection", "category": "Food", "employees": "500+", "website": "ica.se", "email": "info@ica.se" },
-  { "name": "Kungliga Myntet", "category": "Home", "employees": "20-50", "website": "kungligamyntet.se", "email": "info@kungligamyntet.se" },
-  { "name": "Svenskt Tenn", "category": "Home", "employees": "50-100", "website": "svenskttenn.se", "email": "info@svenskttenn.se" },
-  { "name": "Design House Stockholm", "category": "Home", "employees": "50-100", "website": "designhousestockholm.com", "email": "info@designhousestockholm.com" },
-  { "name": "Kosta Boda", "category": "Home", "employees": "200-500", "website": "kostaboda.se", "email": "info@kostaboda.se" },
-  { "name": "Orrefors", "category": "Home", "employees": "200-500", "website": "orrefors.se", "email": "info@orrefors.se" },
-  { "name": "Målerås Glasbruk", "category": "Home", "employees": "100-200", "website": "maleras.se", "email": "info@maleras.se" },
-  { "name": "Höganäs Keramik", "category": "Home", "employees": "100-200", "website": "hoganaskeramik.se", "email": "info@hoganaskeramik.se" },
-  { "name": "Rörstrand", "category": "Home", "employees": "200-500", "website": "rorstrand.se", "email": "info@rorstrand.se" },
-  { "name": "Gustavsberg", "category": "Home", "employees": "100-200", "website": "gustavsberg.se", "email": "info@gustavsberg.se" },
-  { "name": "Ernst Kirchsteiger", "category": "Home", "employees": "20-50", "website": "ernstkirchsteiger.se", "email": "info@ernstkirchsteiger.se" }
+}
