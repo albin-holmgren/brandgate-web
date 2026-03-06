@@ -1,0 +1,188 @@
+{
+  "date": "2026-03-06T09:10:25.366Z",
+  "batch": "small-companies-only",
+  "sent": 20,
+  "failed": 0,
+  "results": [
+    {
+      "company": "Livid Jeans",
+      "name": "Fredrik Berg",
+      "role": "Founder",
+      "size": "~20 employees",
+      "revenue": "~15M SEK",
+      "email": "fredrik@lividjeans.com",
+      "status": "sent"
+    },
+    {
+      "company": "Sneaky Steve",
+      "name": "Steven Hjalmarsson",
+      "role": "Founder & CEO",
+      "size": "~25 employees",
+      "revenue": "~20M SEK",
+      "email": "steven@sneakysteve.com",
+      "status": "sent"
+    },
+    {
+      "company": "Elvine",
+      "name": "Daniel Månsson",
+      "role": "Founder & Creative Director",
+      "size": "~40 employees",
+      "revenue": "~35M SEK",
+      "email": "daniel@elvine.se",
+      "status": "sent"
+    },
+    {
+      "company": "Dunderdon",
+      "name": "Pierre Littmarck",
+      "role": "Co-Founder",
+      "size": "~35 employees",
+      "revenue": "~30M SEK",
+      "email": "pierre@dunderdon.com",
+      "status": "sent"
+    },
+    {
+      "company": "Pico",
+      "name": "Pico Founders",
+      "role": "Founders",
+      "size": "~15 employees",
+      "revenue": "~12M SEK",
+      "email": "hello@picokids.se",
+      "status": "sent"
+    },
+    {
+      "company": "Isbjörn of Sweden",
+      "name": "Maria Frykman",
+      "role": "Co-Founder & CEO",
+      "size": "~25 employees",
+      "revenue": "~22M SEK",
+      "email": "maria@isbjornofsweden.com",
+      "status": "sent"
+    },
+    {
+      "company": "Koppi Coffee",
+      "name": "Anne Lunell",
+      "role": "Co-Founder",
+      "size": "~20 employees",
+      "revenue": "~18M SEK",
+      "email": "anne@koppi.se",
+      "status": "sent"
+    },
+    {
+      "company": "Crimson Coffee",
+      "name": "Mattias Sjöberg",
+      "role": "Founder & Roaster",
+      "size": "~15 employees",
+      "revenue": "~12M SEK",
+      "email": "mattias@crimsoncoffee.se",
+      "status": "sent"
+    },
+    {
+      "company": "Beriksson",
+      "name": "Bertil Eriksson",
+      "role": "Founder",
+      "size": "~10 employees",
+      "revenue": "~8M SEK",
+      "email": "bertil@beriksson.se",
+      "status": "sent"
+    },
+    {
+      "company": "Lillabjörn",
+      "name": "Lillabjörn Founders",
+      "role": "Founders",
+      "size": "~10 employees",
+      "revenue": "~6M SEK",
+      "email": "hello@lillabjorn.se",
+      "status": "sent"
+    },
+    {
+      "company": "Scandi Living",
+      "name": "Scandi Living Team",
+      "role": "Founders",
+      "size": "~20 employees",
+      "revenue": "~15M SEK",
+      "email": "hello@scandiliving.se",
+      "status": "sent"
+    },
+    {
+      "company": "Fine Little Day",
+      "name": "Elisabeth Dunker",
+      "role": "Founder & Designer",
+      "size": "~12 employees",
+      "revenue": "~10M SEK",
+      "email": "elisabeth@finelittleday.com",
+      "status": "sent"
+    },
+    {
+      "company": "Moltaz Design",
+      "name": "Moltaz Founders",
+      "role": "Founders",
+      "size": "~12 employees",
+      "revenue": "~9M SEK",
+      "email": "hello@moltazdesign.se",
+      "status": "sent"
+    },
+    {
+      "company": "Maria Nila",
+      "name": "Ann Wikström",
+      "role": "Co-Founder",
+      "size": "~60 employees",
+      "revenue": "~80M SEK",
+      "email": "ann@mariashaircare.com",
+      "status": "sent"
+    },
+    {
+      "company": "IDUN Minerals",
+      "name": "IDUN Founders",
+      "role": "Founders",
+      "size": "~40 employees",
+      "revenue": "~35M SEK",
+      "email": "hello@idunminerals.se",
+      "status": "sent"
+    },
+    {
+      "company": "Beauty Blvd",
+      "name": "Beauty Blvd Team",
+      "role": "Founders",
+      "size": "~25 employees",
+      "revenue": "~18M SEK",
+      "email": "hello@beautyblvd.se",
+      "status": "sent"
+    },
+    {
+      "company": "Dr. Sannas",
+      "name": "Sanna Ehdin",
+      "role": "Founder",
+      "size": "~15 employees",
+      "revenue": "~12M SEK",
+      "email": "sanna@drsannas.com",
+      "status": "sent"
+    },
+    {
+      "company": "Kaleido",
+      "name": "Kaleido Founders",
+      "role": "Founders",
+      "size": "~15 employees",
+      "revenue": "~10M SEK",
+      "email": "hello@kaleido.se",
+      "status": "sent"
+    },
+    {
+      "company": "Grandpa",
+      "name": "Grandpa Founders",
+      "role": "Founders",
+      "size": "~25 employees",
+      "revenue": "~20M SEK",
+      "email": "hello@grandpa.se",
+      "status": "sent"
+    },
+    {
+      "company": "Efva Attling",
+      "name": "Efva Attling",
+      "role": "Founder & Designer",
+      "size": "~35 employees",
+      "revenue": "~45M SEK",
+      "email": "efva@efvaattling.se",
+      "status": "sent"
+    }
+  ]
+}
