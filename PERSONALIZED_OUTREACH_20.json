@@ -1,0 +1,175 @@
+{
+  "date": "2026-03-06T08:23:10.066Z",
+  "sent": 21,
+  "failed": 0,
+  "results": [
+    {
+      "company": "Dagmar",
+      "name": "Kristina Tjäder",
+      "role": "Co-Founder & Creative Director",
+      "email": "kristina@houseofdagmar.com",
+      "status": "sent",
+      "messageId": "19cc23d9b893d9b5"
+    },
+    {
+      "company": "Hope Stockholm",
+      "name": "Ann Ringstrand",
+      "role": "Co-Founder & Designer",
+      "email": "ann@hopestockholm.com",
+      "status": "sent",
+      "messageId": "19cc23da230d9cf4"
+    },
+    {
+      "company": "Whyred",
+      "name": "Roland Hjort",
+      "role": "Founder & Creative Director",
+      "email": "roland@whyred.com",
+      "status": "sent",
+      "messageId": "19cc23dadca4c6d0"
+    },
+    {
+      "company": "Carin Wester",
+      "name": "Carin Wester",
+      "role": "Founder & Designer",
+      "email": "carin@carinwester.com",
+      "status": "sent",
+      "messageId": "19cc23db4a62db00"
+    },
+    {
+      "company": "Tretorn",
+      "name": "Anders Wenzel",
+      "role": "Sales Director Nordic",
+      "email": "anders.wenzel@tretorn.com",
+      "status": "sent",
+      "messageId": "19cc23dbded95742"
+    },
+    {
+      "company": "Lykke Kaffegårdar",
+      "name": "Lykke Kaffegårdar",
+      "role": "Founders",
+      "email": "hello@lykkegardar.se",
+      "status": "sent",
+      "messageId": "19cc23dc74ca1467"
+    },
+    {
+      "company": "Kränku Te",
+      "name": "Kränku Te",
+      "role": "Founders",
+      "email": "info@kranku.se",
+      "status": "sent",
+      "messageId": "19cc23dceaf64a96"
+    },
+    {
+      "company": "Kicks Choklad",
+      "name": "Kicks Choklad",
+      "role": "Founders",
+      "email": "info@kickschoklad.se",
+      "status": "sent",
+      "messageId": "19cc23dd9c17b2be"
+    },
+    {
+      "company": "HAY Sweden",
+      "name": "Mette Hay",
+      "role": "Co-Founder & Creative Director",
+      "email": "mette@hay.dk",
+      "status": "sent",
+      "messageId": "19cc23de0331f1ba"
+    },
+    {
+      "company": "Muuto",
+      "name": "Muuto Sales Team",
+      "role": "B2B Sales Manager",
+      "email": "sales@muuto.com",
+      "status": "sent",
+      "messageId": "19cc23de85e016a7"
+    },
+    {
+      "company": "Normann Copenhagen",
+      "name": "Poul Madsen",
+      "role": "Co-Founder & CEO",
+      "email": "poul@normann-copenhagen.com",
+      "status": "sent",
+      "messageId": "19cc23df3dc7cbf4"
+    },
+    {
+      "company": "Kosta Boda",
+      "name": "Kosta Boda B2B",
+      "role": "B2B Sales",
+      "email": "b2b@kostaboda.se",
+      "status": "sent",
+      "messageId": "19cc23dfab2338f8"
+    },
+    {
+      "company": "Orrefors",
+      "name": "Orrefors B2B",
+      "role": "B2B Sales",
+      "email": "b2b@orrefors.se",
+      "status": "sent",
+      "messageId": "19cc23e02dacbc6c"
+    },
+    {
+      "company": "Svenskt Tenn",
+      "name": "Maria Veeras",
+      "role": "CEO",
+      "email": "maria.veeras@svenskttenn.se",
+      "status": "sent",
+      "messageId": "19cc23e0d264d814"
+    },
+    {
+      "company": "Pärlans Konfektyr",
+      "name": "Pärlans Konfektyr",
+      "role": "Founders",
+      "email": "info@parlans.se",
+      "status": "sent",
+      "messageId": "19cc23e1417bebe5"
+    },
+    {
+      "company": "Lakritsfabriken",
+      "name": "Lakritsfabriken",
+      "role": "Founders",
+      "email": "info@lakritsfabriken.se",
+      "status": "sent",
+      "messageId": "19cc23e1ee444d63"
+    },
+    {
+      "company": "Malmö Chokladfabrik",
+      "name": "Malmö Chokladfabrik",
+      "role": "Founders",
+      "email": "info@malmochokladfabrik.se",
+      "status": "sent",
+      "messageId": "19cc23e275cdad48"
+    },
+    {
+      "company": "Löfbergs",
+      "name": "Anders Fredriksson",
+      "role": "Sales Director",
+      "email": "anders.fredriksson@lofbergs.se",
+      "status": "sent",
+      "messageId": "19cc23e2e288b5a1"
+    },
+    {
+      "company": "Rörstrand",
+      "name": "Rörstrand B2B",
+      "role": "B2B Sales",
+      "email": "b2b@rorstrand.se",
+      "status": "sent",
+      "messageId": "19cc23e38bae4a1e"
+    },
+    {
+      "company": "Gustavsberg",
+      "name": "Gustavsberg B2B",
+      "role": "B2B Sales",
+      "email": "b2b@gustavsberg.se",
+      "status": "sent",
+      "messageId": "19cc23e414c497fa"
+    },
+    {
+      "company": "Ernst Kirchsteiger",
+      "name": "Ernst Kirchsteiger",
+      "role": "Founder & Designer",
+      "email": "info@ernstkirchsteiger.se",
+      "status": "sent",
+      "messageId": "19cc23e48b5f44ad"
+    }
+  ]
+}
