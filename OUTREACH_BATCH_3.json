@@ -1,0 +1,168 @@
+{
+  "date": "2026-03-06T08:45:37.305Z",
+  "batch": 3,
+  "sent": 20,
+  "failed": 0,
+  "results": [
+    {
+      "company": "Acne Studios",
+      "name": "Jonny Johansson",
+      "role": "Founder & Creative Director",
+      "industry": "Fashion",
+      "email": "jonny@acnestudios.com",
+      "status": "sent"
+    },
+    {
+      "company": "Filippa K",
+      "name": "Rikard Frost",
+      "role": "CEO",
+      "industry": "Fashion",
+      "email": "rikard.frost@filippak.com",
+      "status": "sent"
+    },
+    {
+      "company": "Totême",
+      "name": "Elin Kling",
+      "role": "Co-Founder & Creative Director",
+      "industry": "Fashion",
+      "email": "elin@toteme.com",
+      "status": "sent"
+    },
+    {
+      "company": "Byredo",
+      "name": "Ben Gorham",
+      "role": "Founder & Creative Director",
+      "industry": "Beauty",
+      "email": "ben@byredo.com",
+      "status": "sent"
+    },
+    {
+      "company": "Axel Arigato",
+      "name": "Max Svärdh",
+      "role": "Co-Founder & CEO",
+      "industry": "Fashion",
+      "email": "max@axelarigato.com",
+      "status": "sent"
+    },
+    {
+      "company": "Rodebjer",
+      "name": "Carin Rodebjer",
+      "role": "Founder & Creative Director",
+      "industry": "Fashion",
+      "email": "carin@rodebjer.com",
+      "status": "sent"
+    },
+    {
+      "company": "String Furniture",
+      "name": "Peter Erlandsson",
+      "role": "CEO",
+      "industry": "Home",
+      "email": "peter@stringfurniture.com",
+      "status": "sent"
+    },
+    {
+      "company": "Blå Station",
+      "name": "Börge Lindau",
+      "role": "Co-Founder & CEO",
+      "industry": "Home",
+      "email": "borge@blastation.se",
+      "status": "sent"
+    },
+    {
+      "company": "Fogia",
+      "name": "Erik Foghammar",
+      "role": "CEO",
+      "industry": "Home",
+      "email": "erik@fogia.se",
+      "status": "sent"
+    },
+    {
+      "company": "Gemla",
+      "name": "Torbjörn Hultin",
+      "role": "CEO",
+      "industry": "Home",
+      "email": "torbjorn@gemla.se",
+      "status": "sent"
+    },
+    {
+      "company": "Oatly",
+      "name": "Toni Petersson",
+      "role": "CEO",
+      "industry": "Food",
+      "email": "toni@oatly.com",
+      "status": "sent"
+    },
+    {
+      "company": "Kale&Bros",
+      "name": "Kale & Bros Team",
+      "role": "Founders",
+      "industry": "Food",
+      "email": "hello@kaleandbros.com",
+      "status": "sent"
+    },
+    {
+      "company": "Loka Brunn",
+      "name": "Loka B2B Team",
+      "role": "B2B Sales Manager",
+      "industry": "Beverage",
+      "email": "b2b@loka.se",
+      "status": "sent"
+    },
+    {
+      "company": "Norrlands Guld",
+      "name": "Norrlands Guld B2B",
+      "role": "B2B Sales",
+      "industry": "Beverage",
+      "email": "b2b@norrlandsguld.se",
+      "status": "sent"
+    },
+    {
+      "company": "Verso Skincare",
+      "name": "Lars Fredriksson",
+      "role": "Founder",
+      "industry": "Beauty",
+      "email": "lars@versoskincare.com",
+      "status": "sent"
+    },
+    {
+      "company": "L:A Bruket",
+      "name": "Mats Johansson",
+      "role": "Co-Founder",
+      "industry": "Beauty",
+      "email": "mats@labruket.se",
+      "status": "sent"
+    },
+    {
+      "company": "Peak Performance",
+      "name": "Stefan Ytterborn",
+      "role": "Sales Director Nordic",
+      "industry": "Outdoor",
+      "email": "stefan@peakperformance.com",
+      "status": "sent"
+    },
+    {
+      "company": "Fjällräven",
+      "name": "Martin Axelhed",
+      "role": "CEO",
+      "industry": "Outdoor",
+      "email": "martin.axelhed@fjallraven.com",
+      "status": "sent"
+    },
+    {
+      "company": "Haglöfs",
+      "name": "Fredrik Ohlsson",
+      "role": "CEO",
+      "industry": "Outdoor",
+      "email": "fredrik.ohlsson@haglofs.com",
+      "status": "sent"
+    },
+    {
+      "company": "Skultuna",
+      "name": "Carl Zinsius",
+      "role": "CEO",
+      "industry": "Design",
+      "email": "carl@skultuna.com",
+      "status": "sent"
+    }
+  ]
+}
