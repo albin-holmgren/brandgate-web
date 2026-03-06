@@ -1,0 +1,63 @@
+{
+  "date": "2026-03-06T08:07:56.284Z",
+  "sent": 8,
+  "failed": 0,
+  "results": [
+    {
+      "company": "Stutterheim",
+      "name": "Alexander Stutterheim",
+      "email": "alexander@stutterheim.com",
+      "status": "sent",
+      "messageId": "19cc2301bc9f87a9"
+    },
+    {
+      "company": "Stylein",
+      "name": "Elin Alemdar",
+      "email": "elin@stylein.com",
+      "status": "sent",
+      "messageId": "19cc2302377f4201"
+    },
+    {
+      "company": "Minimarket",
+      "name": "Pernelle",
+      "email": "hello@minimarket.se",
+      "status": "sent",
+      "messageId": "19cc2302dc795be4"
+    },
+    {
+      "company": "Drop Coffee",
+      "name": "Joanna Alm",
+      "email": "joanna@dropcoffee.se",
+      "status": "sent",
+      "messageId": "19cc23035670d2bc"
+    },
+    {
+      "company": "Gringo Nordic",
+      "name": "Gringo Team",
+      "email": "hello@gringonordic.com",
+      "status": "sent",
+      "messageId": "19cc2303d86c59e0"
+    },
+    {
+      "company": "Odd Molly",
+      "name": "Wholesale Team",
+      "email": "wholesale@oddmolly.com",
+      "status": "sent",
+      "messageId": "19cc23047a487955"
+    },
+    {
+      "company": "Johan & Nyström",
+      "name": "B2B Team",
+      "email": "b2b@johanochnystrom.se",
+      "status": "sent",
+      "messageId": "19cc2304fd9d60c7"
+    },
+    {
+      "company": "WESC",
+      "name": "Sales Team",
+      "email": "sales@wesc.com",
+      "status": "sent",
+      "messageId": "19cc2305824a55db"
+    }
+  ]
+}
