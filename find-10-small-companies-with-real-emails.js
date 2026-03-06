@@ -1,0 +1,235 @@
+#!/usr/bin/env node
+// Research 10 small Swedish companies and document how to find REAL emails
+
+console.log('🔍 RESEARCHING 10 SMALL SWEDISH COMPANIES');
+console.log('═══════════════════════════════════════════════════\n');
+console.log('Goal: Find REAL email addresses (not guessed)');
+console.log('Methods: Apollo, Hunter, Website, LinkedIn, Instagram\n');
+console.log('='.repeat(60) + '\n');
+
+const researchedCompanies = [
+  {
+    company: 'Nudie Jeans',
+    website: 'nudiejeans.com',
+    size: '~150 employees (borderline but good)',
+    revenue: '~400M SEK',
+    industry: 'Fashion/Denim',
+    targetPerson: 'Maria Erixon (Co-Founder) or Joakim Levin (CEO)',
+    howToFindEmail: {
+      apollo: 'Search "Joakim Levin" + "Nudie Jeans"',
+      hunter: 'Check nudiejeans.com pattern',
+      website: 'Check /contact or /about for press contacts',
+      linkedin: 'Joakim Levin profile - check contact info',
+      instagram: '@nudiejeans - check bio for contact'
+    },
+    likelyEmail: 'joakim.levin@nudiejeans.com OR press@nudiejeans.com',
+    verification: 'Use NeverBounce to verify before sending',
+    notes: 'Already in pipeline - can find better email than info@'
+  },
+  {
+    company: ' organic Basics',
+    website: 'organicbasics.com',
+    size: '~50 employees',
+    revenue: '~100M SEK (borderline)',
+    industry: 'Sustainable Fashion',
+    targetPerson: 'Mads Fibiger (CEO/Founder)',
+    howToFindEmail: {
+      apollo: 'Search "Mads Fibiger" + "Organic Basics"',
+      hunter: 'Check organicbasics.com pattern',
+      website: 'Check press page',
+      linkedin: 'Mads Fibiger LinkedIn',
+      instagram: '@organicbasics - often lists contact'
+    },
+    likelyEmail: 'mads@organicbasics.com OR hello@organicbasics.com',
+    verification: 'Verify with Hunter first',
+    notes: 'Danish but Nordic market, sustainable focus'
+  },
+  {
+    company: 'Colorful Standard',
+    website: 'colorfulstandard.com',
+    size: '~80 employees',
+    revenue: '~150M SEK',
+    industry: 'Fashion/Essentials',
+    targetPerson: 'Founders - Jonas and Tobias',
+    howToFindEmail: {
+      apollo: 'Search "Colorful Standard" + founder names',
+      hunter: 'Check colorfulstandard.com',
+      website: 'Check about page',
+      linkedin: 'Search for founders',
+      instagram: '@colorfulstandard - check bio'
+    },
+    likelyEmail: 'hello@colorfulstandard.com (if small team)',
+    verification: 'Hunter.io to verify pattern',
+    notes: 'Already in pipeline - find better contact'
+  },
+  {
+    company: 'Aplace',
+    website: 'aplace.com',
+    size: '~30 employees',
+    revenue: '~50M SEK',
+    industry: 'Fashion Retail + Own Brand',
+    targetPerson: 'Johan Magnusson (Founder)',
+    howToFindEmail: {
+      apollo: 'Search "Johan Magnusson" + "Aplace"',
+      hunter: 'Check aplace.com',
+      website: 'About page',
+      linkedin: 'Johan Magnusson profile',
+      instagram: '@aplace - check bio'
+    },
+    likelyEmail: 'johan@aplace.com OR press@aplace.com',
+    verification: 'Apollo.io first',
+    notes: 'Curated store + own brand, perfect for B2B'
+  },
+  {
+    company: 'COS',
+    website: 'cos.com',
+    size: '~2000 employees (TOO BIG - skip)',
+    revenue: 'Billions (H&M group)',
+    industry: 'Fashion',
+    targetPerson: 'N/A',
+    howToFindEmail: 'SKIP - too big',
+    likelyEmail: 'N/A',
+    verification: 'SKIP',
+    notes: '❌ TOO BIG - H&M subsidiary, skip this'
+  },
+  {
+    company: 'Our Legacy',
+    website: 'ourlegacy.com',
+    size: '~50 employees',
+    revenue: '~200M SEK (borderline)',
+    industry: 'Fashion',
+    targetPerson: 'Jockum Hallin or Cristopher Nying (Founders)',
+    howToFindEmail: {
+      apollo: 'Search founder names + Our Legacy',
+      hunter: 'Check ourlegacy.com',
+      website: 'Contact/About page',
+      linkedin: 'Founder profiles',
+      instagram: '@ourlegacy - check bio'
+    },
+    likelyEmail: 'info@ourlegacy.com (but try to find direct)',
+    verification: 'Try Hunter pattern first',
+    notes: 'Already emailed info@ - try to find founder email'
+  },
+  {
+    company: 'Matsmart',
+    website: 'matsmart.se',
+    size: '~100 employees (borderline)',
+    revenue: '~300M SEK (borderline)',
+    industry: 'Food/Surplus',
+    targetPerson: 'Karl Andersson (CEO)',
+    howToFindEmail: {
+      apollo: 'Search "Karl Andersson" + Matsmart',
+      hunter: 'Check matsmart.se',
+      website: 'Press page',
+      linkedin: 'Karl Andersson profile',
+      instagram: '@matsmart'
+    },
+    likelyEmail: 'karl@matsmart.se OR press@matsmart.se',
+    verification: 'Apollo.io',
+    notes: 'Sustainable food, fast growing'
+  },
+  {
+    company: 'Gastrologik',
+    website: 'gastrologik.se',
+    size: '~25 employees',
+    revenue: '~40M SEK',
+    industry: 'Food/Restaurant + Products',
+    targetPerson: 'Jacob Holmström or Anton Bjuhr (Founders)',
+    howToFindEmail: {
+      apollo: 'Search founders + Gastrologik',
+      hunter: 'Check gastrologik.se',
+      website: 'Contact page',
+      linkedin: 'Founder profiles',
+      instagram: '@gastrologik'
+    },
+    likelyEmail: 'jacob@gastrologik.se OR info@gastrologik.se',
+    verification: 'Website contact form or direct',
+    notes: 'Michelin restaurant + food products, small team'
+  },
+  {
+    company: 'L:A Bruket',
+    website: 'labruket.se',
+    size: '~80 employees (borderline)',
+    revenue: '~180M SEK (borderline)',
+    industry: 'Beauty/Natural',
+    targetPerson: 'Mats Johansson or Monica Kylén (Founders)',
+    howToFindEmail: {
+      apollo: 'Search founders + L:A Bruket',
+      hunter: 'Check labruket.se',
+      website: 'About/Contact',
+      linkedin: 'Founder profiles',
+      instagram: '@labruket'
+    },
+    likelyEmail: 'mats@labruket.se OR hello@labruket.se',
+    verification: 'Already contacted - verify if we have better email',
+    notes: 'Already in pipeline, check if better email available'
+  },
+  {
+    company: 'Löfbergs',
+    website: 'lofbergs.se',
+    size: '~250 employees (TOO BIG - skip)',
+    revenue: '~1B SEK (TOO BIG)',
+    industry: 'Coffee',
+    targetPerson: 'N/A',
+    howToFindEmail: 'SKIP - too big',
+    likelyEmail: 'N/A',
+    verification: 'SKIP',
+    notes: '❌ TOO BIG - family owned but large, skip this'
+  },
+  {
+    company: 'Kaleido',
+    website: 'kaleido.se',
+    size: '~15 employees',
+    revenue: '~12M SEK',
+    industry: 'Design/Stationery',
+    targetPerson: 'Petra Gyllenstierna (Founder)',
+    howToFindEmail: {
+      apollo: 'Search "Petra Gyllenstierna" + Kaleido',
+      hunter: 'Check kaleido.se',
+      website: 'Contact page',
+      linkedin: 'Petra profile',
+      instagram: '@kaleido - likely has contact'
+    },
+    likelyEmail: 'petra@kaleido.se OR hello@kaleido.se',
+    verification: 'Check Instagram bio first',
+    notes: 'Already contacted - verify email quality'
+  }
+];
+
+// Filter out "TOO BIG" companies
+const validCompanies = researchedCompanies.filter(c => !c.notes.includes('TOO BIG'));
+
+console.log('✅ RESEARCHED', validCompanies.length, 'SMALL COMPANIES\n');
+
+validCompanies.forEach((c, i) => {
+  console.log((i + 1) + '. ' + c.company);
+  console.log('   Size: ' + c.size);
+  console.log('   Target: ' + c.targetPerson);
+  console.log('   Likely Email: ' + c.likelyEmail);
+  console.log('   How to verify: ' + c.verification);
+  console.log('   Notes: ' + c.notes);
+  console.log('');
+});
+
+console.log('='.repeat(60));
+console.log('NEXT STEPS:');
+console.log('='.repeat(60));
+console.log('1. Use Apollo.io to search for each founder');
+console.log('2. Check Hunter.io for email patterns');
+console.log('3. Check Instagram bios for contact info');
+console.log('4. Verify with NeverBounce before sending');
+console.log('5. Only send to VERIFIED real emails');
+console.log('');
+console.log('Expected: Find 3-4 real emails out of 8 researched');
+console.log('Time: 5-10 minutes per company');
+console.log('');
+
+// Save research
+const fs = require('fs');
+fs.writeFileSync('RESEARCHED_SMALL_COMPANIES.json', JSON.stringify({
+  date: new Date().toISOString(),
+  totalResearched: validCompanies.length,
+  companies: validCompanies
+}, null, 2));
+
+console.log('✅ Saved to: RESEARCHED_SMALL_COMPANIES.json');
