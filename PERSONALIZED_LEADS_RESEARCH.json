@@ -1,0 +1,118 @@
+{
+  "generated": "2026-03-06T07:53:51.502Z",
+  "total": 14,
+  "leads": [
+    {
+      "company": "Our Legacy",
+      "website": "ourlegacy.com",
+      "target": "Founder/CEO",
+      "research": "Check LinkedIn for founders Jockum Hallin or Cristopher Nying",
+      "likelyEmail": "jockum@ourlegacy.com or christopher@ourlegacy.com",
+      "priority": "High"
+    },
+    {
+      "company": "WESC",
+      "website": "wesc.com",
+      "target": "CEO or Sales Director",
+      "research": "LinkedIn: Search \"WESC CEO\" or \"WESC Sales\"",
+      "likelyEmail": "firstname@wesc.com",
+      "priority": "Medium"
+    },
+    {
+      "company": "Hope Stockholm",
+      "website": "hopestockholm.com",
+      "target": "Founders",
+      "research": "Founded by Ann Ringstrand and Stefan Söderberg - check LinkedIn",
+      "likelyEmail": "ann@hopestockholm.com or stefan@hopestockholm.com",
+      "priority": "High"
+    },
+    {
+      "company": "Dagmar",
+      "website": "houseofdagmar.com",
+      "target": "CEO or Sales Director",
+      "research": "Founded by 3 sisters - Kristina Tjäder, Karin Söderlind, Sofia Wallenstam",
+      "likelyEmail": "kristina@houseofdagmar.com",
+      "priority": "High"
+    },
+    {
+      "company": "Stutterheim",
+      "website": "stutterheim.com",
+      "target": "CEO Alexander Stutterheim",
+      "research": "Founder is Alexander Stutterheim - very active on social media",
+      "likelyEmail": "alexander@stutterheim.com",
+      "priority": "High"
+    },
+    {
+      "company": "Odd Molly",
+      "website": "oddmolly.com",
+      "target": "Sales Director",
+      "research": "Public company - find B2B/wholesale contact",
+      "likelyEmail": "wholesale@oddmolly.com",
+      "priority": "Medium"
+    },
+    {
+      "company": "Minimarket",
+      "website": "minimarket.se",
+      "target": "Designers/Founders",
+      "research": "Founded by sisters Pernelle and Sofie - check LinkedIn",
+      "likelyEmail": "pernelle@minimarket.se or sofie@minimarket.se",
+      "priority": "High"
+    },
+    {
+      "company": "Stylein",
+      "website": "stylein.com",
+      "target": "Founder Elin Alemdar",
+      "research": "Founded by Elin Alemdar - small team, direct contact likely",
+      "likelyEmail": "elin@stylein.com",
+      "priority": "High"
+    },
+    {
+      "company": "Johan & Nyström",
+      "website": "johanochnystrom.se",
+      "target": "CEO or Wholesale Manager",
+      "research": "Medium-sized roastery - look for B2B sales person",
+      "likelyEmail": "johan@johanochnystrom.se or b2b@johanochnystrom.se",
+      "priority": "High"
+    },
+    {
+      "company": "Drop Coffee",
+      "website": "dropcoffee.se",
+      "target": "Owner Joanna Alm",
+      "research": "Founded by Joanna Alm - small specialty roaster",
+      "likelyEmail": "joanna@dropcoffee.se",
+      "priority": "High"
+    },
+    {
+      "company": "Gringo Nordic",
+      "website": "gringonordic.com",
+      "target": "Founders",
+      "research": "Small roastery - likely founder-run",
+      "likelyEmail": "info@gringonordic.com (use as last resort)",
+      "priority": "Medium"
+    },
+    {
+      "company": "HAY Sweden",
+      "website": "hay.dk",
+      "target": "B2B Sales Manager",
+      "research": "Larger company - find Swedish sales rep",
+      "likelyEmail": "sales@hay.dk",
+      "priority": "Medium"
+    },
+    {
+      "company": "Muuto",
+      "website": "muuto.com",
+      "target": "Sales Director Nordic",
+      "research": "Danish company with Nordic focus - find regional sales",
+      "likelyEmail": "sales@muuto.com",
+      "priority": "Medium"
+    },
+    {
+      "company": "Normann Copenhagen",
+      "website": "normann-copenhagen.com",
+      "target": "B2B Sales",
+      "research": "Larger brand - find wholesale/B2B contact",
+      "likelyEmail": "b2b@normann-copenhagen.com",
+      "priority": "Medium"
+    }
+  ]
+}
