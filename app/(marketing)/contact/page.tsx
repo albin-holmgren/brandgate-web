@@ -28,14 +28,11 @@ export default function ContactPage() {
       message: formData.get('message') as string,
     };
     try {
-      const res = await fetch(
-        `https://nwyosjcvtftkabxboikn.supabase.co/functions/v1/send-contact`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data),
-        }
-      );
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
       if (!res.ok) throw new Error('Failed to send');
       setSubmitted(true);
     } catch {
