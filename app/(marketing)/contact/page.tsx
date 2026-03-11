@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { FadeIn, ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion/fade-in";
-import { Mail, MapPin, CheckCircle2, Calendar } from "lucide-react";
+import { Mail, CheckCircle2, Calendar } from "lucide-react";
 import Link from "next/link";
 
 export default function ContactPage() {
@@ -39,7 +39,7 @@ export default function ContactPage() {
       if (!res.ok) throw new Error('Failed to send');
       setSubmitted(true);
     } catch {
-      setError("Something went wrong. Please email us at hello@brandgate.com");
+      setError("Something went wrong. Please email us at albin.holmgren@brandgate.dev");
     } finally {
       setLoading(false);
     }
@@ -127,8 +127,7 @@ export default function ContactPage() {
                 <address className="not-italic space-y-6">
                   <StaggerContainer className="space-y-6">
                     {[
-                      { icon: Mail, label: "Email", value: "hello@brandgate.com", href: "mailto:hello@brandgate.com" },
-                      { icon: MapPin, label: "Office", value: "Stockholm, Sweden" },
+                      { icon: Mail, label: "Email", value: "albin.holmgren@brandgate.dev", href: "mailto:albin.holmgren@brandgate.dev" },
                     ].map((item) => (
                       <StaggerItem key={item.label}>
                         <div className="flex items-start gap-4">
@@ -177,24 +176,6 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Map */}
-        <section aria-label="Office location" className="py-16 md:py-20 bg-secondary border-t border-border">
-          <ScrollReveal className="max-w-4xl mx-auto px-6">
-            <div className="bg-primary rounded-3xl aspect-[2/1] overflow-hidden relative">
-              <div className="absolute inset-0 opacity-[0.06]" style={{
-                backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
-                backgroundSize: '32px 32px'
-              }} />
-              <div className="relative z-10 w-full h-full p-8 flex flex-col items-center justify-center text-center">
-                <MapPin className="w-12 h-12 text-gold mb-4" />
-                <p className="text-primary-foreground font-bold text-xl">Stockholm, Sweden</p>
-                <p className="text-primary-foreground/50 text-sm mt-1">Sveavägen 31, 111 34 Stockholm</p>
-                <p className="text-primary-foreground/30 text-xs mt-2">59.3366° N, 18.0731° E</p>
-              </div>
-            </div>
-            <p className="text-center text-sm text-muted-foreground mt-4">Our headquarters in Stockholm, Sweden</p>
-          </ScrollReveal>
-        </section>
       </main>
       <Footer />
     </>
