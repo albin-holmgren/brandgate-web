@@ -73,11 +73,12 @@ mixpanel.init('9277e80f2dc38a2e8bab577cc8f20268', {
   }
 });
 
-// Google Analytics 4
+// Google Analytics 4 + Google Ads
 window.dataLayer = window.dataLayer || [];
 function gtag() { dataLayer.push(arguments); }
 gtag('js', new Date());
 gtag('config', 'G-GMPPJ71Y58');
+gtag('config', 'AW-18008237380');
 
 // Enhanced Event Tracking
 (function() {
@@ -338,6 +339,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <head>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-18008237380" strategy="afterInteractive" />
         <Script id="analytics" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: analyticsScripts }} />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
