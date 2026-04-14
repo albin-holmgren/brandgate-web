@@ -110,7 +110,7 @@ export default function SolutionsPage() {
             </FadeIn>
             <FadeIn delay={0.3}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-                <Button asChild size="lg" className="bg-gold text-primary hover:bg-gold/90 rounded-full px-8">
+                <Button asChild size="lg" className="bg-gold text-gold-foreground hover:bg-gold/90 rounded-full px-8">
                   <Link href="/contact">Get Started Free</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 rounded-full px-8">
@@ -215,7 +215,7 @@ export default function SolutionsPage() {
                 Streamline your B2B distribution on a platform built for wholesale. Start free, scale as you grow.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="bg-gold text-primary hover:bg-gold/90 rounded-full px-10 font-semibold">
+                <Button asChild size="lg" className="bg-gold text-gold-foreground hover:bg-gold/90 rounded-full px-10 font-semibold">
                   <Link href="/contact">Start Free Trial</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 rounded-full px-10">

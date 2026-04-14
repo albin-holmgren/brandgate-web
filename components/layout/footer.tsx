@@ -48,7 +48,7 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-white">
+    <footer className="bg-primary text-primary-foreground">
       {/* Get in touch */}
       <div className="border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -58,14 +58,14 @@ export function Footer() {
                 <Mail className="w-5 h-5 text-gold" />
                 <span className="font-semibold text-lg">Stay in the loop</span>
               </div>
-              <p className="text-white/60">
+              <p className="text-primary-foreground/60">
                 Questions, feedback, or want to hear when we ship something new? Drop us a line.
               </p>
             </div>
             <div className="flex md:justify-end">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-primary font-semibold rounded-lg hover:bg-gold/90 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-gold-foreground font-semibold rounded-lg hover:bg-gold/90 transition-colors"
               >
                 Get in touch
                 <ArrowRight className="w-4 h-4" />
@@ -83,7 +83,7 @@ export function Footer() {
             <Link href="/" className="inline-block">
               <span className="text-2xl font-bold">BrandGate</span>
             </Link>
-            <p className="mt-4 text-white/60 max-w-sm">
+            <p className="mt-4 text-primary-foreground/60 max-w-sm">
               The all-in-one B2B distribution platform for brands. Manage distributors, orders, and scale your wholesale business.
             </p>
           </div>
@@ -94,7 +94,7 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.product.links.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-white/60 hover:text-white transition-colors">
+                  <Link href={link.href} className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -108,7 +108,7 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.solutions.links.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-white/60 hover:text-white transition-colors">
+                  <Link href={link.href} className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -122,7 +122,7 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.resources.links.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-white/60 hover:text-white transition-colors">
+                  <Link href={link.href} className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -136,7 +136,7 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.company.links.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-white/60 hover:text-white transition-colors">
+                  <Link href={link.href} className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -146,12 +146,12 @@ export function Footer() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-white/60">
+          <p className="text-sm text-primary-foreground/60">
             © 2026 BrandGate. All rights reserved.
           </p>
           <div className="flex gap-6">
             {footerLinks.legal.links.map((link) => (
-              <Link key={link.href} href={link.href} className="text-sm text-white/60 hover:text-white transition-colors">
+              <Link key={link.href} href={link.href} className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">
                 {link.label}
               </Link>
             ))}

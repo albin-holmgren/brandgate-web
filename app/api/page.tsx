@@ -118,7 +118,7 @@ const order = await brandgate.orders.create({
               <FileText className="w-12 h-12 text-gold mx-auto mb-6" />
               <h2 className="text-3xl font-bold text-foreground mb-4">Ready to build?</h2>
               <p className="text-muted-foreground mb-8">Get your API keys and start integrating.</p>
-              <Button asChild className="bg-gold text-primary hover:bg-gold/90">
+              <Button asChild className="bg-gold text-gold-foreground hover:bg-gold/90">
                 <Link href="https://app.brandgate.dev">Get API Key</Link>
               </Button>
             </FadeIn>

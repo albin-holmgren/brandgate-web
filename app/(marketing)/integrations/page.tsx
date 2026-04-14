@@ -105,7 +105,7 @@ export default function IntegrationsPage() {
             <FadeIn>
               <h2 className="text-3xl font-bold text-foreground mb-4">Need a custom integration?</h2>
               <p className="text-muted-foreground mb-8">Our API allows you to build custom integrations for your specific needs.</p>
-              <Button asChild className="bg-gold text-primary hover:bg-gold/90">
+              <Button asChild className="bg-gold text-gold-foreground hover:bg-gold/90">
                 <Link href="/api">View API Docs</Link>
               </Button>
             </FadeIn>

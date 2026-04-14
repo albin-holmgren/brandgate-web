@@ -190,10 +190,10 @@ export default function FeaturesPage() {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Ready to see it in action?</h2>
               <p className="text-primary-foreground/60 text-base md:text-lg mb-8">Start your free trial or book a personalized demo.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="bg-gold text-primary hover:bg-gold/90 rounded-full px-8">
+                <Button asChild size="lg" className="bg-gold text-gold-foreground hover:bg-gold/90 rounded-full px-8">
                   <Link href="/contact">Get Started</Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="bg-transparent border-white/20 text-white hover:bg-white/10 rounded-full px-8">
+                <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 rounded-full px-8">
                   <Link href="/contact">Book a Demo</Link>
                 </Button>
               </div>
