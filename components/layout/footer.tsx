@@ -48,14 +48,14 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-[#003822] text-white">
+    <footer className="bg-primary text-white">
       {/* Get in touch */}
       <div className="border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <Mail className="w-5 h-5 text-[#E5A400]" />
+                <Mail className="w-5 h-5 text-gold" />
                 <span className="font-semibold text-lg">Stay in the loop</span>
               </div>
               <p className="text-white/60">
@@ -65,7 +65,7 @@ export function Footer() {
             <div className="flex md:justify-end">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#E5A400] text-[#003822] font-semibold rounded-lg hover:bg-[#E5A400]/90 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-primary font-semibold rounded-lg hover:bg-gold/90 transition-colors"
               >
                 Get in touch
                 <ArrowRight className="w-4 h-4" />

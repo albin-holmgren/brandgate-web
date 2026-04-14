@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 function IngredientTransparencyVisual() {
   return (
     <div className="bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-200">
-      <div className="bg-[#003822] px-4 py-3 flex items-center justify-between">
+      <div className="bg-primary px-4 py-3 flex items-center justify-between">
         <span className="text-white font-semibold text-sm flex items-center gap-2">
           <Beaker className="w-4 h-4" />
           Full Ingredient Disclosure
@@ -45,16 +45,16 @@ function IngredientTransparencyVisual() {
             <p className="text-xs font-medium text-gray-700">Vegan</p>
           </div>
           <div className="bg-gray-50 border border-pink-200 rounded-lg p-2 text-center">
-            <Sparkles className="w-4 h-4 text-[#003822] mx-auto mb-1" />
-            <p className="text-xs font-medium text-[#003822]">Cruelty-Free</p>
+            <Sparkles className="w-4 h-4 text-primary mx-auto mb-1" />
+            <p className="text-xs font-medium text-primary">Cruelty-Free</p>
           </div>
         </div>
 
         {/* Allergen Warning */}
         <div className="bg-gray-50 border-l-4 border-yellow-400 p-3 rounded">
           <div className="flex items-start gap-2">
-            <AlertCircle className="w-4 h-4 text-[#E5A400] shrink-0 mt-0.5" />
-            <p className="text-xs text-[#003822]">
+            <AlertCircle className="w-4 h-4 text-gold shrink-0 mt-0.5" />
+            <p className="text-xs text-primary">
               <span className="font-semibold">Contains:</span> Retinol. Not recommended during pregnancy.
             </p>
           </div>
@@ -70,7 +70,7 @@ function BatchTrackingVisual() {
     <div className="bg-white rounded-xl shadow-xl p-4 border border-gray-200">
       <div className="flex items-center justify-between mb-4">
         <span className="text-sm font-semibold text-gray-900 flex items-center gap-2">
-          <QrCode className="w-4 h-4 text-[#003822]" />
+          <QrCode className="w-4 h-4 text-primary" />
           Batch QR Tracking
         </span>
         <span className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Active</span>
@@ -79,7 +79,7 @@ function BatchTrackingVisual() {
       <div className="space-y-3">
         <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg">
           <div className="w-12 h-12 bg-gray-100 rounded flex items-center justify-center">
-            <QrCode className="w-6 h-6 text-[#003822]" />
+            <QrCode className="w-6 h-6 text-primary" />
           </div>
           <div className="flex-1">
             <p className="text-sm font-medium text-gray-900">Batch: BT-2026-0892</p>
@@ -92,7 +92,7 @@ function BatchTrackingVisual() {
         </div>
 
         <div className="bg-gray-50 rounded-lg p-3">
-          <p className="text-xs font-medium text-[#003822] mb-2">Quality Documents</p>
+          <p className="text-xs font-medium text-primary mb-2">Quality Documents</p>
           <div className="flex gap-2">
             <span className="text-xs bg-white px-2 py-1 rounded border">COA.pdf</span>
             <span className="text-xs bg-white px-2 py-1 rounded border">MSDS.pdf</span>
@@ -110,7 +110,7 @@ export default function HealthBeautyPage() {
       <Navbar />
       <main>
         {/* HERO - Compliance Focus */}
-        <section className="bg-[#003822] text-white py-20 lg:py-32">
+        <section className="bg-primary text-white py-20 lg:py-32">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -128,7 +128,7 @@ export default function HealthBeautyPage() {
                     Track every batch, ingredient, and certification automatically.
                   </p>
                   <div className="flex flex-wrap gap-4 mt-8">
-                    <Button className="bg-white text-[#003822] hover:bg-gray-100 rounded-full px-8 font-semibold">
+                    <Button asChild className="bg-white text-primary hover:bg-gray-100 rounded-full px-8 font-semibold">
                       <Link href="/contact">Start Free Trial</Link>
                     </Button>
                   </div>
@@ -146,7 +146,7 @@ export default function HealthBeautyPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-wrap justify-center gap-4 text-sm">
               {['EU Cosmetics Regulation', 'FDA Compliant', 'GMP Certified', 'ISO 22716'].map((badge) => (
-                <span key={badge} className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm text-[#003822]">
+                <span key={badge} className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm text-primary">
                   <CheckCircle2 className="w-4 h-4" /> {badge}
                 </span>
               ))}
@@ -159,7 +159,7 @@ export default function HealthBeautyPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
               <div className="text-center max-w-2xl mx-auto mb-16">
-                <span className="text-[#003822] font-semibold text-sm uppercase">Compliance Features</span>
+                <span className="text-primary font-semibold text-sm uppercase">Compliance Features</span>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3">
                   Built for Regulatory Complexity
                 </h2>
@@ -179,15 +179,15 @@ export default function HealthBeautyPage() {
                 </p>
                 <div className="grid grid-cols-3 gap-3">
                   <div className="bg-white p-3 rounded-lg text-center">
-                    <p className="text-lg font-bold text-[#003822]">INCI</p>
+                    <p className="text-lg font-bold text-primary">INCI</p>
                     <p className="text-xs text-gray-500">Standard Format</p>
                   </div>
                   <div className="bg-white p-3 rounded-lg text-center">
-                    <p className="text-lg font-bold text-[#003822]"> allergens</p>
+                    <p className="text-lg font-bold text-primary"> allergens</p>
                     <p className="text-xs text-gray-500">Auto-Detected</p>
                   </div>
                   <div className="bg-white p-3 rounded-lg text-center">
-                    <p className="text-lg font-bold text-[#003822]">26</p>
+                    <p className="text-lg font-bold text-primary">26</p>
                     <p className="text-xs text-gray-500">EU Allergens</p>
                   </div>
                 </div>
@@ -238,7 +238,7 @@ export default function HealthBeautyPage() {
               </div>
 
               <div className="bg-gray-50 rounded-2xl p-6 border border-rose-100">
-                <div className="w-12 h-12 bg-[#E5A400] rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-gold rounded-xl flex items-center justify-center mb-4">
                   <Shield className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Quality Control</h3>
@@ -256,7 +256,7 @@ export default function HealthBeautyPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
                 <FadeIn>
-                  <div className="inline-flex items-center gap-2 bg-gray-100 text-[#003822] px-3 py-1 rounded-full text-sm font-medium mb-4">
+                  <div className="inline-flex items-center gap-2 bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
                     <QrCode className="w-4 h-4" />
                     Full Traceability
                   </div>
@@ -275,7 +275,7 @@ export default function HealthBeautyPage() {
                       "Regulatory report generation"
                     ].map((item) => (
                       <li key={item} className="flex items-center gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-[#003822] shrink-0" />
+                        <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
                         <span className="text-gray-700">{item}</span>
                       </li>
                     ))}
@@ -292,11 +292,11 @@ export default function HealthBeautyPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-[#003822] text-white text-center">
+        <section className="py-20 bg-primary text-white text-center">
           <div className="max-w-3xl mx-auto px-4">
             <Sparkles className="w-12 h-12 text-gray-200 mx-auto mb-6" />
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Compliance confidence, built in</h2>
-            <Button className="bg-white text-[#003822] hover:bg-gray-100 rounded-full px-10 py-6 text-lg font-semibold">
+            <Button asChild className="bg-white text-primary hover:bg-gray-100 rounded-full px-10 py-6 text-lg font-semibold">
               <Link href="/contact">Get Started Free</Link>
             </Button>
           </div>

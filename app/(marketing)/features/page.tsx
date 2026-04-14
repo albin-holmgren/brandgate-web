@@ -2,8 +2,8 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { FadeIn, ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion/fade-in";
 import { Button } from "@/components/ui/button";
-import { DashboardPreview, PortalPreview, OrderFlowGraphic, IntegrationGrid, AnalyticsChart } from "@/components/visuals/dashboard-previews";
-import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
+import { DashboardPreview, PortalPreview, OrderFlowGraphic, MobilePreview, IntegrationGrid, AnalyticsChart } from "@/components/visuals/dashboard-previews";
+import { CheckCircle2, Sparkles } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -53,6 +53,30 @@ const features = [
       "Tiered pricing per distributor group",
       "Inventory tracking with low-stock alerts",
       "Category and collection management",
+    ],
+    visual: <DashboardPreview />,
+  },
+  {
+    id: "store",
+    title: "Online Store Builder",
+    description: "Launch a branded B2B storefront in minutes with a drag-and-drop editor — no designers or developers required.",
+    bullets: [
+      "Drag-and-drop editor with live preview",
+      "Custom domain, branding, and typography",
+      "Responsive out of the box on mobile and desktop",
+      "Distributor-specific catalogs and pricing",
+    ],
+    visual: <MobilePreview />,
+  },
+  {
+    id: "invoicing",
+    title: "Automated Invoicing",
+    description: "Generate invoices from orders automatically, track payment status, and keep receivables under control.",
+    bullets: [
+      "Invoices generated automatically from orders",
+      "Credit notes and returns workflow",
+      "Payment history and status tracking",
+      "Export to CSV or your accounting tool",
     ],
     visual: <DashboardPreview />,
   },

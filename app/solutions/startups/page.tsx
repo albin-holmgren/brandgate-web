@@ -16,17 +16,17 @@ export const metadata: Metadata = {
 function SimpleDashboard() {
   return (
     <div className="bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-200">
-      <div className="bg-[#003822] px-4 py-3">
+      <div className="bg-primary px-4 py-3">
         <span className="text-white font-semibold text-sm">Your Brand Dashboard</span>
       </div>
       <div className="p-4">
         <div className="grid grid-cols-2 gap-3 mb-4">
-          <div className="bg-[#E5A400]/10 p-3 rounded-lg text-center">
-            <p className="text-2xl font-bold text-[#003822]">12</p>
+          <div className="bg-gold/10 p-3 rounded-lg text-center">
+            <p className="text-2xl font-bold text-primary">12</p>
             <p className="text-xs text-gray-600">Retailers</p>
           </div>
-          <div className="bg-[#003822]/10 p-3 rounded-lg text-center">
-            <p className="text-2xl font-bold text-[#003822]">€5.2k</p>
+          <div className="bg-primary/10 p-3 rounded-lg text-center">
+            <p className="text-2xl font-bold text-primary">€5.2k</p>
             <p className="text-xs text-gray-600">Revenue</p>
           </div>
         </div>
@@ -48,25 +48,25 @@ const features = [
     icon: Rocket,
     title: "Quick Setup",
     description: "Get your B2B portal live in under an hour. No developers needed.",
-    color: "bg-[#003822]/10 text-[#003822]",
+    color: "bg-primary/10 text-primary",
   },
   {
     icon: Zap,
     title: "Pay-as-You-Grow",
     description: "Start with our affordable Starter plan. Upgrade when you scale.",
-    color: "bg-[#E5A400]/10 text-[#003822]",
+    color: "bg-gold/10 text-primary",
   },
   {
     icon: Users,
     title: "First Retailers Free",
     description: "Onboard your first 10 retailers at no extra cost.",
-    color: "bg-[#003822]/10 text-[#003822]",
+    color: "bg-primary/10 text-primary",
   },
   {
     icon: TrendingUp,
     title: "Growth Tools",
     description: "Built-in analytics show which products drive your growth.",
-    color: "bg-[#E5A400]/10 text-[#003822]",
+    color: "bg-gold/10 text-primary",
   },
 ];
 
@@ -85,7 +85,7 @@ export default function StartupsPage() {
       <Navbar />
       <main className="overflow-x-hidden">
         {/* Hero */}
-        <section className="relative bg-[#003822] text-white overflow-hidden">
+        <section className="relative bg-primary text-white overflow-hidden">
           <div className="absolute inset-0 opacity-[0.03]" style={{
             backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
             backgroundSize: '40px 40px'
@@ -95,7 +95,7 @@ export default function StartupsPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center py-16 md:py-24 lg:py-32">
               <div className="text-center lg:text-left">
                 <FadeIn>
-                  <div className="inline-flex items-center gap-2 bg-[#E5A400]/20 text-[#E5A400] px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                  <div className="inline-flex items-center gap-2 bg-gold/20 text-gold px-4 py-2 rounded-full text-sm font-semibold mb-6">
                     <Rocket className="w-4 h-4" />
                     For Startups
                   </div>
@@ -104,7 +104,7 @@ export default function StartupsPage() {
                 <FadeIn delay={0.1}>
                   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
                     Start Wholesale
-                    <span className="block text-[#E5A400]">Without the Headache</span>
+                    <span className="block text-gold">Without the Headache</span>
                   </h1>
                 </FadeIn>
                 
@@ -116,7 +116,7 @@ export default function StartupsPage() {
                 
                 <FadeIn delay={0.3}>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-8">
-                    <Button asChild size="lg" className="bg-[#E5A400] text-[#003822] hover:bg-[#E5A400]/90 rounded-full px-8">
+                    <Button asChild size="lg" className="bg-gold text-primary hover:bg-gold/90 rounded-full px-8">
                       <Link href="/contact">Start Free Trial</Link>
                     </Button>
                   </div>
@@ -131,14 +131,14 @@ export default function StartupsPage() {
         </section>
 
         {/* Pricing Card */}
-        <section className="py-12 bg-[#E5A400]/10">
+        <section className="py-12 bg-gold/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
-              <div className="max-w-sm mx-auto bg-white rounded-2xl shadow-xl p-8 border border-[#E5A400]/20">
+              <div className="max-w-sm mx-auto bg-white rounded-2xl shadow-xl p-8 border border-gold/20">
                 <div className="text-center mb-6">
-                  <h3 className="text-xl font-bold text-[#003822]">Starter Plan</h3>
+                  <h3 className="text-xl font-bold text-primary">Starter Plan</h3>
                   <div className="mt-4">
-                    <span className="text-5xl font-bold text-[#003822]">€35</span>
+                    <span className="text-5xl font-bold text-primary">€35</span>
                     <span className="text-gray-500">/month</span>
                   </div>
                   <p className="text-sm text-gray-500 mt-2">€28/month billed annually</p>
@@ -146,12 +146,12 @@ export default function StartupsPage() {
                 <ul className="space-y-3 mb-8">
                   {["Up to 100 products", "Order management", "Product catalog", "Basic analytics", "Email support"].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-sm text-gray-600">
-                      <CheckCircle2 className="w-4 h-4 text-[#E5A400]" />
+                      <CheckCircle2 className="w-4 h-4 text-gold" />
                       {item}
                   </li>
                   ))}
                 </ul>
-                <Button asChild className="w-full bg-[#003822] text-white hover:bg-[#003822]/90">
+                <Button asChild className="w-full bg-primary text-white hover:bg-primary/90">
                   <Link href="/contact">Get Started</Link>
                 </Button>
               </div>
@@ -164,7 +164,7 @@ export default function StartupsPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
               <div className="text-center mb-12">
-                <h2 className="text-2xl sm:text-3xl font-bold text-[#003822]">Built for Emerging Brands</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-primary">Built for Emerging Brands</h2>
               </div>
             </FadeIn>
             
@@ -175,7 +175,7 @@ export default function StartupsPage() {
                     <div className={`w-12 h-14 ${feature.color} rounded-xl flex items-center justify-center mx-auto mb-4`}>
                       <feature.icon className="w-6 h-6" />
                     </div>
-                    <h3 className="font-bold text-[#003822] mb-2">{feature.title}</h3>
+                    <h3 className="font-bold text-primary mb-2">{feature.title}</h3>
                     <p className="text-sm text-gray-600">{feature.description}</p>
                   </div>
                 </StaggerItem>
@@ -185,12 +185,12 @@ export default function StartupsPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-16 bg-[#003822] text-white">
+        <section className="py-16 bg-primary text-white">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <FadeIn>
-              <Sparkles className="w-12 h-12 text-[#E5A400] mx-auto mb-4" />
+              <Sparkles className="w-12 h-12 text-gold mx-auto mb-4" />
               <h2 className="text-2xl font-bold mb-4">Ready to launch your wholesale channel?</h2>
-              <Button asChild className="bg-[#E5A400] text-[#003822] hover:bg-[#E5A400]/90 rounded-full px-8">
+              <Button asChild className="bg-gold text-primary hover:bg-gold/90 rounded-full px-8">
                 <Link href="/contact">Start Free Trial</Link>
               </Button>
             </FadeIn>

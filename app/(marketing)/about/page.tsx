@@ -18,7 +18,7 @@ const values = [
 const milestones = [
   { year: "2024", title: "Founded in Stockholm", desc: "BrandGate was born from the frustration of managing B2B distribution with spreadsheets and email." },
   { year: "2025", title: "Platform launch", desc: "Launched the core platform with order management, distributor portal, and product catalog." },
-  { year: "2026", title: "Store builder & AI tools", desc: "Introduced the drag-and-drop storefront editor and AI-powered website importer for instant branding." },
+  { year: "2026", title: "Store builder", desc: "Introduced the drag-and-drop storefront editor so brands can ship a polished B2B portal without a designer." },
 ];
 
 export default function AboutPage() {

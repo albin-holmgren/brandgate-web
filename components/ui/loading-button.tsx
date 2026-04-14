@@ -16,10 +16,10 @@ const LoadingButton = forwardRef<HTMLButtonElement, LoadingButtonProps>(
     const baseStyles = "inline-flex items-center justify-center rounded-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50";
     
     const variants = {
-      default: "bg-[#E5A400] text-[#003822] hover:bg-[#E5A400]/90",
+      default: "bg-gold text-primary hover:bg-gold/90",
       outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
       ghost: "hover:bg-accent hover:text-accent-foreground",
-      secondary: "bg-[#003822] text-white hover:bg-[#003822]/90",
+      secondary: "bg-primary text-white hover:bg-primary/90",
     };
     
     const sizes = {

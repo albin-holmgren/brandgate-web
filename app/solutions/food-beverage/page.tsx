@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 function BatchTimelineVisual() {
   return (
     <div className="bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-200">
-      <div className="bg-[#003822] px-4 py-3 flex items-center justify-between">
+      <div className="bg-primary px-4 py-3 flex items-center justify-between">
         <span className="text-white font-semibold text-sm flex items-center gap-2">
           <Shield className="w-4 h-4" />
           Batch Traceability
@@ -40,7 +40,7 @@ function BatchTimelineVisual() {
           ].map((item, i) => (
             <div key={i} className="relative flex items-start gap-4 mb-4 last:mb-0">
               <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 relative z-10 ${
-                item.status === 'complete' ? 'bg-gray-500' : 'bg-[#E5A400]'
+                item.status === 'complete' ? 'bg-gray-500' : 'bg-gold'
               }`}>
                 <CheckCircle2 className="w-4 h-4 text-white" />
               </div>
@@ -65,7 +65,7 @@ function ExpiryAlertVisual() {
     <div className="bg-white rounded-xl shadow-xl p-4 border border-gray-200">
       <div className="flex items-center justify-between mb-4">
         <span className="text-sm font-semibold text-gray-900 flex items-center gap-2">
-          <Clock className="w-4 h-4 text-[#E5A400]" />
+          <Clock className="w-4 h-4 text-gold" />
           Expiry Monitoring
         </span>
         <span className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full font-medium">3 Alerts</span>
@@ -90,7 +90,7 @@ function ExpiryAlertVisual() {
               <div className="text-right">
                 <p className={`text-sm font-bold ${
                   item.level === 'critical' ? 'text-gray-600' :
-                  item.level === 'warning' ? 'text-[#E5A400]' :
+                  item.level === 'warning' ? 'text-gold' :
                   'text-gray-600'
                 }`}>{item.expiry}</p>
                 <p className="text-xs text-gray-500">remaining</p>
@@ -109,7 +109,7 @@ export default function FoodBeveragePage() {
       <Navbar />
       <main>
         {/* HERO - Food Safety Focus */}
-        <section className="bg-[#003822] text-white py-20 lg:py-32">
+        <section className="bg-primary text-white py-20 lg:py-32">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -120,14 +120,14 @@ export default function FoodBeveragePage() {
                   </div>
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold uppercase leading-tight">
                     Trace Every
-                    <span className="text-[#E5A400] block">Batch</span>
+                    <span className="text-gold block">Batch</span>
                   </h1>
                   <p className="text-white/80 text-lg mt-6 max-w-lg">
                     From farm to shelf, track every batch with complete traceability. 
                     Be recall-ready in minutes, not days.
                   </p>
                   <div className="flex flex-wrap gap-4 mt-8">
-                    <Button className="bg-[#E5A400] text-[#003822] hover:bg-[#E5A400]/30 rounded-full px-8 font-semibold">
+                    <Button asChild className="bg-gold text-primary hover:bg-gold/30 rounded-full px-8 font-semibold">
                       <Link href="/contact">Start Free Trial</Link>
                     </Button>
                   </div>
@@ -143,7 +143,7 @@ export default function FoodBeveragePage() {
         {/* COMPLIANCE BADGES */}
         <section className="py-8 bg-gray-50 border-y border-green-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-wrap justify-center gap-6 text-sm text-[#003822]">
+            <div className="flex flex-wrap justify-center gap-6 text-sm text-primary">
               <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
                 <CheckCircle2 className="w-4 h-4" /> EU Food Safety
               </span>
@@ -194,7 +194,7 @@ export default function FoodBeveragePage() {
               {/* Stacked Cards */}
               <div className="md:col-span-5 space-y-6">
                 <div className="bg-gray-50 rounded-2xl p-6 border border-yellow-100">
-                  <div className="w-12 h-12 bg-[#E5A400] rounded-xl flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-gold rounded-xl flex items-center justify-center mb-4">
                     <Calendar className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">Expiry Management</h3>
@@ -204,7 +204,7 @@ export default function FoodBeveragePage() {
                 </div>
 
                 <div className="bg-gray-50 rounded-2xl p-6 border border-blue-100">
-                  <div className="w-12 h-12 bg-[#003822] rounded-xl flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mb-4">
                     <Thermometer className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">Temperature Logs</h3>
@@ -216,7 +216,7 @@ export default function FoodBeveragePage() {
 
               {/* Bottom Cards */}
               <div className="md:col-span-4 bg-gray-50 rounded-2xl p-6 border border-green-100">
-                <div className="w-12 h-12 bg-[#003822] rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mb-4">
                   <Leaf className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Certifications</h3>
@@ -254,7 +254,7 @@ export default function FoodBeveragePage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
                 <FadeIn>
-                  <div className="inline-flex items-center gap-2 bg-gray-100 text-[#003822] px-3 py-1 rounded-full text-sm font-medium mb-4">
+                  <div className="inline-flex items-center gap-2 bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
                     <AlertTriangle className="w-4 h-4" />
                     Proactive Alerts
                   </div>
@@ -290,11 +290,11 @@ export default function FoodBeveragePage() {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-[#003822] text-white text-center">
+        <section className="py-20 bg-primary text-white text-center">
           <div className="max-w-3xl mx-auto px-4">
-            <Shield className="w-12 h-12 text-[#E5A400] mx-auto mb-6" />
+            <Shield className="w-12 h-12 text-gold mx-auto mb-6" />
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Food safety starts with traceability</h2>
-            <Button className="bg-[#E5A400] text-[#003822] hover:bg-[#E5A400]/30 rounded-full px-10 py-6 text-lg font-semibold">
+            <Button asChild className="bg-gold text-primary hover:bg-gold/30 rounded-full px-10 py-6 text-lg font-semibold">
               <Link href="/contact">Get Started Free</Link>
             </Button>
           </div>

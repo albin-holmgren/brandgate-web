@@ -201,11 +201,11 @@ export function Navbar() {
 
       {/* Mobile drawer */}
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-0 top-16 bg-[#003822] z-40 overflow-y-auto animate-in slide-in-from-right duration-300">
+        <div className="lg:hidden fixed inset-0 top-16 bg-primary z-40 overflow-y-auto animate-in slide-in-from-right duration-300">
           <div className="px-6 py-6 space-y-6">
             {Object.entries(megaMenuData).map(([key, data]) => (
               <div key={key} className="space-y-3">
-                <div className="text-sm font-bold text-[#E5A400] uppercase tracking-wider">
+                <div className="text-sm font-bold text-gold uppercase tracking-wider">
                   {data.label}
                 </div>
                 <div className="space-y-2 pl-2 border-l-2 border-white/10">
@@ -230,7 +230,7 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-between py-2 text-sm font-medium text-white hover:text-[#E5A400] transition-colors"
+                  className="flex items-center justify-between py-2 text-sm font-medium text-white hover:text-gold transition-colors"
                 >
                   <span>{link.label}</span>
                   <ChevronRight className="w-4 h-4 text-white/40" />
@@ -248,7 +248,7 @@ export function Navbar() {
               </a>
               <Button 
                 asChild 
-                className="w-full bg-[#E5A400] text-[#003822] hover:bg-[#E5A400]/90 rounded-lg font-semibold py-3"
+                className="w-full bg-gold text-primary hover:bg-gold/90 rounded-lg font-semibold py-3"
               >
                 <a href="https://app.brandgate.dev/signup" onClick={() => setMobileOpen(false)}>
                   Get Started Free

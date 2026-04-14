@@ -43,7 +43,7 @@ export function Breadcrumbs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ol className="flex items-center flex-wrap gap-2 text-sm">
           <li>
-            <Link href="/" className="flex items-center gap-1 text-gray-500 hover:text-[#003822] transition-colors">
+            <Link href="/" className="flex items-center gap-1 text-gray-500 hover:text-primary transition-colors">
               <Home className="w-4 h-4" />
               <span className="sr-only">Home</span>
             </Link>
@@ -57,13 +57,13 @@ export function Breadcrumbs() {
               <li key={path} className="flex items-center gap-2">
                 <ChevronRight className="w-4 h-4 text-gray-400" />
                 {isLast ? (
-                  <span className="font-medium text-[#003822]" aria-current="page">
+                  <span className="font-medium text-primary" aria-current="page">
                     {breadcrumbMap[path] || path}
                   </span>
                 ) : (
                   <Link 
                     href={href} 
-                    className="text-gray-500 hover:text-[#003822] transition-colors capitalize"
+                    className="text-gray-500 hover:text-primary transition-colors capitalize"
                   >
                     {breadcrumbMap[path] || path}
                   </Link>

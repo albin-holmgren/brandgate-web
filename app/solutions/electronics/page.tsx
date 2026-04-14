@@ -19,12 +19,12 @@ export const metadata: Metadata = {
 function SerialTrackerVisual() {
   return (
     <div className="bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-200">
-      <div className="bg-[#003822] px-4 py-3 flex items-center justify-between">
+      <div className="bg-primary px-4 py-3 flex items-center justify-between">
         <span className="text-white font-semibold text-sm flex items-center gap-2">
           <Cpu className="w-4 h-4" />
           Serial Number Tracking
         </span>
-        <span className="bg-[#E5A400] text-gray-900 text-xs px-2 py-1 rounded font-bold">LIVE</span>
+        <span className="bg-gold text-gray-900 text-xs px-2 py-1 rounded font-bold">LIVE</span>
       </div>
       <div className="p-4">
         <div className="space-y-3">
@@ -37,18 +37,18 @@ function SerialTrackerVisual() {
               <div className="flex items-center justify-between mb-1">
                 <span className="text-xs font-mono text-gray-600">{item.serial}</span>
                 <span className={`text-xs px-2 py-0.5 rounded-full ${
-                  item.status === 'active' ? 'bg-gray-100 text-gray-700' : 'bg-gray-100 text-[#003822]'
+                  item.status === 'active' ? 'bg-gray-100 text-gray-700' : 'bg-gray-100 text-primary'
                 }`}>{item.status}</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-sm font-medium text-gray-900">{item.product}</span>
-                <span className="text-xs text-[#003822]">{item.warranty}</span>
+                <span className="text-xs text-primary">{item.warranty}</span>
               </div>
             </div>
           ))}
         </div>
         <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-cyan-200">
-          <div className="flex items-center gap-2 text-sm text-[#003822]">
+          <div className="flex items-center gap-2 text-sm text-primary">
             <CheckCircle2 className="w-4 h-4" />
             <span className="font-medium">Block scanning enabled</span>
           </div>
@@ -64,15 +64,15 @@ function TechSpecsVisual() {
     <div className="bg-white rounded-xl shadow-xl p-5 border border-gray-200">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-[#003822] rounded-lg flex items-center justify-center">
-            <Laptop className="w-5 h-5 text-[#E5A400]" />
+          <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+            <Laptop className="w-5 h-5 text-gold" />
           </div>
           <div>
             <p className="text-sm font-bold text-gray-900">ProBook X200</p>
             <p className="text-xs text-gray-500">Model: PB-X200-15</p>
           </div>
         </div>
-        <span className="bg-gray-100 text-[#003822] text-xs px-2 py-1 rounded font-medium">TECH SPECS</span>
+        <span className="bg-gray-100 text-primary text-xs px-2 py-1 rounded font-medium">TECH SPECS</span>
       </div>
       
       <div className="space-y-3">
@@ -96,8 +96,8 @@ function TechSpecsVisual() {
         </div>
         
         <div className="flex items-center gap-2 pt-2 border-t">
-          <FileText className="w-4 h-4 text-[#003822]" />
-          <span className="text-sm text-[#003822]">Download full spec sheet (PDF)</span>
+          <FileText className="w-4 h-4 text-primary" />
+          <span className="text-sm text-primary">Download full spec sheet (PDF)</span>
         </div>
       </div>
     </div>
@@ -110,28 +110,28 @@ export default function ElectronicsPage() {
       <Navbar />
       <main>
         {/* HERO - Tech Focus */}
-        <section className="bg-[#003822] text-white py-20 lg:py-32">
+        <section className="bg-primary text-white py-20 lg:py-32">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <FadeIn>
-                  <div className="inline-flex items-center gap-2 bg-[#E5A400]/20 px-4 py-2 rounded-full text-sm mb-6 text-[#E5A400]/30">
+                  <div className="inline-flex items-center gap-2 bg-gold/20 px-4 py-2 rounded-full text-sm mb-6 text-gold/30">
                     <Cpu className="w-4 h-4" />
                     Electronics & Tech
                   </div>
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold uppercase leading-tight">
                     Serial-Level
-                    <span className="text-[#E5A400] block">Tracking</span>
+                    <span className="text-gold block">Tracking</span>
                   </h1>
                   <p className="text-gray-400 text-lg mt-6 max-w-lg">
                     Track every unit by serial number. Manage warranties, handle RMAs, 
                     and keep firmware updated across your entire distribution network.
                   </p>
                   <div className="flex flex-wrap gap-4 mt-8">
-                    <Button className="bg-[#E5A400] text-gray-900 hover:bg-[#E5A400]/30 rounded-full px-8 font-semibold">
+                    <Button asChild className="bg-gold text-gray-900 hover:bg-gold/30 rounded-full px-8 font-semibold">
                       <Link href="/contact">Start Free Trial</Link>
                     </Button>
-                    <Button variant="outline" className="border-slate-600 text-gray-300 hover:bg-[#003822] rounded-full px-8">
+                    <Button asChild variant="outline" className="border-slate-600 text-gray-300 hover:bg-primary rounded-full px-8">
                       <Link href="/features">See API</Link>
                     </Button>
                   </div>
@@ -145,7 +145,7 @@ export default function ElectronicsPage() {
         </section>
 
         {/* TECH SPECS BANNER */}
-        <section className="py-8 bg-[#003822] border-y border-slate-700">
+        <section className="py-8 bg-primary border-y border-slate-700">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               {[
@@ -155,7 +155,7 @@ export default function ElectronicsPage() {
                 { label: "API Access", value: "REST + GraphQL" },
               ].map((stat) => (
                 <div key={stat.label}>
-                  <p className="text-[#E5A400] font-bold text-lg">{stat.value}</p>
+                  <p className="text-gold font-bold text-lg">{stat.value}</p>
                   <p className="text-gray-400 text-sm">{stat.label}</p>
                 </div>
               ))}
@@ -168,7 +168,7 @@ export default function ElectronicsPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
               <div className="text-center max-w-2xl mx-auto mb-16">
-                <span className="text-[#003822] font-semibold text-sm uppercase">Tech-Specific Features</span>
+                <span className="text-primary font-semibold text-sm uppercase">Tech-Specific Features</span>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3">
                   Built for Hardware Distribution
                 </h2>
@@ -180,8 +180,8 @@ export default function ElectronicsPage() {
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <FadeIn>
                   <div className="bg-gray-50 rounded-2xl p-8 border border-slate-100">
-                    <div className="w-14 h-14 bg-[#003822] rounded-xl flex items-center justify-center mb-6">
-                      <Shield className="w-7 h-7 text-[#E5A400]" />
+                    <div className="w-14 h-14 bg-primary rounded-xl flex items-center justify-center mb-6">
+                      <Shield className="w-7 h-7 text-gold" />
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">Warranty by Serial</h3>
                     <p className="text-gray-600 mb-6">
@@ -191,7 +191,7 @@ export default function ElectronicsPage() {
                     <ul className="space-y-3">
                       {["Automatic warranty validation", "Claims history per serial", "Repair tracking", "Replacement management"].map((item) => (
                         <li key={item} className="flex items-center gap-3">
-                          <CheckCircle2 className="w-5 h-5 text-[#003822] shrink-0" />
+                          <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
                           <span className="text-gray-700">{item}</span>
                         </li>
                       ))}
@@ -222,7 +222,7 @@ export default function ElectronicsPage() {
                       <div className="bg-white p-4 rounded-xl shadow-sm">
                         <div className="flex items-center gap-3 mb-2">
                           <div className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center">
-                            <BarChart3 className="w-4 h-4 text-[#003822]" />
+                            <BarChart3 className="w-4 h-4 text-primary" />
                           </div>
                           <span className="font-semibold text-gray-900">Update Analytics</span>
                         </div>
@@ -244,7 +244,7 @@ export default function ElectronicsPage() {
                     <div className="bg-white p-4 rounded-lg border border-slate-200">
                       <div className="flex items-center justify-between text-sm">
                         <span className="text-gray-600">Current firmware</span>
-                        <span className="font-mono text-[#003822]">v2.4.1</span>
+                        <span className="font-mono text-primary">v2.4.1</span>
                       </div>
                     </div>
                   </div>
@@ -255,8 +255,8 @@ export default function ElectronicsPage() {
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <FadeIn>
                   <div className="bg-gray-50 rounded-2xl p-8 border border-slate-100">
-                    <div className="w-14 h-14 bg-[#003822] rounded-xl flex items-center justify-center mb-6">
-                      <Box className="w-7 h-7 text-[#E5A400]" />
+                    <div className="w-14 h-14 bg-primary rounded-xl flex items-center justify-center mb-6">
+                      <Box className="w-7 h-7 text-gold" />
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">Bundle Management</h3>
                     <p className="text-gray-600 mb-6">
@@ -286,7 +286,7 @@ export default function ElectronicsPage() {
                     <div className="space-y-2">
                       <div className="flex items-center justify-between bg-white p-3 rounded-lg">
                         <span className="text-sm text-gray-600">Open RMAs</span>
-                        <span className="font-bold text-[#E5A400]">12</span>
+                        <span className="font-bold text-gold">12</span>
                       </div>
                       <div className="flex items-center justify-between bg-white p-3 rounded-lg">
                         <span className="text-sm text-gray-600">Avg. Resolution</span>
@@ -304,21 +304,21 @@ export default function ElectronicsPage() {
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
-              <div className="bg-[#003822] rounded-2xl p-8 md:p-12 text-center md:text-left">
+              <div className="bg-primary rounded-2xl p-8 md:p-12 text-center md:text-left">
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                   <div>
-                    <Cpu className="w-12 h-12 text-[#E5A400] mb-6" />
+                    <Cpu className="w-12 h-12 text-gold mb-6" />
                     <h2 className="text-3xl font-bold text-white mb-4">Built for Integration</h2>
                     <p className="text-gray-400 mb-6">
                       Connect with your existing systems. Our REST and GraphQL APIs 
                       make integration with your ERP, CRM, and logistics platforms simple.
                     </p>
-                    <Button className="bg-[#E5A400] text-gray-900 hover:bg-[#E5A400]/30 rounded-full">
+                    <Button asChild className="bg-gold text-gray-900 hover:bg-gold/30 rounded-full">
                       <Link href="/api">View API Docs</Link>
                     </Button>
                   </div>
-                  <div className="bg-[#003822] rounded-xl p-6 font-mono text-sm">
-                    <p className="text-[#E5A400] mb-2">// Get product by serial</p>
+                  <div className="bg-primary rounded-xl p-6 font-mono text-sm">
+                    <p className="text-gold mb-2">// Get product by serial</p>
                     <p className="text-gray-300">GET /api/v1/products/serial/{'{sn}'}</p>
                     <p className="text-gray-500 mt-4 mb-2">Response:</p>
                     <div className="text-gray-300 space-y-1">
@@ -336,11 +336,11 @@ export default function ElectronicsPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-[#003822] text-white text-center">
+        <section className="py-20 bg-primary text-white text-center">
           <div className="max-w-3xl mx-auto px-4">
-            <Cpu className="w-12 h-12 text-[#E5A400] mx-auto mb-6" />
+            <Cpu className="w-12 h-12 text-gold mx-auto mb-6" />
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to scale your tech distribution?</h2>
-            <Button className="bg-[#E5A400] text-gray-900 hover:bg-[#E5A400]/30 rounded-full px-10 py-6 text-lg font-semibold">
+            <Button asChild className="bg-gold text-gray-900 hover:bg-gold/30 rounded-full px-10 py-6 text-lg font-semibold">
               <Link href="/contact">Get Started Free</Link>
             </Button>
           </div>

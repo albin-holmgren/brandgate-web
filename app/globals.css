@@ -134,6 +134,10 @@
   * {
     @apply border-border;
   }
+  html {
+    /* Leave room for the sticky 64px navbar when anchor links scroll into view */
+    scroll-padding-top: 5rem;
+  }
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
