@@ -92,8 +92,8 @@ export default function ApiPage() {
           <div className="max-w-4xl mx-auto px-6">
             <FadeIn>
               <h2 className="text-2xl font-bold text-foreground mb-6">Quick Start</h2>
-              <div className="bg-slate-900 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-sm text-slate-300 font-mono">
+              <div className="bg-primary text-primary-foreground rounded-xl p-6 overflow-x-auto border border-border">
+                <pre className="text-sm text-primary-foreground/80 font-mono leading-relaxed">
 {`// Get your API key from dashboard
 const brandgate = require('brandgate')('your_api_key');
 

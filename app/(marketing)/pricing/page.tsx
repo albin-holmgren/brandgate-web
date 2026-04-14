@@ -159,9 +159,9 @@ export default function PricingPage() {
                     >
                       {tier.badge && (
                         <span className={`absolute -top-4 left-1/2 -translate-x-1/2 text-xs font-bold px-5 py-1.5 rounded-full flex items-center gap-1.5 ${
-                          tier.name === "Pro" 
-                            ? "bg-gold text-gold-foreground" 
-                            : "bg-slate-700 text-white"
+                          tier.name === "Pro"
+                            ? "bg-gold text-gold-foreground"
+                            : "bg-primary text-primary-foreground"
                         }`}>
                           <ThumbsUp className="w-3.5 h-3.5" />
                           {tier.badge}

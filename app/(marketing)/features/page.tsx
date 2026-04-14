@@ -3,7 +3,7 @@ import { Footer } from "@/components/layout/footer";
 import { FadeIn, ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion/fade-in";
 import { Button } from "@/components/ui/button";
 import { DashboardPreview, PortalPreview, OrderFlowGraphic, MobilePreview, IntegrationGrid, AnalyticsChart } from "@/components/visuals/dashboard-previews";
-import { CheckCircle2, Sparkles } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -98,53 +98,40 @@ export default function FeaturesPage() {
   return (
     <>
       <Navbar />
-      <main className="overflow-x-hidden">
-        {/* Hero Section */}
-        <section className="relative bg-primary text-primary-foreground overflow-hidden">
-          <div className="absolute inset-0 opacity-[0.03]" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
-            backgroundSize: '40px 40px'
-          }} />
-          
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <div className="text-center lg:text-left">
-                <FadeIn>
-                  <div className="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
-                    <Sparkles className="w-4 h-4" />
-                    Platform Features
-                  </div>
-                </FadeIn>
-                
-                <FadeIn delay={0.1}>
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
-                    Everything You Need to
-                    <span className="block text-gold">Scale Wholesale</span>
-                  </h1>
-                </FadeIn>
-                
-                <FadeIn delay={0.2}>
-                  <p className="text-primary-foreground/60 text-base sm:text-lg mt-6 max-w-xl mx-auto lg:mx-0">
-                    From distributor onboarding to order fulfillment — BrandGate gives you the tools to scale wholesale effortlessly.
-                  </p>
-                </FadeIn>
-                
-                <FadeIn delay={0.3}>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-8">
-                    <Button asChild size="lg" className="bg-gold text-primary hover:bg-gold/90 rounded-full px-8">
-                      <Link href="/contact">Start Free Trial</Link>
-                    </Button>
-                    <Button asChild size="lg" variant="outline" className="bg-transparent border-white/20 text-white hover:bg-white/10 rounded-full px-8">
-                      <Link href="/pricing">View Pricing</Link>
-                    </Button>
-                  </div>
-                </FadeIn>
+      <main>
+        {/* Hero */}
+        <section aria-label="Features hero" className="relative bg-primary text-primary-foreground overflow-hidden">
+          <div
+            className="absolute inset-0 opacity-[0.04]"
+            style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
+              backgroundSize: "40px 40px",
+            }}
+          />
+          <div className="relative max-w-4xl mx-auto px-6 py-24 md:py-36 text-center">
+            <FadeIn>
+              <div className="w-16 h-1 bg-gold mx-auto mb-8 shadow-[0_0_12px_hsl(45,93%,47%,0.4)]" />
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight uppercase leading-[1.1]">
+                Everything you need to scale wholesale
+              </h1>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <p className="text-primary-foreground/60 text-lg md:text-xl mt-8 max-w-2xl mx-auto font-light">
+                From distributor onboarding to order fulfillment — one platform for the whole wholesale channel.
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+                <Button asChild size="lg" className="bg-gold text-gold-foreground hover:bg-gold/90 text-base px-10 rounded-full font-semibold h-12">
+                  <a href="https://app.brandgate.dev/signup">Start Free Trial <ArrowRight className="w-4 h-4 ml-2" /></a>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="text-base px-10 bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground rounded-full h-12">
+                  <Link href="/pricing">View Pricing</Link>
+                </Button>
               </div>
-              
-              <FadeIn delay={0.2}>
-                <DashboardPreview />
-              </FadeIn>
-            </div>
+            </FadeIn>
           </div>
         </section>
 

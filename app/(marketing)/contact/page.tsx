@@ -78,7 +78,7 @@ export default function ContactPage() {
                 <div className="w-12 h-1 bg-gold mb-6 shadow-[0_0_12px_hsl(45,93%,47%,0.4)]" />
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground uppercase tracking-tight mb-4">Send us a message</h2>
                 <div className="flex items-center gap-2 mb-8">
-                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                  <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
                   <span className="text-sm text-muted-foreground">Typically replies within 4 hours</span>
                 </div>
                 {submitted ? (

@@ -2,199 +2,145 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { FadeIn, ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion/fade-in";
 import { Button } from "@/components/ui/button";
-import { TrendingUp, Building2, Users, Globe, CheckCircle2, BarChart3 } from "lucide-react";
+import { Users, BarChart3, Globe, Building2, CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "B2B Wholesale for Growing Brands | BrandGate",
-  description: "Scale your wholesale operations with advanced features, automation, and analytics.",
+  description: "Scale your wholesale operations with advanced tools, analytics, and a distributor portal built to grow with you.",
   alternates: { canonical: "https://brandgate.dev/solutions/growing-brands" },
 };
 
-// Growth Dashboard Preview
-function GrowthDashboard() {
-  return (
-    <div className="bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-200">
-      <div className="bg-primary px-4 py-3 flex items-center justify-between">
-        <span className="text-white font-semibold text-sm">Growth Dashboard</span>
-        <span className="bg-gold text-primary text-xs px-2 py-1 rounded-full font-medium">+127%</span>
-      </div>
-      <div className="p-4">
-        <div className="flex items-end gap-2 h-24 mb-4">
-          {[30, 45, 40, 60, 55, 80, 95].map((h, i) => (
-            <div key={i} className="flex-1 bg-primary/10 rounded-t-md relative">
-              <div className="absolute bottom-0 left-0 right-0 bg-primary rounded-t-md transition-all" style={{ height: `${h}%` }} />
-            </div>
-          ))}
-        </div>
-        <div className="grid grid-cols-3 gap-2 text-center text-xs">
-          <div className="bg-gold/10 p-2 rounded">
-            <p className="font-bold text-primary">Unlimited</p>
-            <p className="text-gray-500">Retailers</p>
-          </div>
-          <div className="bg-primary/10 p-2 rounded">
-            <p className="font-bold text-primary">24/7</p>
-            <p className="text-gray-500">Support</p>
-          </div>
-          <div className="bg-gold/10 p-2 rounded">
-            <p className="font-bold text-primary">API</p>
-            <p className="text-gray-500">Access</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-const features = [
+const capabilities = [
   {
     icon: Users,
-    title: "Unlimited Retailers",
-    description: "No caps on your growth. Add as many retailers as you need.",
-    color: "bg-primary/10 text-primary",
+    title: "Grow your retailer base",
+    description: "Add retailers without adding headcount. Self-service onboarding, per-distributor catalogs, and tiered pricing keep admin down as volume goes up.",
   },
   {
     icon: BarChart3,
-    title: "Advanced Analytics",
-    description: "Deep insights into sales trends and retailer behavior.",
-    color: "bg-gold/10 text-primary",
+    title: "Analytics that move the needle",
+    description: "Revenue dashboards, distributor rankings, and product performance so you know where to push next quarter.",
   },
   {
     icon: Globe,
-    title: "Multi-Region",
-    description: "Expand internationally with multi-currency and regional pricing.",
-    color: "bg-primary/10 text-primary",
+    title: "International-ready",
+    description: "Multi-currency pricing and an English + Swedish interface today, with more on the roadmap. Run one wholesale channel across markets.",
   },
-  {
-    icon: Building2,
-    title: "Team Collaboration",
-    description: "Add team members with role-based permissions.",
-    color: "bg-gold/10 text-primary",
-  },
+];
+
+const checklist = [
+  "Unlimited SKUs with variants",
+  "Tiered price lists per distributor group",
+  "Custom minimum order rules",
+  "Revenue dashboards and distributor rankings",
+  "Automated invoicing from orders",
+  "Integrations with Fortnox, Visma, and Stripe",
+  "Branded distributor portal",
+  "Team members with role-based access",
 ];
 
 export default function GrowingBrandsPage() {
   return (
     <>
       <Navbar />
-      <main className="overflow-x-hidden">
+      <main className="min-h-screen bg-background">
         {/* Hero */}
-        <section className="relative bg-primary text-white overflow-hidden">
-          <div className="absolute inset-0 opacity-[0.03]" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
-            backgroundSize: '40px 40px'
-          }} />
-          
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center py-16 md:py-24 lg:py-32">
-              <div className="text-center lg:text-left">
-                <FadeIn>
-                  <div className="inline-flex items-center gap-2 bg-gold/20 text-gold px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                    <TrendingUp className="w-4 h-4" />
-                    For Growing Brands
-                  </div>
-                </FadeIn>
-                
-                <FadeIn delay={0.1}>
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
-                    Scale Your
-                    <span className="block text-gold">Wholesale Operations</span>
-                  </h1>
-                </FadeIn>
-                
-                <FadeIn delay={0.2}>
-                  <p className="text-white/60 text-base sm:text-lg mt-6 max-w-xl">
-                    Advanced tools and automation for brands expanding their B2B reach. Handle 10x more retailers without 10x the work.
-                  </p>
-                </FadeIn>
-                
-                <FadeIn delay={0.3}>
-                  <Button asChild size="lg" className="bg-gold text-primary hover:bg-gold/90 rounded-full px-8 mt-8">
-                    <Link href="/contact">See Growth Plan</Link>
-                  </Button>
-                </FadeIn>
-              </div>
-              
-              <FadeIn delay={0.2}>
-                <GrowthDashboard />
-              </FadeIn>
-            </div>
-          </div>
-        </section>
-
-        {/* Pricing */}
-        <section className="py-12 bg-primary/5">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section aria-label="Growing brands hero" className="relative bg-primary text-primary-foreground overflow-hidden">
+          <div
+            className="absolute inset-0 opacity-[0.04]"
+            style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
+              backgroundSize: "40px 40px",
+            }}
+          />
+          <div className="relative max-w-4xl mx-auto px-6 py-24 md:py-36 text-center">
             <FadeIn>
-              <div className="max-w-sm mx-auto bg-white rounded-2xl shadow-xl p-8 border-2 border-primary">
-                <div className="text-center mb-6">
-                  <h3 className="text-xl font-bold text-primary">Pro Plan</h3>
-                  <div className="mt-4">
-                    <span className="text-5xl font-bold text-primary">€281</span>
-                    <span className="text-gray-500">/month</span>
-                  </div>
-                  <p className="text-sm text-gray-500 mt-2">€225/month billed annually</p>
-                </div>
-                <ul className="space-y-3 mb-8">
-                  {["Up to 500 products", "Online store builder", "Automated invoicing", "Advanced analytics", "Priority support", "API access"].map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-sm text-gray-600">
-                      <CheckCircle2 className="w-4 h-4 text-gold" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <Button asChild className="w-full bg-primary text-white hover:bg-primary/90">
-                  <Link href="/contact">Get Started</Link>
+              <div className="w-16 h-1 bg-gold mx-auto mb-8 shadow-[0_0_12px_hsl(45,93%,47%,0.4)]" />
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight uppercase leading-[1.1]">
+                For growing brands
+              </h1>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <p className="text-primary-foreground/60 text-lg md:text-xl mt-8 max-w-2xl mx-auto font-light">
+                Handle more retailers without more admin. Tools and automation built for brands moving past spreadsheets.
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+                <Button asChild size="lg" className="bg-gold text-gold-foreground hover:bg-gold/90 text-base px-10 rounded-full font-semibold h-12">
+                  <a href="https://app.brandgate.dev/signup">Get Started <ArrowRight className="w-4 h-4 ml-2" /></a>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="text-base px-10 bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground rounded-full h-12">
+                  <Link href="/pricing">View Pricing</Link>
                 </Button>
               </div>
             </FadeIn>
           </div>
         </section>
 
-        {/* Features */}
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <FadeIn>
-              <div className="text-center mb-12">
-                <h2 className="text-2xl sm:text-3xl font-bold text-primary">Tools for Scaling</h2>
-              </div>
-            </FadeIn>
-            
-            <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {features.map((feature) => (
-                <StaggerItem key={feature.title}>
-                  <div className="bg-gray-50 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
-                    <div className={`w-12 h-14 ${feature.color} rounded-xl flex items-center justify-center mx-auto mb-4`}>
-                      <feature.icon className="w-6 h-6" />
+        {/* Capabilities */}
+        <section aria-label="Capabilities" className="py-24 md:py-32 bg-card border-t border-border">
+          <div className="max-w-7xl mx-auto px-6">
+            <ScrollReveal className="text-center mb-20">
+              <div className="w-12 h-1 bg-gold mx-auto mb-6 shadow-[0_0_12px_hsl(45,93%,47%,0.4)]" />
+              <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tight">Built to scale</h2>
+              <p className="text-muted-foreground mt-5 text-lg max-w-xl mx-auto">
+                The tools you need once wholesale stops being a side project.
+              </p>
+            </ScrollReveal>
+            <StaggerContainer staggerDelay={0.08} className="grid md:grid-cols-3 gap-6">
+              {capabilities.map((c) => (
+                <StaggerItem key={c.title}>
+                  <article className="bg-card border border-border rounded-2xl p-8 hover:shadow-xl hover:border-primary/20 transition-all duration-300 h-full">
+                    <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center mb-6">
+                      <c.icon className="w-7 h-7 text-primary-foreground" aria-hidden="true" />
                     </div>
-                    <h3 className="font-bold text-primary mb-2">{feature.title}</h3>
-                    <p className="text-sm text-gray-600">{feature.description}</p>
-                  </div>
+                    <h3 className="text-lg font-bold text-foreground mb-3">{c.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{c.description}</p>
+                  </article>
                 </StaggerItem>
               ))}
             </StaggerContainer>
           </div>
         </section>
 
-        {/* Stats */}
-        <section className="py-16 bg-primary text-white">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="grid grid-cols-3 gap-8 text-center">
-              <div>
-                <div className="text-4xl font-bold text-gold">3x</div>
-                <p className="text-white/60 text-sm">Faster onboarding</p>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-gold">10x</div>
-                <p className="text-white/60 text-sm">More orders</p>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-gold">50%</div>
-                <p className="text-white/60 text-sm">Less admin time</p>
-              </div>
-            </div>
+        {/* What you get */}
+        <section aria-label="What you get" className="py-24 md:py-32 bg-primary text-primary-foreground">
+          <div className="max-w-5xl mx-auto px-6">
+            <ScrollReveal className="text-center mb-16">
+              <div className="w-12 h-1 bg-gold mx-auto mb-6 shadow-[0_0_12px_hsl(45,93%,47%,0.4)]" />
+              <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight">What you get</h2>
+            </ScrollReveal>
+            <ul className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+              {checklist.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-primary-foreground/90">
+                  <CheckCircle2 className="w-5 h-5 text-gold mt-0.5 shrink-0" aria-hidden="true" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
+        </section>
+
+        {/* CTA */}
+        <section aria-label="Call to action" className="py-24 md:py-32 bg-card">
+          <ScrollReveal className="max-w-4xl mx-auto px-6 text-center">
+            <div className="w-12 h-1 bg-gold mx-auto mb-8 shadow-[0_0_12px_hsl(45,93%,47%,0.4)]" />
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tight">Ready to scale wholesale?</h2>
+            <p className="text-muted-foreground mt-6 text-lg">Start your free trial or book a personalized demo.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+              <Button asChild size="lg" className="bg-gold text-gold-foreground hover:bg-gold/90 text-base px-10 rounded-full font-semibold h-12">
+                <a href="https://app.brandgate.dev/signup">Get Started Free <ArrowRight className="w-4 h-4 ml-2" /></a>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="text-base px-10 rounded-full h-12">
+                <Link href="/contact">Book a Demo</Link>
+              </Button>
+            </div>
+          </ScrollReveal>
         </section>
       </main>
       <Footer />

@@ -1,298 +1,144 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion/fade-in";
+import { FadeIn, ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion/fade-in";
 import { Button } from "@/components/ui/button";
-import { 
-  Shirt, Ruler, Palette, Tag, TrendingUp, CheckCircle2, 
-  Layers, Clock, Percent, ArrowRight, Sparkles 
-} from "lucide-react";
+import { Ruler, Palette, Tag, CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Fashion Wholesale Platform | BrandGate",
-  description: "B2B platform for fashion brands. Manage size matrices, colorways, pre-orders, and digital lookbooks.",
+  title: "Wholesale for Fashion Brands | BrandGate",
+  description: "A B2B platform built for fashion brands. Manage size grids, colorways, pre-orders, and distributor-specific price lists.",
   alternates: { canonical: "https://brandgate.dev/solutions/fashion" },
 };
 
-// SIZE MATRIX VISUAL - Unique to Fashion
-function SizeMatrixVisual() {
-  return (
-    <div className="bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-200">
-      <div className="bg-primary px-4 py-3 flex items-center justify-between">
-        <span className="text-white font-semibold text-sm">Size Matrix</span>
-        <span className="bg-gold text-primary text-xs px-2 py-1 rounded font-bold">LIVE STOCK</span>
-      </div>
-      <div className="p-4">
-        <p className="text-xs text-gray-500 mb-3">Summer Dress - Navy Blue</p>
-        <div className="grid grid-cols-6 gap-1 text-center text-xs">
-          {['XS', 'S', 'M', 'L', 'XL', 'XXL'].map((size, i) => (
-            <div key={size} className="bg-gray-100 p-2 rounded font-medium text-gray-600">{size}</div>
-          ))}
-          {[12, 24, 48, 36, 18, 8].map((stock, i) => (
-            <div key={i} className={`p-2 rounded font-bold ${
-              stock < 10 ? 'bg-gray-100 text-gray-600' : 
-              stock < 20 ? 'bg-gold/10 text-gold' : 
-              'bg-gray-100 text-gray-700'
-            }`}>
-              {stock}
-            </div>
-          ))}
-        </div>
-        <div className="mt-3 flex items-center gap-2 text-xs">
-          <span className="w-3 h-3 bg-gray-100 rounded" /> In Stock
-          <span className="w-3 h-3 bg-gold/10 rounded" /> Low
-          <span className="w-3 h-3 bg-gray-100 rounded" /> Critical
-        </div>
-      </div>
-    </div>
-  );
-}
+const capabilities = [
+  {
+    icon: Ruler,
+    title: "Size & variant matrix",
+    description: "Manage size runs and colorways as structured variants so retailers never order a size you're out of.",
+  },
+  {
+    icon: Palette,
+    title: "Seasonal drops & pre-orders",
+    description: "Launch new collections with scheduled availability. Collect pre-orders before production, then convert to live orders.",
+  },
+  {
+    icon: Tag,
+    title: "Price lists per distributor",
+    description: "Assign margin-safe price lists per retailer or retailer group. Tiered pricing without spreadsheets.",
+  },
+];
 
-// LOOKBOOK VISUAL - Unique to Fashion
-function LookbookVisual() {
-  return (
-    <div className="bg-white rounded-xl shadow-xl p-4 border border-gray-200">
-      <div className="flex items-center justify-between mb-4">
-        <span className="text-sm font-semibold text-primary">Spring Collection 2026</span>
-        <span className="text-xs text-gray-400">Page 1 of 12</span>
-      </div>
-      <div className="grid grid-cols-2 gap-3">
-        <div className="space-y-3">
-          <div className="bg-gradient-to-br from-gray-100 to-gray-50 h-32 rounded-lg flex items-center justify-center">
-            <Shirt className="w-10 h-10 text-gray-400" />
-          </div>
-          <p className="text-xs font-medium text-gray-700">Floral Dress</p>
-          <p className="text-xs text-gray-500">€45 wholesale</p>
-        </div>
-        <div className="space-y-3">
-          <div className="bg-gradient-to-br from-gray-100 to-gray-50 h-32 rounded-lg flex items-center justify-center">
-            <Layers className="w-10 h-10 text-gray-400" />
-          </div>
-          <p className="text-xs font-medium text-gray-700">Linen Blazer</p>
-          <p className="text-xs text-gray-500">€89 wholesale</p>
-        </div>
-      </div>
-      <div className="mt-4 flex items-center gap-2">
-        <span className="bg-gold/20 text-primary text-xs px-2 py-1 rounded-full">New Arrival</span>
-        <span className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">In Stock</span>
-      </div>
-    </div>
-  );
-}
+const checklist = [
+  "Custom size grids per product line",
+  "Variant-level stock and low-stock alerts",
+  "Product pages ready for lookbook-style imagery",
+  "Tiered wholesale pricing per distributor",
+  "Minimum order values and pack sizes",
+  "Branded retailer portal with your fonts and colors",
+];
 
 export default function FashionPage() {
   return (
     <>
       <Navbar />
-      <main>
-        {/* HERO - Fashion Focus */}
-        <section className="bg-primary text-white py-20 lg:py-32">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <FadeIn>
-                  <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-sm mb-6">
-                    <Shirt className="w-4 h-4" />
-                    Fashion & Apparel
-                  </div>
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold uppercase leading-tight">
-                    Size-Perfect
-                    <span className="text-gold block">Wholesale</span>
-                  </h1>
-                  <p className="text-white/60 text-lg mt-6 max-w-lg">
-                    The only B2B platform with intelligent size matrix management. 
-                    Never sell out of mediums while larges sit in stock.
-                  </p>
-                  <div className="flex flex-wrap gap-4 mt-8">
-                    <Button asChild className="bg-gold text-primary hover:bg-gold/90 rounded-full px-8">
-                      <Link href="/contact">Start Free</Link>
-                    </Button>
-                    <Button asChild variant="outline" className="border-white/20 text-white hover:bg-white/10 rounded-full px-8">
-                      <Link href="/features">See Size Matrix</Link>
-                    </Button>
-                  </div>
-                </FadeIn>
-              </div>
-              <FadeIn delay={0.2}>
-                <SizeMatrixVisual />
-              </FadeIn>
-            </div>
-          </div>
-        </section>
-
-        {/* FASHION-SPECIFIC FEATURES */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <main className="min-h-screen bg-background">
+        {/* Hero */}
+        <section aria-label="Fashion hero" className="relative bg-primary text-primary-foreground overflow-hidden">
+          <div
+            className="absolute inset-0 opacity-[0.04]"
+            style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
+              backgroundSize: "40px 40px",
+            }}
+          />
+          <div className="relative max-w-4xl mx-auto px-6 py-24 md:py-36 text-center">
             <FadeIn>
-              <div className="text-center max-w-2xl mx-auto mb-16">
-                <span className="text-gold font-semibold text-sm uppercase">Fashion-Specific Tools</span>
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-3">
-                  Built for How Fashion Works
-                </h2>
+              <div className="w-16 h-1 bg-gold mx-auto mb-8 shadow-[0_0_12px_hsl(45,93%,47%,0.4)]" />
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight uppercase leading-[1.1]">
+                Wholesale for fashion brands
+              </h1>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <p className="text-primary-foreground/60 text-lg md:text-xl mt-8 max-w-2xl mx-auto font-light">
+                Run your size grids, seasonal drops, and distributor pricing from one branded B2B portal.
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+                <Button asChild size="lg" className="bg-gold text-gold-foreground hover:bg-gold/90 text-base px-10 rounded-full font-semibold h-12">
+                  <a href="https://app.brandgate.dev/signup">Get Started <ArrowRight className="w-4 h-4 ml-2" /></a>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="text-base px-10 bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground rounded-full h-12">
+                  <Link href="/contact">Book a Demo</Link>
+                </Button>
               </div>
             </FadeIn>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Size Matrix - Unique to Fashion */}
-              <FadeIn>
-                <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow">
-                  <div className="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center mb-6">
-                    <Ruler className="w-7 h-7 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold text-primary mb-3">Size Matrix Management</h3>
-                  <p className="text-gray-600 mb-4">
-                    Track every size-color combination independently. Get alerts when specific sizes run low.
-                  </p>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-gold" />
-                      XS to 4XL tracking
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-gold" />
-                      Size-specific alerts
-                    </li>
-                  </ul>
-                </div>
-              </FadeIn>
-
-              {/* Colorways - Unique to Fashion */}
-              <FadeIn delay={0.1}>
-                <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow">
-                  <div className="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center mb-6">
-                    <Palette className="w-7 h-7 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold text-primary mb-3">Colorway Management</h3>
-                  <p className="text-gray-600 mb-4">
-                    Manage multiple colors per style with visual swatches. Retailers see exactly what they are ordering.
-                  </p>
-                  <div className="flex gap-2 mt-4">
-                    <div className="w-8 h-8 rounded-full bg-gold border-2 border-white shadow" />
-                    <div className="w-8 h-8 rounded-full bg-primary border-2 border-white shadow" />
-                    <div className="w-8 h-8 rounded-full bg-gray-500 border-2 border-white shadow" />
-                    <div className="w-8 h-8 rounded-full bg-gold border-2 border-white shadow" />
-                    <div className="w-8 h-8 rounded-full bg-gray-200 border-2 border-white shadow flex items-center justify-center text-xs">+5</div>
-                  </div>
-                </div>
-              </FadeIn>
-
-              {/* Pre-orders - Unique to Fashion */}
-              <FadeIn delay={0.2}>
-                <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow">
-                  <div className="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center mb-6">
-                    <Clock className="w-7 h-7 text-gray-600" />
-                  </div>
-                  <h3 className="text-xl font-bold text-primary mb-3">Pre-order & Drops</h3>
-                  <p className="text-gray-600 mb-4">
-                    Take pre-orders for upcoming collections. Set embargo dates and manage drops like a pro.
-                  </p>
-                  <div className="bg-white p-3 rounded-lg border border-gray-200">
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-gray-600">Summer Drop</span>
-                      <span className="text-gold font-semibold">In 5 days</span>
-                    </div>
-                  </div>
-                </div>
-              </FadeIn>
-
-              {/* Tiered Pricing - Unique to Fashion */}
-              <FadeIn delay={0.3}>
-                <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow">
-                  <div className="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center mb-6">
-                    <Tag className="w-7 h-7 text-gold" />
-                  </div>
-                  <h3 className="text-xl font-bold text-primary mb-3">Boutique vs Department</h3>
-                  <p className="text-gray-600 mb-4">
-                    Different prices for boutiques and big box stores. Volume discounts that make sense.
-                  </p>
-                  <div className="space-y-2">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">Boutique</span>
-                      <span className="font-semibold text-primary">€45</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">Department Store</span>
-                      <span className="font-semibold text-primary">€38</span>
-                    </div>
-                  </div>
-                </div>
-              </FadeIn>
-
-              {/* Digital Lookbooks */}
-              <FadeIn delay={0.4}>
-                <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow">
-                  <div className="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center mb-6">
-                    <Layers className="w-7 h-7 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold text-primary mb-3">Digital Lookbooks</h3>
-                  <p className="text-gray-600 mb-4">
-                    Share beautiful, interactive lookbooks. Include styling notes and fabric details.
-                  </p>
-                </div>
-              </FadeIn>
-
-              {/* Trend Analytics */}
-              <FadeIn delay={0.5}>
-                <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow">
-                  <div className="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center mb-6">
-                    <TrendingUp className="w-7 h-7 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold text-primary mb-3">Trend Analytics</h3>
-                  <p className="text-gray-600 mb-4">
-                    See which styles, colors, and sizes are trending. Predict demand before you manufacture.
-                  </p>
-                </div>
-              </FadeIn>
-            </div>
           </div>
         </section>
 
-        {/* LOOKBOOK SECTION - Unique Visual */}
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <FadeIn>
-                <LookbookVisual />
-              </FadeIn>
-              <div>
-                <FadeIn>
-                  <span className="text-gold font-semibold text-sm uppercase">Digital Showroom</span>
-                  <h2 className="text-3xl md:text-4xl font-bold text-primary mt-3 mb-6">
-                    Your Collection, Beautifully Presented
-                  </h2>
-                  <p className="text-gray-600 text-lg mb-6">
-                    Replace PDF line sheets with interactive digital lookbooks. Retailers can browse, 
-                    zoom, and order directly from your collection presentation.
-                  </p>
-                  <ul className="space-y-3">
-                    {[
-                      "High-resolution product images",
-                      "Fabric composition and care instructions",
-                      "Size guide integration",
-                      "Direct ordering from lookbook"
-                    ].map((item) => (
-                      <li key={item} className="flex items-center gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-gold shrink-0" />
-                        <span className="text-gray-700">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </FadeIn>
-              </div>
-            </div>
+        {/* Capabilities */}
+        <section aria-label="Capabilities" className="py-24 md:py-32 bg-card border-t border-border">
+          <div className="max-w-7xl mx-auto px-6">
+            <ScrollReveal className="text-center mb-20">
+              <div className="w-12 h-1 bg-gold mx-auto mb-6 shadow-[0_0_12px_hsl(45,93%,47%,0.4)]" />
+              <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tight">Built for fashion</h2>
+              <p className="text-muted-foreground mt-5 text-lg max-w-xl mx-auto">
+                The wholesale essentials that apparel brands actually use.
+              </p>
+            </ScrollReveal>
+            <StaggerContainer staggerDelay={0.08} className="grid md:grid-cols-3 gap-6">
+              {capabilities.map((c) => (
+                <StaggerItem key={c.title}>
+                  <article className="bg-card border border-border rounded-2xl p-8 hover:shadow-xl hover:border-primary/20 transition-all duration-300 h-full">
+                    <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center mb-6">
+                      <c.icon className="w-7 h-7 text-primary-foreground" aria-hidden="true" />
+                    </div>
+                    <h3 className="text-lg font-bold text-foreground mb-3">{c.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{c.description}</p>
+                  </article>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+        </section>
+
+        {/* What you get */}
+        <section aria-label="What you get" className="py-24 md:py-32 bg-primary text-primary-foreground">
+          <div className="max-w-5xl mx-auto px-6">
+            <ScrollReveal className="text-center mb-16">
+              <div className="w-12 h-1 bg-gold mx-auto mb-6 shadow-[0_0_12px_hsl(45,93%,47%,0.4)]" />
+              <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight">What you get</h2>
+            </ScrollReveal>
+            <ul className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+              {checklist.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-primary-foreground/90">
+                  <CheckCircle2 className="w-5 h-5 text-gold mt-0.5 shrink-0" aria-hidden="true" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-primary text-white text-center">
-          <div className="max-w-3xl mx-auto px-4">
-            <Sparkles className="w-12 h-12 text-gold mx-auto mb-6" />
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to streamline your fashion wholesale?</h2>
-            <Button asChild className="bg-gold text-primary hover:bg-gold/90 rounded-full px-10 py-6 text-lg font-semibold">
-              <Link href="/contact">Get Started Free</Link>
-            </Button>
-          </div>
+        <section aria-label="Call to action" className="py-24 md:py-32 bg-card">
+          <ScrollReveal className="max-w-4xl mx-auto px-6 text-center">
+            <div className="w-12 h-1 bg-gold mx-auto mb-8 shadow-[0_0_12px_hsl(45,93%,47%,0.4)]" />
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tight">Ready to scale your fashion brand?</h2>
+            <p className="text-muted-foreground mt-6 text-lg">Start your free trial or book a personalized demo.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+              <Button asChild size="lg" className="bg-gold text-gold-foreground hover:bg-gold/90 text-base px-10 rounded-full font-semibold h-12">
+                <a href="https://app.brandgate.dev/signup">Get Started Free <ArrowRight className="w-4 h-4 ml-2" /></a>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="text-base px-10 rounded-full h-12">
+                <Link href="/contact">Book a Demo</Link>
+              </Button>
+            </div>
+          </ScrollReveal>
         </section>
       </main>
       <Footer />

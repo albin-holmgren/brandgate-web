@@ -81,8 +81,8 @@ const features = [
 ];
 
 function Check({ value }: { value: boolean | string }) {
-  if (value === true) return <CheckCircle2 className="w-5 h-5 text-green-500 mx-auto" aria-label="Yes" />;
-  if (value === "partial") return <span className="text-yellow-600 text-sm">Partial</span>;
+  if (value === true) return <CheckCircle2 className="w-5 h-5 text-gold mx-auto" aria-label="Yes" />;
+  if (value === "partial") return <span className="text-muted-foreground text-sm font-medium">Partial</span>;
   return <X className="w-5 h-5 text-muted-foreground/40 mx-auto" aria-label="No" />;
 }
 
@@ -150,7 +150,7 @@ export default function WhyBrandGatePage() {
                         <ul className="mt-3 space-y-2">
                           {comp.brandgate.map((item) => (
                             <li key={item} className="flex items-start gap-2 text-sm text-foreground">
-                              <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0 mt-0.5" />
+                              <CheckCircle2 className="w-4 h-4 text-gold shrink-0 mt-0.5" />
                               {item}
                             </li>
                           ))}

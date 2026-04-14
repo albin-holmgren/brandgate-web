@@ -123,7 +123,7 @@ export default function AboutPage() {
               <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tight">Our journey</h2>
             </ScrollReveal>
             <div className="relative">
-              <div className="absolute left-[23px] top-0 bottom-0 w-px bg-gradient-to-b from-gold/40 via-primary/30 to-border" />
+              <div className="absolute left-[23px] top-0 bottom-0 w-px bg-border" />
               <div className="space-y-12">
                 {milestones.map((m, i) => (
                   <FadeIn key={m.year} delay={i * 0.1}>

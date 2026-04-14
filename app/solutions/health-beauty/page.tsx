@@ -1,305 +1,144 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion/fade-in";
+import { FadeIn, ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion/fade-in";
 import { Button } from "@/components/ui/button";
-import { 
-  Sparkles, Shield, Beaker, Leaf, Tag, CheckCircle2,
-  AlertCircle, FileText, QrCode, ArrowRight
-} from "lucide-react";
+import { Package, Clock, Shield, CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Health & Beauty Wholesale | BrandGate",
-  description: "Compliance-ready B2B platform for cosmetics brands. Batch tracking, regulatory compliance, and certification management.",
+  title: "Wholesale for Health & Beauty Brands | BrandGate",
+  description: "A B2B platform for cosmetics and wellness brands. Batch tracking, expiry-aware inventory, and retailer-specific price lists.",
   alternates: { canonical: "https://brandgate.dev/solutions/health-beauty" },
 };
 
-// INGREDIENT TRANSPARENCY - Unique to Beauty
-function IngredientTransparencyVisual() {
-  return (
-    <div className="bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-200">
-      <div className="bg-primary px-4 py-3 flex items-center justify-between">
-        <span className="text-white font-semibold text-sm flex items-center gap-2">
-          <Beaker className="w-4 h-4" />
-          Full Ingredient Disclosure
-        </span>
-        <span className="bg-white/20 text-white text-xs px-2 py-1 rounded">EU Compliant</span>
-      </div>
-      <div className="p-4">
-        <p className="text-sm font-medium text-gray-900 mb-3">Radiance Serum - 30ml</p>
-        
-        {/* INCI List */}
-        <div className="bg-gray-50 rounded-lg p-3 mb-4">
-          <p className="text-xs text-gray-500 mb-2">INCI Ingredients (EU Standard)</p>
-          <p className="text-xs text-gray-700 leading-relaxed">
-            Aqua, Glycerin, Niacinamide, Hyaluronic Acid, Tocopherol, 
-            Retinol, Phenoxyethanol, Ethylhexylglycerin
-          </p>
-        </div>
+const capabilities = [
+  {
+    icon: Package,
+    title: "Batch & lot tracking",
+    description: "Attach batch numbers to every order line. Trace any product back to its production run if you need to.",
+  },
+  {
+    icon: Clock,
+    title: "Expiry-aware inventory",
+    description: "Capture shelf life per SKU so older stock moves first and retailers don't receive product close to expiry.",
+  },
+  {
+    icon: Shield,
+    title: "Audit-ready order history",
+    description: "Every order is time-stamped, tied to its distributor, and filterable — useful when compliance comes knocking.",
+  },
+];
 
-        {/* Key Claims */}
-        <div className="grid grid-cols-2 gap-2 mb-4">
-          <div className="bg-gray-50 border border-green-200 rounded-lg p-2 text-center">
-            <Leaf className="w-4 h-4 text-gray-600 mx-auto mb-1" />
-            <p className="text-xs font-medium text-gray-700">Vegan</p>
-          </div>
-          <div className="bg-gray-50 border border-pink-200 rounded-lg p-2 text-center">
-            <Sparkles className="w-4 h-4 text-primary mx-auto mb-1" />
-            <p className="text-xs font-medium text-primary">Cruelty-Free</p>
-          </div>
-        </div>
-
-        {/* Allergen Warning */}
-        <div className="bg-gray-50 border-l-4 border-yellow-400 p-3 rounded">
-          <div className="flex items-start gap-2">
-            <AlertCircle className="w-4 h-4 text-gold shrink-0 mt-0.5" />
-            <p className="text-xs text-primary">
-              <span className="font-semibold">Contains:</span> Retinol. Not recommended during pregnancy.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// BATCH & COA TRACKING - Unique to Beauty
-function BatchTrackingVisual() {
-  return (
-    <div className="bg-white rounded-xl shadow-xl p-4 border border-gray-200">
-      <div className="flex items-center justify-between mb-4">
-        <span className="text-sm font-semibold text-gray-900 flex items-center gap-2">
-          <QrCode className="w-4 h-4 text-primary" />
-          Batch QR Tracking
-        </span>
-        <span className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">Active</span>
-      </div>
-      
-      <div className="space-y-3">
-        <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg">
-          <div className="w-12 h-12 bg-gray-100 rounded flex items-center justify-center">
-            <QrCode className="w-6 h-6 text-primary" />
-          </div>
-          <div className="flex-1">
-            <p className="text-sm font-medium text-gray-900">Batch: BT-2026-0892</p>
-            <p className="text-xs text-gray-500">Mfg: Jan 10, 2026</p>
-          </div>
-          <div className="text-right">
-            <p className="text-xs font-semibold text-gray-600">COA ✓</p>
-            <p className="text-xs text-gray-500">Expires 2028</p>
-          </div>
-        </div>
-
-        <div className="bg-gray-50 rounded-lg p-3">
-          <p className="text-xs font-medium text-primary mb-2">Quality Documents</p>
-          <div className="flex gap-2">
-            <span className="text-xs bg-white px-2 py-1 rounded border">COA.pdf</span>
-            <span className="text-xs bg-white px-2 py-1 rounded border">MSDS.pdf</span>
-            <span className="text-xs bg-white px-2 py-1 rounded border">Micro.pdf</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+const checklist = [
+  "Batch / lot numbers on every order line",
+  "Shelf-life and expiry fields per SKU",
+  "Distributor-specific price lists",
+  "Tiered pricing by retailer group",
+  "Audit-friendly order and invoice history",
+  "Branded retailer portal",
+];
 
 export default function HealthBeautyPage() {
   return (
     <>
       <Navbar />
-      <main>
-        {/* HERO - Compliance Focus */}
-        <section className="bg-primary text-white py-20 lg:py-32">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <FadeIn>
-                  <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-sm mb-6">
-                    <Shield className="w-4 h-4" />
-                    Regulatory Compliant
-                  </div>
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold uppercase leading-tight">
-                    Beauty
-                    <span className="text-gray-200 block">Without Risk</span>
-                  </h1>
-                  <p className="text-white/80 text-lg mt-6 max-w-lg">
-                    The only B2B platform with full EU Cosmetics Regulation compliance. 
-                    Track every batch, ingredient, and certification automatically.
-                  </p>
-                  <div className="flex flex-wrap gap-4 mt-8">
-                    <Button asChild className="bg-white text-primary hover:bg-gray-100 rounded-full px-8 font-semibold">
-                      <Link href="/contact">Start Free Trial</Link>
-                    </Button>
-                  </div>
-                </FadeIn>
-              </div>
-              <FadeIn delay={0.2}>
-                <IngredientTransparencyVisual />
-              </FadeIn>
-            </div>
-          </div>
-        </section>
-
-        {/* COMPLIANCE BADGES */}
-        <section className="py-6 bg-gray-50 border-y border-pink-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-wrap justify-center gap-4 text-sm">
-              {['EU Cosmetics Regulation', 'FDA Compliant', 'GMP Certified', 'ISO 22716'].map((badge) => (
-                <span key={badge} className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm text-primary">
-                  <CheckCircle2 className="w-4 h-4" /> {badge}
-                </span>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ASYMMETRIC GRID LAYOUT */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <main className="min-h-screen bg-background">
+        {/* Hero */}
+        <section aria-label="Health and beauty hero" className="relative bg-primary text-primary-foreground overflow-hidden">
+          <div
+            className="absolute inset-0 opacity-[0.04]"
+            style={{
+              backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
+              backgroundSize: "40px 40px",
+            }}
+          />
+          <div className="relative max-w-4xl mx-auto px-6 py-24 md:py-36 text-center">
             <FadeIn>
-              <div className="text-center max-w-2xl mx-auto mb-16">
-                <span className="text-primary font-semibold text-sm uppercase">Compliance Features</span>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3">
-                  Built for Regulatory Complexity
-                </h2>
+              <div className="w-16 h-1 bg-gold mx-auto mb-8 shadow-[0_0_12px_hsl(45,93%,47%,0.4)]" />
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight uppercase leading-[1.1]">
+                Wholesale for health &amp; beauty brands
+              </h1>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <p className="text-primary-foreground/60 text-lg md:text-xl mt-8 max-w-2xl mx-auto font-light">
+                Batch tracking, shelf-life fields, and retailer-specific pricing for cosmetics and wellness brands.
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+                <Button asChild size="lg" className="bg-gold text-gold-foreground hover:bg-gold/90 text-base px-10 rounded-full font-semibold h-12">
+                  <a href="https://app.brandgate.dev/signup">Get Started <ArrowRight className="w-4 h-4 ml-2" /></a>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="text-base px-10 bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground rounded-full h-12">
+                  <Link href="/contact">Book a Demo</Link>
+                </Button>
               </div>
             </FadeIn>
-
-            <div className="grid lg:grid-cols-3 gap-6">
-              {/* Large Feature Card */}
-              <div className="lg:col-span-2 bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl p-8 border border-pink-100">
-                <div className="w-14 h-14 bg-gray-500 rounded-xl flex items-center justify-center mb-6">
-                  <Beaker className="w-7 h-7 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Complete Ingredient Transparency</h3>
-                <p className="text-gray-600 mb-6">
-                  Automatic INCI list generation, allergen flagging, and full ingredient 
-                  disclosure for every product. Share complete product information with retailers instantly.
-                </p>
-                <div className="grid grid-cols-3 gap-3">
-                  <div className="bg-white p-3 rounded-lg text-center">
-                    <p className="text-lg font-bold text-primary">INCI</p>
-                    <p className="text-xs text-gray-500">Standard Format</p>
-                  </div>
-                  <div className="bg-white p-3 rounded-lg text-center">
-                    <p className="text-lg font-bold text-primary"> allergens</p>
-                    <p className="text-xs text-gray-500">Auto-Detected</p>
-                  </div>
-                  <div className="bg-white p-3 rounded-lg text-center">
-                    <p className="text-lg font-bold text-primary">26</p>
-                    <p className="text-xs text-gray-500">EU Allergens</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Stacked Cards */}
-              <div className="space-y-6">
-                <div className="bg-gray-50 rounded-2xl p-6 border border-purple-100">
-                  <div className="w-12 h-12 bg-gray-500 rounded-xl flex items-center justify-center mb-4">
-                    <QrCode className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">Batch QR Codes</h3>
-                  <p className="text-sm text-gray-600">
-                    Every batch gets a unique QR code linking to full traceability data.
-                  </p>
-                </div>
-
-                <div className="bg-gray-50 rounded-2xl p-6 border border-pink-100">
-                  <div className="w-12 h-12 bg-gray-500 rounded-xl flex items-center justify-center mb-4">
-                    <FileText className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">COA Storage</h3>
-                  <p className="text-sm text-gray-600">
-                    Attach Certificates of Analysis, MSDS, and micro reports to every batch.
-                  </p>
-                </div>
-              </div>
-
-              {/* Bottom Row */}
-              <div className="bg-gray-50 rounded-2xl p-6 border border-green-100">
-                <div className="w-12 h-12 bg-gray-500 rounded-xl flex items-center justify-center mb-4">
-                  <Leaf className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Certification Badges</h3>
-                <p className="text-sm text-gray-600">
-                  Display organic, vegan, and cruelty-free certifications prominently.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 rounded-2xl p-6 border border-amber-100">
-                <div className="w-12 h-12 bg-gray-500 rounded-xl flex items-center justify-center mb-4">
-                  <Tag className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Variant Tracking</h3>
-                <p className="text-sm text-gray-600">
-                  Track every shade, size, and formulation variant independently.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 rounded-2xl p-6 border border-rose-100">
-                <div className="w-12 h-12 bg-gold rounded-xl flex items-center justify-center mb-4">
-                  <Shield className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">Quality Control</h3>
-                <p className="text-sm text-gray-600">
-                  Document quality checks and testing results for every production run.
-                </p>
-              </div>
-            </div>
           </div>
         </section>
 
-        {/* BATCH TRACKING SECTION */}
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="order-2 lg:order-1">
-                <FadeIn>
-                  <div className="inline-flex items-center gap-2 bg-gray-100 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
-                    <QrCode className="w-4 h-4" />
-                    Full Traceability
-                  </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                    Instant Recall Response
-                  </h2>
-                  <p className="text-gray-600 text-lg mb-6">
-                    When quality issues arise, speed matters. Our batch tracking system lets you 
-                    identify affected products and notify retailers within minutes, not days.
-                  </p>
-                  <ul className="space-y-4">
-                    {[
-                      "QR code on every product links to batch data",
-                      "One-click retailer notification system",
-                      "Complete chain of custody documentation",
-                      "Regulatory report generation"
-                    ].map((item) => (
-                      <li key={item} className="flex items-center gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                        <span className="text-gray-700">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </FadeIn>
-              </div>
-              <div className="order-1 lg:order-2">
-                <FadeIn delay={0.2}>
-                  <BatchTrackingVisual />
-                </FadeIn>
-              </div>
-            </div>
+        {/* Capabilities */}
+        <section aria-label="Capabilities" className="py-24 md:py-32 bg-card border-t border-border">
+          <div className="max-w-7xl mx-auto px-6">
+            <ScrollReveal className="text-center mb-20">
+              <div className="w-12 h-1 bg-gold mx-auto mb-6 shadow-[0_0_12px_hsl(45,93%,47%,0.4)]" />
+              <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tight">Built for health &amp; beauty</h2>
+              <p className="text-muted-foreground mt-5 text-lg max-w-xl mx-auto">
+                The wholesale essentials for brands with regulated inventory.
+              </p>
+            </ScrollReveal>
+            <StaggerContainer staggerDelay={0.08} className="grid md:grid-cols-3 gap-6">
+              {capabilities.map((c) => (
+                <StaggerItem key={c.title}>
+                  <article className="bg-card border border-border rounded-2xl p-8 hover:shadow-xl hover:border-primary/20 transition-all duration-300 h-full">
+                    <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center mb-6">
+                      <c.icon className="w-7 h-7 text-primary-foreground" aria-hidden="true" />
+                    </div>
+                    <h3 className="text-lg font-bold text-foreground mb-3">{c.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{c.description}</p>
+                  </article>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+        </section>
+
+        {/* What you get */}
+        <section aria-label="What you get" className="py-24 md:py-32 bg-primary text-primary-foreground">
+          <div className="max-w-5xl mx-auto px-6">
+            <ScrollReveal className="text-center mb-16">
+              <div className="w-12 h-1 bg-gold mx-auto mb-6 shadow-[0_0_12px_hsl(45,93%,47%,0.4)]" />
+              <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight">What you get</h2>
+            </ScrollReveal>
+            <ul className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+              {checklist.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-primary-foreground/90">
+                  <CheckCircle2 className="w-5 h-5 text-gold mt-0.5 shrink-0" aria-hidden="true" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-primary text-white text-center">
-          <div className="max-w-3xl mx-auto px-4">
-            <Sparkles className="w-12 h-12 text-gray-200 mx-auto mb-6" />
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Compliance confidence, built in</h2>
-            <Button asChild className="bg-white text-primary hover:bg-gray-100 rounded-full px-10 py-6 text-lg font-semibold">
-              <Link href="/contact">Get Started Free</Link>
-            </Button>
-          </div>
+        <section aria-label="Call to action" className="py-24 md:py-32 bg-card">
+          <ScrollReveal className="max-w-4xl mx-auto px-6 text-center">
+            <div className="w-12 h-1 bg-gold mx-auto mb-8 shadow-[0_0_12px_hsl(45,93%,47%,0.4)]" />
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tight">Ready to run wholesale properly?</h2>
+            <p className="text-muted-foreground mt-6 text-lg">Start your free trial or book a personalized demo.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+              <Button asChild size="lg" className="bg-gold text-gold-foreground hover:bg-gold/90 text-base px-10 rounded-full font-semibold h-12">
+                <a href="https://app.brandgate.dev/signup">Get Started Free <ArrowRight className="w-4 h-4 ml-2" /></a>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="text-base px-10 rounded-full h-12">
+                <Link href="/contact">Book a Demo</Link>
+              </Button>
+            </div>
+          </ScrollReveal>
         </section>
       </main>
       <Footer />
