@@ -2,7 +2,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion/fade-in";
 import { Button } from "@/components/ui/button";
-import { HelpCircle, Search, MessageCircle, ChevronDown } from "lucide-react";
+import { HelpCircle, MessageCircle, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -52,7 +52,7 @@ const faqs = [
     questions: [
       {
         q: "Which integrations do you support?",
-        a: "We integrate with Shopify, WooCommerce, Fortnox, Visma, Stripe, Klarna, and many more. We also offer a full REST API for custom integrations."
+        a: "We integrate with Shopify, WooCommerce, Fortnox, Visma, Stripe, and Klarna, with more on the roadmap. We also offer a full REST API for custom integrations."
       },
       {
         q: "Can I set different prices for different retailers?",
@@ -97,22 +97,6 @@ export default function FAQPage() {
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
               <p className="text-white/60 text-lg">Everything you need to know about BrandGate</p>
-            </FadeIn>
-          </div>
-        </section>
-
-        {/* Search Bar */}
-        <section className="py-8 bg-gray-50 border-b">
-          <div className="max-w-2xl mx-auto px-4">
-            <FadeIn>
-              <div className="relative">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <input 
-                  type="text" 
-                  placeholder="Search questions..."
-                  className="w-full pl-12 pr-4 py-4 rounded-xl border border-gray-200 focus:border-[#E5A400] focus:ring-2 focus:ring-[#E5A400]/20 outline-none transition-all"
-                />
-              </div>
             </FadeIn>
           </div>
         </section>

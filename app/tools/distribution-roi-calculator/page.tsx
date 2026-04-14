@@ -273,32 +273,16 @@ export default function ROICalculator() {
               <div className="bg-white rounded-2xl border border-[#E3E3E3] p-8 text-center shadow-sm">
                 <h3 className="font-semibold mb-2 text-[#003822]">Ready to save time and money?</h3>
                 <p className="text-[#6E6B6B] text-sm mb-6">
-                  Join brands already streamlining their distribution
+                  Start a free trial and see your numbers for real.
                 </p>
-                <Link
-                  href="/signup"
+                <a
+                  href="https://app.brandgate.dev/signup"
                   className="inline-flex items-center justify-center gap-2 text-base font-semibold bg-[#E5A400] text-[#1A1A1A] hover:bg-[#E5A400]/90 rounded-full px-10 h-12 transition-all"
                 >
                   Start Free Trial
                   <ArrowRight className="w-4 h-4" />
-                </Link>
+                </a>
               </div>
-            </div>
-          </div>
-
-          {/* Trust Indicators */}
-          <div className="mt-16 grid md:grid-cols-3 gap-8 text-center">
-            <div className="p-6">
-              <div className="text-4xl font-bold text-[#003822] mb-2">75%</div>
-              <p className="text-[#6E6B6B]">Less time on order processing</p>
-            </div>
-            <div className="p-6">
-              <div className="text-4xl font-bold text-[#003822] mb-2">80%</div>
-              <p className="text-[#6E6B6B]">Reduction in order errors</p>
-            </div>
-            <div className="p-6">
-              <div className="text-4xl font-bold text-[#003822] mb-2">10x</div>
-              <p className="text-[#6E6B6B]">ROI within first year</p>
             </div>
           </div>
         </div>
@@ -309,7 +293,7 @@ export default function ROICalculator() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-[#6E6B6B] text-sm">
-              © 2024 BrandGate. All rights reserved.
+              © {new Date().getFullYear()} BrandGate. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               <Link href="/privacy" className="text-sm text-[#6E6B6B] hover:text-[#003822] transition-colors">

@@ -26,21 +26,21 @@ const industries = [
     title: "Fashion & Apparel",
     description: "Size variants, seasonal collections, and lookbook management for fashion brands scaling their wholesale operations.",
     href: "/solutions/fashion",
-    stats: "40% faster order processing",
+    stats: "Size matrix built-in",
   },
   {
     icon: Apple,
     title: "Food & Beverage",
     description: "Expiry tracking, batch management, and compliance tools for food brands distributing to retailers.",
     href: "/solutions/food-beverage",
-    stats: "99.9% traceability accuracy",
+    stats: "Batch & expiry tracking",
   },
   {
     icon: Home,
     title: "Home & Design",
     description: "Product variants and shipping management for furniture, decor, and home goods brands.",
     href: "/solutions/home-design",
-    stats: "3x faster onboarding",
+    stats: "Variant management",
   },
   {
     icon: Sparkles,
@@ -54,7 +54,7 @@ const industries = [
     title: "Electronics",
     description: "Warranty tracking and technical specifications for tech products and accessories.",
     href: "/solutions/electronics",
-    stats: "50% fewer returns",
+    stats: "Warranty tracking",
   },
   {
     icon: Building2,
@@ -212,7 +212,7 @@ export default function SolutionsPage() {
                 Ready to transform your wholesale?
               </h2>
               <p className="text-primary-foreground/50 text-lg mb-10 max-w-2xl mx-auto">
-                Join hundreds of brands using BrandGate to streamline their B2B distribution. Start free, scale as you grow.
+                Streamline your B2B distribution on a platform built for wholesale. Start free, scale as you grow.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg" className="bg-gold text-primary hover:bg-gold/90 rounded-full px-10 font-semibold">

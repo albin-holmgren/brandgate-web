@@ -204,7 +204,7 @@ export default function WhyBrandGatePage() {
           <div className="max-w-3xl mx-auto px-4">
             <BarChart3 className="w-12 h-12 text-[#E5A400] mx-auto mb-6" />
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to switch?</h2>
-            <p className="text-white/60 mb-8">Join hundreds of brands who made the switch to purpose-built B2B wholesale.</p>
+            <p className="text-white/60 mb-8">See why brands are moving off generic e-commerce platforms to purpose-built B2B wholesale.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="bg-[#E5A400] text-[#003822] hover:bg-[#E5A400]/90 rounded-full px-8">
                 <Link href="/contact">Start Free Trial</Link>
