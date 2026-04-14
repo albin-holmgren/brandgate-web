@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { FadeIn, ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion/fade-in";
 import { ArrowRight, Zap, Shield, Handshake } from "lucide-react";
 
-const DEMO_MAILTO = `mailto:albin.holmgren97@gmail.com?subject=Book%20a%20Demo%20-%20BrandGate&body=Hi%2C%20I'd%20like%20to%20book%20a%20demo%20of%20BrandGate.`;
+const DEMO_LINK = "/contact";
 
 const values = [
   { icon: Zap, title: "Simplicity", desc: "We believe powerful tools should be easy to use. Every feature is designed to reduce complexity, not add it." },
@@ -49,7 +49,7 @@ export default function AboutPage() {
             <FadeIn delay={0.3}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
                 <Button asChild size="lg" className="bg-gold text-gold-foreground hover:bg-gold/90 text-base px-10 rounded-full font-semibold h-12">
-                  <a href={DEMO_MAILTO}>Book a Demo <ArrowRight className="w-4 h-4 ml-2" /></a>
+                  <Link href={DEMO_LINK}>Book a Demo <ArrowRight className="w-4 h-4 ml-2" /></Link>
                 </Button>
               </div>
             </FadeIn>
@@ -153,7 +153,7 @@ export default function AboutPage() {
                 <a href="https://app.brandgate.dev/signup">Get Started <ArrowRight className="w-4 h-4 ml-2" /></a>
               </Button>
               <Button asChild size="lg" variant="outline" className="text-base px-10 bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground rounded-full h-12">
-                <a href={DEMO_MAILTO}>Book a Demo</a>
+                <Link href={DEMO_LINK}>Book a Demo</Link>
               </Button>
             </div>
           </ScrollReveal>

@@ -2,7 +2,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion/fade-in";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, HelpCircle, Mail, MessageCircle, FileQuestion } from "lucide-react";
+import { HelpCircle, Mail, MessageCircle, FileQuestion } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -17,19 +17,16 @@ const helpCategories = [
     icon: FileQuestion,
     title: "Getting Started",
     description: "Set up your account, invite team members, and configure your first distributor.",
-    articles: ["Quick Start Guide", "Account Setup", "Adding Products"],
   },
   {
     icon: MessageCircle,
     title: "Using the Platform",
     description: "Learn how to manage orders, invoicing, and your distributor network.",
-    articles: ["Processing Orders", "Managing Invoices", "Distributor Portal"],
   },
   {
     icon: HelpCircle,
     title: "Integrations",
     description: "Connect BrandGate with your existing tools like Shopify, Fortnox, and Visma.",
-    articles: ["Shopify Integration", "Fortnox Setup", "API Documentation"],
   },
 ];
 
@@ -72,16 +69,7 @@ export default function HelpPage() {
                       <category.icon className="w-8 h-8 text-gold" />
                     </div>
                     <h3 className="text-xl font-bold text-foreground mb-3">{category.title}</h3>
-                    <p className="text-muted-foreground mb-6">{category.description}</p>
-                    <ul className="space-y-2">
-                      {category.articles.map((article) => (
-                        <li key={article}>
-                          <Link href="#" className="text-sm text-primary hover:underline">
-                            {article}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
+                    <p className="text-muted-foreground">{category.description}</p>
                   </div>
                 </StaggerItem>
               ))}

@@ -1,40 +1,16 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/motion/fade-in";
+import { FadeIn } from "@/components/motion/fade-in";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BookOpen, Download, FileText, Video } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Guides & E-books | BrandGate Resources",
-  description: "Download free guides and e-books on B2B distribution, wholesale growth, and scaling your brand.",
+  description: "In-depth guides and e-books on B2B distribution, wholesale growth, and scaling your brand.",
   alternates: { canonical: "https://brandgate.dev/guides" },
 };
-
-const guides = [
-  {
-    icon: BookOpen,
-    title: "The B2B Distribution Playbook",
-    description: "A complete guide to building and managing your wholesale distribution network.",
-    pages: "45 pages",
-    cta: "Download Free",
-  },
-  {
-    icon: FileText,
-    title: "Wholesale Pricing Strategy",
-    description: "How to set wholesale prices that maximize margins while keeping retailers happy.",
-    pages: "28 pages",
-    cta: "Download Free",
-  },
-  {
-    icon: Download,
-    title: "Scaling from B2C to B2B",
-    description: "The essential roadmap for brands adding wholesale to their direct-to-consumer business.",
-    pages: "52 pages",
-    cta: "Download Free",
-  },
-];
 
 export default function GuidesPage() {
   return (
@@ -64,37 +40,21 @@ export default function GuidesPage() {
           </div>
         </section>
 
-        {/* Guides Grid */}
+        {/* Empty state */}
         <section className="py-20">
-          <div className="max-w-6xl mx-auto px-6">
-            <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {guides.map((guide) => (
-                <StaggerItem key={guide.title}>
-                  <div className="bg-card border rounded-2xl p-8 h-full hover:shadow-lg transition-shadow">
-                    <div className="w-16 h-16 bg-gold/10 rounded-xl flex items-center justify-center mb-6">
-                      <guide.icon className="w-8 h-8 text-gold" />
-                    </div>
-                    <div className="text-sm text-muted-foreground mb-2">{guide.pages}</div>
-                    <h3 className="text-xl font-bold text-foreground mb-3">{guide.title}</h3>
-                    <p className="text-muted-foreground mb-6">{guide.description}</p>
-                    <Button variant="outline" className="w-full">
-                      {guide.cta}
-                    </Button>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-20 bg-muted">
-          <div className="max-w-4xl mx-auto px-6 text-center">
+          <div className="max-w-3xl mx-auto px-6 text-center">
             <FadeIn>
-              <h2 className="text-3xl font-bold text-foreground mb-4">Want more resources?</h2>
-              <p className="text-muted-foreground mb-8">Check out our blog for the latest insights.</p>
+              <BookOpen className="w-12 h-12 text-gold mx-auto mb-6" />
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                Our first guides are on the way
+              </h2>
+              <p className="text-muted-foreground mb-8">
+                We&rsquo;re putting together in-depth playbooks on building a wholesale channel,
+                pricing strategy, and scaling from B2C to B2B. Let us know you&rsquo;re interested
+                and we&rsquo;ll send the first guide the moment it&rsquo;s ready.
+              </p>
               <Button asChild className="bg-gold text-primary hover:bg-gold/90">
-                <Link href="/blog">Visit Blog</Link>
+                <Link href="/contact">Get the first guide</Link>
               </Button>
             </FadeIn>
           </div>

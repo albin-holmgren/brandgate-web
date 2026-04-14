@@ -34,9 +34,7 @@ const footerLinks = {
     title: "Company",
     links: [
       { label: "About", href: "/about" },
-      { label: "Team", href: "/company/team" },
       { label: "Contact", href: "/contact" },
-      { label: "Careers", href: "/contact" },
     ],
   },
   legal: {
@@ -51,29 +49,27 @@ const footerLinks = {
 export function Footer() {
   return (
     <footer className="bg-[#003822] text-white">
-      {/* Newsletter Section */}
+      {/* Get in touch */}
       <div className="border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <div className="flex items-center gap-2 mb-3">
                 <Mail className="w-5 h-5 text-[#E5A400]" />
-                <span className="font-semibold text-lg">Stay Updated</span>
+                <span className="font-semibold text-lg">Stay in the loop</span>
               </div>
               <p className="text-white/60">
-                Get the latest B2B wholesale tips, product updates, and industry insights delivered to your inbox.
+                Questions, feedback, or want to hear when we ship something new? Drop us a line.
               </p>
             </div>
-            <div className="flex gap-3">
-              <input 
-                type="email" 
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:border-[#E5A400]"
-              />
-              <button className="px-6 py-3 bg-[#E5A400] text-[#003822] font-semibold rounded-lg hover:bg-[#E5A400]/90 transition-colors flex items-center gap-2">
-                Subscribe
+            <div className="flex md:justify-end">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#E5A400] text-[#003822] font-semibold rounded-lg hover:bg-[#E5A400]/90 transition-colors"
+              >
+                Get in touch
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -90,14 +86,6 @@ export function Footer() {
             <p className="mt-4 text-white/60 max-w-sm">
               The all-in-one B2B distribution platform for brands. Manage distributors, orders, and scale your wholesale business.
             </p>
-            <div className="mt-6 flex gap-4">
-              <a href="https://linkedin.com" className="text-white/60 hover:text-white transition-colors">
-                LinkedIn
-              </a>
-              <a href="https://twitter.com" className="text-white/60 hover:text-white transition-colors">
-                Twitter
-              </a>
-            </div>
           </div>
 
           {/* Product */}

@@ -88,7 +88,7 @@ export default function ContactPage() {
                     <p className="text-primary-foreground/60 text-sm">We've received your message and will get back to you within one business day.</p>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form id="contact-form" onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-2 gap-5">
                       <div className="space-y-2">
                         <Label htmlFor="name" className="text-foreground font-medium">Name</Label>
@@ -150,9 +150,9 @@ export default function ContactPage() {
                     <Calendar className="w-5 h-5 text-gold" />
                     <h3 className="text-sm font-bold text-foreground uppercase tracking-wider">Prefer a call?</h3>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-4">Book a 30-minute demo with our team to see BrandGate in action.</p>
+                  <p className="text-sm text-muted-foreground mb-4">Book a 30-minute demo with our team to see BrandGate in action. Send us a note and we&rsquo;ll find a time.</p>
                   <Button asChild variant="outline" className="w-full rounded-full h-10 font-semibold border-gold/30 text-foreground hover:bg-gold/10">
-                    <a href="mailto:albin.holmgren97@gmail.com?subject=Book%20a%20Demo%20-%20BrandGate&body=Hi%2C%20I'd%20like%20to%20book%20a%20demo%20of%20BrandGate.">Book a Demo Call</a>
+                    <a href="#contact-form">Book a Demo Call</a>
                   </Button>
                 </div>
 

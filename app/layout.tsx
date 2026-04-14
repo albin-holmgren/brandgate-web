@@ -52,9 +52,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://brandgate.dev",
   },
-  verification: {
-    google: "please-add-your-google-search-console-verification-code-here",
-  },
 };
 
 // Enhanced Analytics Script
