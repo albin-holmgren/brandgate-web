@@ -1,67 +1,83 @@
 import { NextResponse } from 'next/server'
 import { createLeadInAttio, trackLeadInMixpanel } from './attio'
+import { isValidEmail } from '@/lib/security/email'
+import { clientIpFromHeaders, consumeRateLimit } from '@/lib/security/rate-limit'
+import {
+  bearerTokenMatches,
+  isHoneypotTriggered,
+  isJsonContentType,
+} from '@/lib/security/request-auth'
+
+const genericError = { error: 'Unable to process request' }
 
 export async function POST(req: Request) {
   try {
-    const data = await req.json()
+    const secret = process.env.LEADS_API_SECRET
+    if (!secret) {
+      console.error('Leads API is not configured')
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
 
-    // Validate required fields
-    if (!data.email) {
+    const ip = clientIpFromHeaders(req.headers)
+    const rate = consumeRateLimit(`leads:${ip}`, { limit: 10, windowMs: 10 * 60 * 1000 })
+    if (!rate.allowed) {
       return NextResponse.json(
-        { error: 'Email is required' },
-        { status: 400 }
+        { error: 'Too many requests' },
+        { status: 429, headers: { 'Retry-After': String(rate.retryAfterSeconds) } }
       )
     }
 
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(data.email)) {
-      return NextResponse.json(
-        { error: 'Invalid email format' },
-        { status: 400 }
-      )
+    if (!isJsonContentType(req.headers)) {
+      return NextResponse.json({ error: 'Invalid request' }, { status: 400 })
     }
 
-    // Sanitize and prepare lead data
+    if (!bearerTokenMatches(req.headers.get('authorization'), secret)) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
+    if (!process.env.ATTIO_API_KEY) {
+      console.error('Leads CRM write is not configured')
+      return NextResponse.json(genericError, { status: 503 })
+    }
+
+    const data: unknown = await req.json()
+    if (isHoneypotTriggered(data)) {
+      return NextResponse.json({ error: 'Invalid request' }, { status: 400 })
+    }
+
+    if (!data || typeof data !== 'object') {
+      return NextResponse.json({ error: 'Invalid request' }, { status: 400 })
+    }
+
+    const record = data as Record<string, unknown>
+    const email = typeof record.email === 'string' ? record.email.toLowerCase().trim() : ''
+    if (!isValidEmail(email)) {
+      return NextResponse.json({ error: 'Invalid request' }, { status: 400 })
+    }
+
     const leadData = {
-      email: data.email.toLowerCase().trim(),
-      first_name: data.first_name?.trim() || '',
-      last_name: data.last_name?.trim() || '',
-      company: data.company?.trim() || '',
-      job_title: data.job_title?.trim() || '',
-      phone: data.phone?.trim() || '',
-      website: data.website?.trim() || '',
-      source: data.source || 'website',
-      message: data.message?.trim() || '',
-      company_size: data.company_size || '',
-      use_case: data.use_case || '',
+      email,
+      first_name: readTrimmed(record.first_name),
+      last_name: readTrimmed(record.last_name),
+      company: readTrimmed(record.company),
+      job_title: readTrimmed(record.job_title),
+      phone: readTrimmed(record.phone),
+      website: readTrimmed(record.website),
+      source: readTrimmed(record.source) || 'website',
+      message: readTrimmed(record.message),
+      company_size: readTrimmed(record.company_size),
+      use_case: readTrimmed(record.use_case),
     }
 
-    // Create in Attio
     const attioResult = await createLeadInAttio(leadData)
-
-    // Track in Mixpanel
     await trackLeadInMixpanel(leadData, attioResult)
 
-    return NextResponse.json({
-      success: true,
-      message: 'Lead captured successfully',
-      leadId: attioResult.dealId,
-    })
-
-  } catch (error: any) {
-    console.error('Lead capture error:', error)
-    return NextResponse.json(
-      { error: 'Failed to capture lead', message: error.message },
-      { status: 500 }
-    )
+    return NextResponse.json({ success: true })
+  } catch {
+    return NextResponse.json(genericError, { status: 500 })
   }
 }
 
-// Optional: GET endpoint to check status
-export async function GET() {
-  return NextResponse.json({
-    status: 'Lead capture API is running',
-    timestamp: new Date().toISOString(),
-  })
+function readTrimmed(value: unknown): string {
+  return typeof value === 'string' ? value.trim() : ''
 }

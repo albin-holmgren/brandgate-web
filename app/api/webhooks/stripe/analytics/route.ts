@@ -1,74 +1,58 @@
 import { NextResponse } from 'next/server'
-import { createHmac } from 'crypto'
+import { verifyStripeAnalyticsWebhook } from '@/lib/security/stripe-webhook'
 
-// This webhook is SEPARATE from the checkout webhook
-// It handles analytics/revenue tracking only and won't affect subscription processing
-
-// Verify Stripe webhook signature without the stripe package
-function verifyWebhookSignature(payload: string, signature: string, secret: string): any {
-  const elements = signature.split(',')
-  const signatureHash = elements.find(el => el.startsWith('v1='))?.replace('v1=', '')
-  
-  if (!signatureHash) {
-    throw new Error('Invalid signature format')
+type MixpanelStripeEvent = {
+  type?: string
+  id?: string
+  data?: {
+    object?: Record<string, unknown>
+    previous_attributes?: { items?: unknown }
   }
-  
-  const expectedHash = createHmac('sha256', secret)
-    .update(payload)
-    .digest('hex')
-  
-  // Constant-time comparison to prevent timing attacks
-  let match = true
-  for (let i = 0; i < signatureHash.length; i++) {
-    if (signatureHash.charCodeAt(i) !== expectedHash.charCodeAt(i)) {
-      match = false
-    }
-  }
-  
-  if (!match) {
-    throw new Error('Signature verification failed')
-  }
-  
-  // Parse the payload
-  return JSON.parse(payload)
 }
 
 export async function POST(req: Request) {
-  const payload = await req.text()
+  const secret = process.env.STRIPE_WEBHOOK_SECRET_ANALYTICS
   const signature = req.headers.get('stripe-signature')
+  const payload = await req.text()
 
-  if (!signature || !process.env.STRIPE_WEBHOOK_SECRET_ANALYTICS) {
-    return NextResponse.json({ error: 'Missing signature or webhook secret' }, { status: 400 })
+  const verification = verifyStripeAnalyticsWebhook({
+    payload,
+    signatureHeader: signature,
+    secret,
+  })
+
+  if (!verification.ok) {
+    if (verification.status === 500) {
+      console.error('Analytics webhook is not configured')
+      return NextResponse.json({ error: 'Webhook unavailable' }, { status: 500 })
+    }
+    return NextResponse.json({ error: 'Invalid signature' }, { status: 400 })
   }
 
-  let event
-
-  try {
-    event = verifyWebhookSignature(payload, signature, process.env.STRIPE_WEBHOOK_SECRET_ANALYTICS)
-  } catch (err: any) {
-    console.error('Analytics webhook signature verification failed:', err.message)
-    return NextResponse.json({ error: err.message }, { status: 400 })
-  }
-
-  // Track events to Mixpanel
   const mixpanelToken = process.env.MIXPANEL_TOKEN
-  
   if (mixpanelToken) {
-    await trackToMixpanel(event, mixpanelToken)
+    try {
+      await trackToMixpanel(verification.event as MixpanelStripeEvent, mixpanelToken)
+    } catch (error) {
+      console.error('Analytics webhook downstream tracking failed')
+      if (error instanceof Error) {
+        console.error(error.name)
+      }
+    }
   }
 
   return NextResponse.json({ received: true })
 }
 
-async function trackToMixpanel(event: any, token: string) {
-  
+async function trackToMixpanel(event: MixpanelStripeEvent, token: string) {
   switch (event.type) {
     case 'checkout.session.completed': {
-      const session = event.data.object
-      const amount = session.amount_total ? session.amount_total / 100 : 0
-      const currency = session.currency?.toUpperCase() || 'USD'
-      
-      // Track revenue event
+      const session = event.data?.object ?? {}
+      const amountTotal = asNumber(session.amount_total)
+      const amount = amountTotal ? amountTotal / 100 : 0
+      const currency = asString(session.currency)?.toUpperCase() || 'USD'
+      const metadata = asRecord(session.metadata)
+
       await fetch('https://api.mixpanel.com/track', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -81,25 +65,23 @@ async function trackToMixpanel(event: any, token: string) {
             $insert_id: `stripe_${event.id}`,
             revenue: amount,
             currency,
-            plan: session.metadata?.plan || 'unknown',
-            interval: session.metadata?.interval || 'unknown',
+            plan: metadata?.plan || 'unknown',
+            interval: metadata?.interval || 'unknown',
             session_id: session.id,
             customer_id: session.customer,
             payment_status: session.payment_status,
-          }
-        })
+          },
+        }),
       })
-      
-      console.log(`[Analytics] Tracked purchase: $${amount} ${currency}`)
       break
     }
 
     case 'invoice.payment_succeeded': {
-      const invoice = event.data.object
-      const amount = invoice.amount_paid ? invoice.amount_paid / 100 : 0
-      const currency = invoice.currency?.toUpperCase() || 'USD'
-      
-      // Only track if it's a subscription renewal (not the first payment)
+      const invoice = event.data?.object ?? {}
+      const amountPaid = asNumber(invoice.amount_paid)
+      const amount = amountPaid ? amountPaid / 100 : 0
+      const currency = asString(invoice.currency)?.toUpperCase() || 'USD'
+
       if (invoice.billing_reason === 'subscription_cycle') {
         await fetch('https://api.mixpanel.com/track', {
           method: 'POST',
@@ -116,18 +98,17 @@ async function trackToMixpanel(event: any, token: string) {
               subscription_id: invoice.subscription,
               invoice_id: invoice.id,
               customer_id: invoice.customer,
-            }
-          })
+            },
+          }),
         })
-        
-        console.log(`[Analytics] Tracked renewal: $${amount} ${currency}`)
       }
       break
     }
 
     case 'invoice.payment_failed': {
-      const invoice = event.data.object
-      
+      const invoice = event.data?.object ?? {}
+      const amountDue = asNumber(invoice.amount_due)
+
       await fetch('https://api.mixpanel.com/track', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -138,23 +119,22 @@ async function trackToMixpanel(event: any, token: string) {
             token,
             time: Math.floor(Date.now() / 1000),
             $insert_id: `stripe_${event.id}`,
-            amount: invoice.amount_due ? invoice.amount_due / 100 : 0,
-            currency: invoice.currency?.toUpperCase() || 'USD',
+            amount: amountDue ? amountDue / 100 : 0,
+            currency: asString(invoice.currency)?.toUpperCase() || 'USD',
             subscription_id: invoice.subscription,
             invoice_id: invoice.id,
             customer_id: invoice.customer,
             attempt_count: invoice.attempt_count,
-          }
-        })
+          },
+        }),
       })
-      
-      console.log('[Analytics] Tracked payment failure')
       break
     }
 
     case 'customer.subscription.created': {
-      const subscription = event.data.object
-      
+      const subscription = event.data?.object ?? {}
+      const plan = firstSubscriptionItem(subscription)
+
       await fetch('https://api.mixpanel.com/track', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -168,19 +148,18 @@ async function trackToMixpanel(event: any, token: string) {
             subscription_id: subscription.id,
             customer_id: subscription.customer,
             status: subscription.status,
-            plan_id: subscription.items?.data?.[0]?.price?.id,
-            interval: subscription.items?.data?.[0]?.price?.recurring?.interval,
-          }
-        })
+            plan_id: plan?.price?.id,
+            interval: plan?.price?.recurring?.interval,
+          },
+        }),
       })
-      
-      console.log('[Analytics] Tracked subscription creation')
       break
     }
 
     case 'customer.subscription.deleted': {
-      const subscription = event.data.object
-      
+      const subscription = event.data?.object ?? {}
+      const cancellation = asRecord(subscription.cancellation_details)
+
       await fetch('https://api.mixpanel.com/track', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -193,21 +172,18 @@ async function trackToMixpanel(event: any, token: string) {
             $insert_id: `stripe_${event.id}`,
             subscription_id: subscription.id,
             customer_id: subscription.customer,
-            cancellation_reason: subscription.cancellation_details?.reason || 'unknown',
-          }
-        })
+            cancellation_reason: cancellation?.reason || 'unknown',
+          },
+        }),
       })
-      
-      console.log('[Analytics] Tracked subscription cancellation')
       break
     }
 
     case 'customer.subscription.updated': {
-      const subscription = event.data.object
-      
-      // Track plan changes
-      const previousAttributes = event.data.previous_attributes
+      const subscription = event.data?.object ?? {}
+      const previousAttributes = event.data?.previous_attributes
       if (previousAttributes?.items) {
+        const plan = firstSubscriptionItem(subscription)
         await fetch('https://api.mixpanel.com/track', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -221,14 +197,40 @@ async function trackToMixpanel(event: any, token: string) {
               subscription_id: subscription.id,
               customer_id: subscription.customer,
               status: subscription.status,
-              plan_id: subscription.items?.data?.[0]?.price?.id,
-            }
-          })
+              plan_id: plan?.price?.id,
+            },
+          }),
         })
-        
-        console.log('[Analytics] Tracked subscription update')
       }
       break
     }
+  }
+}
+
+function asString(value: unknown): string | undefined {
+  return typeof value === 'string' ? value : undefined
+}
+
+function asNumber(value: unknown): number | undefined {
+  return typeof value === 'number' ? value : undefined
+}
+
+function asRecord(value: unknown): Record<string, unknown> | undefined {
+  if (!value || typeof value !== 'object') {
+    return undefined
+  }
+  return value as Record<string, unknown>
+}
+
+function firstSubscriptionItem(subscription: Record<string, unknown>): {
+  price?: { id?: unknown; recurring?: { interval?: unknown } }
+} | undefined {
+  const items = asRecord(subscription.items)
+  const data = items?.data
+  if (!Array.isArray(data) || data.length === 0) {
+    return undefined
+  }
+  return asRecord(data[0]) as {
+    price?: { id?: unknown; recurring?: { interval?: unknown } }
   }
 }

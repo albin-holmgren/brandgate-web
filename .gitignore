@@ -33,6 +33,12 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# Outreach / lead lists must stay private
+/NEW_LEADS*.md
+/UPDATED_LEADS*.md
+/OUTREACH_*.md
+/memory/
+
 # vercel
 .vercel
 
