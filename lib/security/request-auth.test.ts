@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import { bearerTokenMatches, isHoneypotTriggered, isJsonContentType } from './request-auth'
+import { bearerTokenMatches, isHoneypotTriggered, isJsonContentType } from './request-auth.ts'
 
 test('bearerTokenMatches requires equal-length secrets', () => {
   assert.equal(bearerTokenMatches('Bearer correct-token', 'correct-token'), true)

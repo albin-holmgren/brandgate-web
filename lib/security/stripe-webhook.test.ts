@@ -4,7 +4,7 @@ import { test } from 'node:test'
 import {
   verifyStripeAnalyticsWebhook,
   verifyStripeSignedPayload,
-} from './stripe-webhook'
+} from './stripe-webhook.ts'
 
 const secret = 'whsec_test_secret'
 const payload = '{"id":"evt_test","object":"event","type":"ping"}'

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import { consumeRateLimit, resetRateLimitStoreForTests } from './rate-limit'
+import { consumeRateLimit, resetRateLimitStoreForTests } from './rate-limit.ts'
 
 test('consumeRateLimit blocks after the configured limit', () => {
   resetRateLimitStoreForTests()

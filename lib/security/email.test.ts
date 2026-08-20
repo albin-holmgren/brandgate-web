@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import { isValidEmail } from './email'
+import { isValidEmail } from './email.ts'
 
 test('isValidEmail accepts a well-formed address', () => {
   assert.equal(isValidEmail('user@example.com'), true)
